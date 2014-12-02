@@ -49,5 +49,4 @@ func testST() {
 	fmt.Printf("#v %#v\n", st)
 	fmt.Printf("v %v\n", st)
 	fmt.Printf("T %T\n", st)
-	fmt.Printf("c %c\n", st)
 }
