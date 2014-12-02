@@ -24,3 +24,4 @@ _testmain.go
 *.prof
 
 commit.bat
+commit_only.bat
