@@ -21,6 +21,7 @@ func main() {
 	origin := "[{{} 3 1 2 .jpg /admin/shops/activity/home?id=15  1} {{} 4 1 7 .jpg /admin/shops/activity/home?id=21  1} {{} 5 1 7 .jpg /admin/shops/activity/home?id=24  1}]"
 
 	// solutionOne(origin)
+
 	solutionTwo(origin)
 }
 
