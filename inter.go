@@ -16,9 +16,9 @@ func main() {
 
 	// solutionTwo(origin)
 	// testST_print()
-	// testST_reflect()
+	testST_reflect()
 
-	test_Map()
+	// test_Map()
 }
 
 func solutionOne(origin string) {
@@ -60,6 +60,10 @@ func testST_reflect() {
 	// fmt.Println(elem.String())
 	// var newst elem
 	// fmt.Println(newst)
+	v := reflect.ValueOf(st)
+	newt := reflect.New(v.Type())
+	newt.Set(newt)
+	fmt.Println(newt)
 }
 
 func test_Map() {

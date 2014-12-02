@@ -1,3 +1,4 @@
+git status
 git add -A
 ::echo commit for change : 
 set /p commit_for_change=
