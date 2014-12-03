@@ -1,17 +1,17 @@
 package fetch
 
 import (
-	"encoding/json"
-	"fmt"
 	"github.com/astaxie/beego/httplib"
 	"github.com/shaalx/sstruct/log"
+	"net"
 	"net/http"
+	"time"
 )
 
 /*根据给定的URL,fetch the data*/
 func Do(url, ipaddr string) []byte {
 	request := httplib.Get(url)
-	request.SetTransport(newTransport(ipaddr))
+	// request.SetTransport(newTransport(ipaddr))
 	request.Header("Host", "itunes.apple.com")
 	request.Header("X-Apple-Store-Front", "143465-19,21 t:native")
 	request.Header("Accept", "*/*")
@@ -27,6 +27,9 @@ func Do(url, ipaddr string) []byte {
 	return bs
 }
 
+/*
+* 固定IP
+ */
 func newTransport(ipaddr string) *http.Transport {
 	transport :=
 		&http.Transport{
