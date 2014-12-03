@@ -1,33 +1,16 @@
 package fetch
 
 import (
-	// "./gojson"
 	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego/httplib"
-	// _ "github.com/go-sql-driver/mysql"
-	// "github.com/go-xorm/xorm"
-	"labix.org/v2/mgo"
-	// "labix.org/v2/mgo/bson"
-	// "os"
-	"strconv"
-	"strings"
-	"time"
+	"net/http"
 )
 
-func CrawlStoreApp(appurl AppUrl) {
-	crawlStore(appurl.Url)
-}
-
-func CrawlStoreApps(appurls ...AppUrl) {
-	for _, it := range appurls {
-		CrawlStoreApp(it)
-	}
-}
-
-/*根据给定的URL，将源数据加盖时间戳，然后存储到mongoDB中*/
-func crawlStore(url string) {
+/*根据给定的URL,fetch the data*/
+func Do(url, ipaddr string) []byte {
 	request := httplib.Get(url)
+	request.SetTransport(newTransport(ipaddr))
 	request.Header("Host", "itunes.apple.com")
 	request.Header("X-Apple-Store-Front", "143465-19,21 t:native")
 	request.Header("Accept", "*/*")
@@ -36,8 +19,31 @@ func crawlStore(url string) {
 	request.Header("Connection", "keep-alive")
 	request.Header("Proxy-Connection", "keep-alive")
 	request.Header("Design-Agent", "AppStore/2.0 iOS/7.1.1 model/iPod5,1 build/11D201 (4; dt:81)")
+	bs, err := request.Bytes()
+}
 
-	str, _ := request.String()
-	v := setStringByStruct(str)
-	onlyStore(v)
+func newTransport(ipaddr string) *http.Transport {
+	transport :=
+		&http.Transport{
+			Dial: func(netw, addr string) (net.Conn, error) {
+				//本地地址  ipaddr是本地外网IP
+				lAddr, err := net.ResolveTCPAddr(netw, ipaddr+":0")
+				if err != nil {
+					return nil, err
+				}
+				//被请求的地址
+				rAddr, err := net.ResolveTCPAddr(netw, addr)
+				if err != nil {
+					return nil, err
+				}
+				conn, err := net.DialTCP(netw, lAddr, rAddr)
+				if err != nil {
+					return nil, err
+				}
+				deadline := time.Now().Add(35 * time.Second)
+				conn.SetDeadline(deadline)
+				return conn, nil
+			},
+		}
+	return transport
 }
