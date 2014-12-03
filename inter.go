@@ -2,9 +2,11 @@ package main
 
 import (
 	// "bytes"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	. "github.com/shaalx/sstruct/structs"
+	"io"
 	"reflect"
 	"strings"
 )
@@ -16,8 +18,8 @@ func main() {
 
 	// solutionTwo(origin)
 	// testST_print()
-	testST_reflect()
-
+	// testST_reflect()
+	testST_reflect2()
 	// test_Map()
 }
 
@@ -60,10 +62,35 @@ func testST_reflect() {
 	// fmt.Println(elem.String())
 	// var newst elem
 	// fmt.Println(newst)
-	v := reflect.ValueOf(st)
-	newt := reflect.New(v.Type())
-	newt.Set(newt)
-	fmt.Println(newt)
+	// v := reflect.ValueOf(st)
+	// newt := reflect.New(v.Type())
+	// newt.Set(newt)
+	// fmt.Println(newt)
+
+	var r io.Reader
+	b := new(bytes.Buffer)
+	rv := reflect.ValueOf(&r).Elem()
+	rv.Set(reflect.ValueOf(b))
+	if r != b {
+		fmt.Errorf("after Set: r=%T(%v)", r, r)
+	}
+	fmt.Println(rv)
+	fmt.Println(b)
+}
+
+func testST_reflect2() {
+	var r *Structs
+	b := new(Structs)
+	rv := reflect.ValueOf(&r).Elem()
+	rv.Set(reflect.ValueOf(b))
+	if r != b {
+		fmt.Errorf("after Set: r=%T(%v)", r, r)
+	}
+	fmt.Println(rv)
+	fmt.Println(b)
+
+	fmt.Println(rv.Type())
+	fmt.Println(rv.Elem())
 }
 
 func test_Map() {
