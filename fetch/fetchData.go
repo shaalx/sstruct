@@ -21,6 +21,10 @@ func Do(url, ipaddr string) []byte {
 	request.Header("Proxy-Connection", "keep-alive")
 	request.Header("Design-Agent", "AppStore/2.0 iOS/7.1.1 model/iPod5,1 build/11D201 (4; dt:81)")
 	bs, err := request.Bytes()
+	if log.IsError(err) {
+		return nil
+	}
+	return bs
 }
 
 func newTransport(ipaddr string) *http.Transport {

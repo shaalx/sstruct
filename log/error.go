@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func isError(err error) bool {
+func IsError(err error) bool {
 	if err == nil {
 		return false
 	}
