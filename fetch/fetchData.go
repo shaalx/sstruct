@@ -1,7 +1,7 @@
 package fetch
 
 import (
-	"github.com/astaxie/beego/httplib"
+	"github.com/shaalx/sstruct/httplib"
 	"github.com/shaalx/sstruct/log"
 	"net"
 	"net/http"
