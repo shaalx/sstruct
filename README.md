@@ -1,7 +1,6 @@
 sstruct
 =======
 
-convert string to struct
 
 get this pkg
 
