@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/shaalx/sstruct/fetch"
-	"github.com/shaalx/sstruct/mgodb"
-	// "labix.org/v2/mgo/bson"
-	"encoding/json"
+	"github.com/shaalx/sstruct/persistence"
 )
 
 func main() {
@@ -15,16 +13,6 @@ func main() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	fmt.Println(string(bs))
-	test(bs)
-}
-
-// bs := bson.M{"a": 1}
-// fmt.Println(bs)
-
-func test(b []byte) {
-	server := []string{"", "newsmgo", "firstbanner"}
-	dbserver := mgodb.SetLocalDB(server...)
-	var i interface{}
-	json.Unmarshal(b, &i)
-	dbserver.Save(i)
+	var p persistence.MgoPers
+	p.Do(bs)
 }

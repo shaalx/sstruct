@@ -18,7 +18,7 @@ func main() {
 	jsonF()
 	xmlF()
 	gobF()
-
+	fmt.Println([]byte("abcdefh"))
 }
 
 func itype(t interface{}) {
