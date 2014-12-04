@@ -96,57 +96,57 @@ func (d *DB) SelectAny(selector bson.M) *bson.M {
 	return &result
 }
 
-// select a homegroup
-func (d *DB) SelectHomegroup(selector bson.M) *Homegroup {
-	collection := d.collection
-	var result Homegroup
-	err := collection.Find(selector).One(&result)
-	Log(err)
-	if err != nil {
-		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-	}
-	return &result
-}
+// // select a homegroup
+// func (d *DB) SelectHomegroup(selector bson.M) *Homegroup {
+// 	collection := d.collection
+// 	var result Homegroup
+// 	err := collection.Find(selector).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		return nil
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 	}
+// 	return &result
+// }
 
-// select an app
-func (d *DB) SelectApp(selector bson.M) *App {
-	collection := d.collection
-	var result App
-	err := collection.Find(selector).One(&result)
-	Log(err)
-	if err != nil {
-		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-	}
-	return &result
-}
+// // select an app
+// func (d *DB) SelectApp(selector bson.M) *App {
+// 	collection := d.collection
+// 	var result App
+// 	err := collection.Find(selector).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		return nil
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 	}
+// 	return &result
+// }
 
-// select a digapp
-func (d *DB) SelectDigapp(selector bson.M) *Digapp {
-	collection := d.collection
-	var result Digapp
-	err := collection.Find(selector).One(&result)
-	Log(err)
-	if err != nil {
-		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-	}
-	return &result
-}
+// // select a digapp
+// func (d *DB) SelectDigapp(selector bson.M) *Digapp {
+// 	collection := d.collection
+// 	var result Digapp
+// 	err := collection.Find(selector).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		return nil
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 	}
+// 	return &result
+// }
 
-// select an apprate
-func (d *DB) SelectApprate(selector bson.M) *Apprate {
-	collection := d.collection
-	var result Apprate
-	err := collection.Find(selector).One(&result)
-	Log(err)
-	if err != nil {
-		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-	}
-	return &result
-}
+// // select an apprate
+// func (d *DB) SelectApprate(selector bson.M) *Apprate {
+// 	collection := d.collection
+// 	var result Apprate
+// 	err := collection.Find(selector).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		return nil
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 	}
+// 	return &result
+// }
 
 // select sort data into bson.M{}
 func (d *DB) SelectSort(selector bson.M, sortor ...string) *bson.M {
@@ -161,18 +161,18 @@ func (d *DB) SelectSort(selector bson.M, sortor ...string) *bson.M {
 	return &result
 }
 
-// select sorted app
-func (d *DB) SelectSortApp(selector bson.M, sortor ...string) *App {
-	collection := d.collection
-	var result App
-	err := collection.Find(selector).Sort(sortor...).One(&result)
-	Log(err)
-	if err != nil {
-		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-	}
-	return &result
-}
+// // select sorted app
+// func (d *DB) SelectSortApp(selector bson.M, sortor ...string) *App {
+// 	collection := d.collection
+// 	var result App
+// 	err := collection.Find(selector).Sort(sortor...).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		return nil
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 	}
+// 	return &result
+// }
 
 // select sorted data into bson.M{}
 func (d *DB) SelectSortAny(selector bson.M, sortor ...string) *bson.M {
@@ -186,76 +186,76 @@ func (d *DB) SelectSortAny(selector bson.M, sortor ...string) *bson.M {
 	return &result
 }
 
-// select sorted homegroup
-func (d *DB) SelectSortHomegroup(selector bson.M, sortor ...string) *Homegroup {
-	collection := d.collection
-	var result Homegroup
-	err := collection.Find(selector).Sort(sortor...).One(&result)
-	Log(err)
-	if err != nil {
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		return nil
-	}
-	return &result
-}
+// // select sorted homegroup
+// func (d *DB) SelectSortHomegroup(selector bson.M, sortor ...string) *Homegroup {
+// 	collection := d.collection
+// 	var result Homegroup
+// 	err := collection.Find(selector).Sort(sortor...).One(&result)
+// 	Log(err)
+// 	if err != nil {
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		return nil
+// 	}
+// 	return &result
+// }
 
-// select sorted topchart
-func (d *DB) SelectSortTopchart(selector bson.M, sortor ...string) *Topchart {
-	collection := d.collection
-	var result Topchart
-	err := collection.Find(selector).Sort(sortor...).One(&result)
-	if err != nil {
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		return nil
-	}
-	return &result
-}
+// // select sorted topchart
+// func (d *DB) SelectSortTopchart(selector bson.M, sortor ...string) *Topchart {
+// 	collection := d.collection
+// 	var result Topchart
+// 	err := collection.Find(selector).Sort(sortor...).One(&result)
+// 	if err != nil {
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		return nil
+// 	}
+// 	return &result
+// }
 
-// select sorted digapp
-func (d *DB) SelectSortDigapp(selector bson.M, sortor ...string) *Digapp {
-	collection := d.collection
-	var result Digapp
-	err := collection.Find(selector).Sort(sortor...).One(&result)
-	if err != nil {
-		// log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		fmt.Print(".")
-		return nil
-	}
-	return &result
-}
+// // select sorted digapp
+// func (d *DB) SelectSortDigapp(selector bson.M, sortor ...string) *Digapp {
+// 	collection := d.collection
+// 	var result Digapp
+// 	err := collection.Find(selector).Sort(sortor...).One(&result)
+// 	if err != nil {
+// 		// log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		fmt.Print(".")
+// 		return nil
+// 	}
+// 	return &result
+// }
 
-// select sorted digapps limit within 20
-func (d *DB) SelectSortLimitDigapps(selector bson.M, sortor ...string) []Digapp {
-	collection := d.collection
-	var result []Digapp
-	err := collection.Find(selector).Sort(sortor...).Limit(20).All(&result)
-	if err != nil {
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		return nil
-	}
-	return result
-}
+// // select sorted digapps limit within 20
+// func (d *DB) SelectSortLimitDigapps(selector bson.M, sortor ...string) []Digapp {
+// 	collection := d.collection
+// 	var result []Digapp
+// 	err := collection.Find(selector).Sort(sortor...).Limit(20).All(&result)
+// 	if err != nil {
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		return nil
+// 	}
+// 	return result
+// }
 
-// select sorted apprate
-func (d *DB) SelectSortApprate(selector bson.M, sortor ...string) *Apprate {
-	collection := d.collection
-	var result Apprate
-	err := collection.Find(selector).Sort(sortor...).One(&result)
-	if err != nil {
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		return nil
-	}
-	return &result
-}
+// // select sorted apprate
+// func (d *DB) SelectSortApprate(selector bson.M, sortor ...string) *Apprate {
+// 	collection := d.collection
+// 	var result Apprate
+// 	err := collection.Find(selector).Sort(sortor...).One(&result)
+// 	if err != nil {
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		return nil
+// 	}
+// 	return &result
+// }
 
-// select sorted apprate
-func (d *DB) SelectTopchartHistory(selector bson.M) []Topcharthistory {
-	collection := d.collection
-	var result []Topcharthistory
-	err := collection.Find(selector).All(&result)
-	if err != nil {
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-		return nil
-	}
-	return result
-}
+// // select sorted apprate
+// func (d *DB) SelectTopchartHistory(selector bson.M) []Topcharthistory {
+// 	collection := d.collection
+// 	var result []Topcharthistory
+// 	err := collection.Find(selector).All(&result)
+// 	if err != nil {
+// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+// 		return nil
+// 	}
+// 	return result
+// }
