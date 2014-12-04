@@ -3,7 +3,7 @@ package mgodb
 import (
 	"fmt"
 	"github.com/shaalx/sstruct/mgo/bson"
-	. "github.com/shaalx/sstruct/mgo/structs"
+	// . "github.com/shaalx/sstruct/structs"
 	"log"
 )
 

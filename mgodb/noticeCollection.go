@@ -1,4 +1,4 @@
-package mgoDB
+package mgodb
 
 // save notice to mongodb,and send an e-mail
 func SaveNotice(data interface{}) bool {
