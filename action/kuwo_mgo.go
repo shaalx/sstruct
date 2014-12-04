@@ -3,6 +3,7 @@ package action
 import (
 	"fmt"
 	"github.com/shaalx/sstruct/fetch"
+	"github.com/shaalx/sstruct/mgodb"
 	"github.com/shaalx/sstruct/persistence"
 	"strings"
 )
@@ -11,7 +12,15 @@ type KuwoMgoAction struct {
 	persis persistence.MgoPersistence
 }
 
-func (z *KuwoMgoAction) Do() {
+var (
+	KuwoServer = []string{"", "newsmgo", "kuwo"}
+)
+
+func (t *KuwoMgoAction) Init() {
+	t.persis.MgoDB = mgodb.SetLocalDB(KuwoServer...)
+}
+
+func (k *KuwoMgoAction) Persistence() {
 	url := "http://artistlistinfo.kuwo.cn/mb.slist?stype=artistlist&category=0&order=hot&pn=0&rn=20&callback=showAreaArtistList&r=1417619717508"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
@@ -21,7 +30,6 @@ func (z *KuwoMgoAction) Do() {
 
 	stmp = strings.Replace(stmp, "'total':'49522','pn':'0','rn':'20','category':'0','new_album':'1','new_album_cnt':'107','artistlist':", "", -1)
 	fmt.Println(string(stmp))
-	var p persistence.MgoPersistence
-	p.Server = []string{"", "newsmgo", "kuwo"}
-	p.Do([]byte(stmp))
+
+	k.persis.Do([]byte(stmp))
 }

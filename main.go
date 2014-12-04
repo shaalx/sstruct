@@ -7,7 +7,11 @@ import (
 func main() {
 	// var act action.Action
 	// act := action.ZhihuMgoAction{}
-	// act := action.TouTiaoAction{}
-	act := action.KuwoMgoAction{}
-	act.Do()
+	act := action.ToutiaoAction{}
+	// act := action.KuwoMgoAction{}
+	// act := action.YodaoMgoAction{}
+
+	act.Init()
+	act.Persistence()
+	// act.QueryOne()
 }
