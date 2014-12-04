@@ -7,7 +7,7 @@ import (
 )
 
 type ZhihuMgoAction struct {
-	Action
+	persis persistence.MgoPersistence
 }
 
 func (z *ZhihuMgoAction) Do() {
@@ -18,5 +18,6 @@ func (z *ZhihuMgoAction) Do() {
 	bs := fetch.Do(url, ipaddr)
 	fmt.Println(string(bs))
 	var p persistence.MgoPersistence
+	p.Server = []string{"", "newsmgo", "zhihu"}
 	p.Do(bs)
 }

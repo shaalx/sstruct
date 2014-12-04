@@ -6,6 +6,8 @@ import (
 
 func main() {
 	// var act action.Action
-	act := action.ZhihuMgoAction{}
+	// act := action.ZhihuMgoAction{}
+	// act := action.TouTiaoAction{}
+	act := action.KuwoMgoAction{}
 	act.Do()
 }
