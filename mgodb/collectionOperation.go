@@ -1,24 +1,15 @@
 package mgodb
 
 import (
-	"fmt"
-	"github.com/shaalx/sstruct/mgo/bson"
-	// . "github.com/shaalx/sstruct/structs"
-	"log"
+	"github.com/shaalx/sstruct/log"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
 )
-
-// log and check the error
-func Log(err error) {
-	if err != nil {
-		// fmt.Println(err.Error())
-	}
-}
 
 // check data exists in mongodb
 func (d *DB) Exist(selector bson.M) bool {
 	collection := d.collection
 	n, err := collection.Find(selector).Count()
-	Log(err)
+	log.IsError("{mongodb exist}", err)
 	if n == 0 || err != nil {
 		return false
 	}
@@ -29,7 +20,7 @@ func (d *DB) Exist(selector bson.M) bool {
 func (d *DB) Count(selector bson.M) int {
 	collection := d.collection
 	n, err := collection.Find(selector).Count()
-	Log(err)
+	log.IsError("{mongodb count}", err)
 	return n
 }
 
@@ -40,11 +31,11 @@ func (d *DB) Save(data interface{}) bool {
 	}
 	collection := d.collection
 	err := collection.Insert(data)
-	Log(err)
+	log.IsError("{mongodb save}", err)
 	if err != nil {
 		return false
 	}
-	fmt.Println("data save >>", d.ToString())
+	log.LOGS.Notice("data save >> %s", d.ToString())
 	return true
 }
 
@@ -52,7 +43,7 @@ func (d *DB) Save(data interface{}) bool {
 func (d *DB) Delete(selector bson.M) bool {
 	collection := d.collection
 	err := collection.Remove(selector)
-	Log(err)
+	log.IsError("{mongodb delete}", err)
 	if err != nil {
 		return false
 	}
@@ -63,7 +54,7 @@ func (d *DB) Delete(selector bson.M) bool {
 func (d *DB) Update(selector bson.M, change interface{}) bool {
 	collection := d.collection
 	err := collection.Update(selector, change)
-	Log(err)
+	log.IsError("{mongodb update}", err)
 	if err != nil {
 		return false
 	}
@@ -76,10 +67,9 @@ func (d *DB) Select(selector bson.M) *bson.M {
 	collection := d.collection
 	var result bson.M
 	err := collection.Find(selector).One(&result)
-	Log(err)
+	log.IsError("{mongodb select}", err)
 	if err != nil {
 		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
 	}
 	return &result
 }
@@ -89,7 +79,7 @@ func (d *DB) SelectAny(selector bson.M) *bson.M {
 	collection := d.collection
 	var result bson.M
 	err := collection.Find(selector).One(&result)
-	Log(err)
+	log.IsError("{mongodb select any}", err)
 	if err != nil {
 		return nil
 	}
@@ -153,10 +143,10 @@ func (d *DB) SelectSort(selector bson.M, sortor ...string) *bson.M {
 	collection := d.collection
 	var result bson.M
 	err := collection.Find(selector).Sort(sortor...).One(&result)
-	Log(err)
+	log.IsError("{mongodb select sort}", err)
 	if err != nil {
 		return nil
-		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+		// log.Printf("%s select error : %v\n", d.ToString(), err.Error())
 	}
 	return &result
 }
@@ -179,7 +169,7 @@ func (d *DB) SelectSortAny(selector bson.M, sortor ...string) *bson.M {
 	collection := d.collection
 	var result bson.M
 	err := collection.Find(selector).Sort(sortor...).One(&result)
-	Log(err)
+	log.IsError("{mongodb select sort any}", err)
 	if err != nil {
 		return nil
 	}

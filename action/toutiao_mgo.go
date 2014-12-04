@@ -25,7 +25,7 @@ func (t *ToutiaoAction) Persistence() {
 	// url := "http://ic.snssdk.com/2/article/v10/hot_comments/?iid=2463135716&ac=wifi&channel=App%20Store&app_name=news_article&aid=13&version_code=4.2&device_platform=ipad&os_version=8.1&device_type=iPad%20Mini%20Retina&vid=0256CB17-8BBE-4974-B25D-B4691079ACDC&openudid=1663351e7f057fe184db98ac159e9971e590aef8&idfa=D5A1F8CF-75C5-4DB9-8C3E-CCD702148275"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
-	fmt.Println(string(bs))
+	// fmt.Println(string(bs))
 	t.persis.Do(bs)
 }
 

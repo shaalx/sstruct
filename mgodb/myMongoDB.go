@@ -1,7 +1,8 @@
 package mgodb
 
 import (
-	"github.com/shaalx/sstruct/mgo"
+	"github.com/shaalx/sstruct/log"
+	"github.com/shaalx/sstruct/pkg3/mgo"
 	"strings"
 )
 
@@ -19,7 +20,9 @@ func SetDB(str ...string) *DB {
 	db := new(DB)
 	dialUrl := "mongodb://capturedata:woaini-2010@" + str[0] + "/appstore"
 	session, err := mgo.Dial(dialUrl)
-	Log(err)
+	if log.IsError("{connect mongodb}", err) {
+		return nil
+	}
 	session.SetMode(mgo.Monotonic, true)
 	collection := session.DB(str[1]).C(str[2])
 	db.db = str[1]
@@ -32,7 +35,9 @@ func SetDB(str ...string) *DB {
 func SetLocalDB(str ...string) *DB {
 	db := new(DB)
 	session, err := mgo.Dial("127.0.0.1:27017")
-	Log(err)
+	if log.IsError("{connect mongodb}", err) {
+		return nil
+	}
 	session.SetMode(mgo.Monotonic, true)
 	collection := session.DB(str[1]).C(str[2])
 	db.db = str[1]

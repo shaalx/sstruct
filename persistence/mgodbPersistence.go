@@ -2,10 +2,9 @@ package persistence
 
 import (
 	"encoding/json"
-	"fmt"
-	// "github.com/shaalx/sstruct/fetch"
-	"github.com/shaalx/sstruct/mgo/bson"
+	"github.com/shaalx/sstruct/log"
 	"github.com/shaalx/sstruct/mgodb"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
 )
 
 type MgoPersistence struct {
@@ -13,17 +12,16 @@ type MgoPersistence struct {
 	MgoDB *mgodb.DB
 }
 
-func init() {
-	fmt.Println("init...")
-}
-
 func (m *MgoPersistence) init() {
-	fmt.Println("mgoPersistence init...")
+	log.LOGS.Notice("mgoPersistence init...")
 }
 
 func (m MgoPersistence) Do(bs []byte) bool {
 	var i interface{}
-	json.Unmarshal(bs, &i)
+	err := json.Unmarshal(bs, &i)
+	if log.IsError("{mongodb data unmarshal}", err) {
+		return false
+	}
 	return m.MgoDB.Save(i)
 }
 

@@ -1,8 +1,8 @@
 package fetch
 
 import (
-	"github.com/shaalx/sstruct/httplib"
 	"github.com/shaalx/sstruct/log"
+	"github.com/shaalx/sstruct/pkg3/httplib"
 	"net"
 	"net/http"
 	"time"
@@ -21,7 +21,7 @@ func Do(url, ipaddr string) []byte {
 	request.Header("Proxy-Connection", "keep-alive")
 	request.Header("Design-Agent", "AppStore/2.0 iOS/7.1.1 model/iPod5,1 build/11D201 (4; dt:81)")
 	bs, err := request.Bytes()
-	if log.IsError(err) {
+	if log.IsError("{fetch json data error}", err) {
 		return nil
 	}
 	return bs

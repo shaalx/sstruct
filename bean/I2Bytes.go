@@ -2,15 +2,15 @@ package bean
 
 import (
 	"encoding/json"
-	"fmt"
-	"github.com/shaalx/sstruct/mgo/bson"
+	"github.com/shaalx/sstruct/log"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
 )
 
 // 解码 有 问题
 func Bson2Bytes(b *bson.M) []byte {
 	bs, err := bson.Marshal(b)
-	if err != nil {
-		fmt.Println("binary.Write failed:", err)
+	if log.IsError("{can not convert bson to bytes}", err) {
+		return nil
 	}
 	return bs
 }
@@ -18,8 +18,8 @@ func Bson2Bytes(b *bson.M) []byte {
 // in 其实为 *bson.M
 func I2Bytes(in interface{}) []byte {
 	out, err := json.Marshal(in)
-	if err != nil {
-		fmt.Println("binary.Write failed:", err)
+	if log.IsError("{can not convert interface{} to bytes}", err) {
+		return nil
 	}
 	return out
 }
