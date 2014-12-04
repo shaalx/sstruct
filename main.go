@@ -11,6 +11,7 @@ func main() {
 	act := action.ToutiaoAction{}
 	// act := action.KuwoMgoAction{}
 	// act := action.YodaoMgoAction{}
+	// act := action.ItunesMgoAction{}
 
 	act.Init()
 	// act.Persistence()

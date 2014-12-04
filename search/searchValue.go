@@ -6,7 +6,7 @@ import (
 
 // search value
 // 查询某个路径path下的key值 string
-func SearchPathSValue(data []byte, key string, path ...string) *string {
+func SearchSValue(data []byte, key string, path ...string) *string {
 	if data == nil {
 		return nil
 	}
@@ -23,7 +23,7 @@ func SearchPathSValue(data []byte, key string, path ...string) *string {
 
 // search value
 // 查询某个路径path下的key值 int
-func SearchPathIValue(data []byte, key string, path ...string) int64 {
+func SearchIValue(data []byte, key string, path ...string) int64 {
 	if data == nil {
 		return -1
 	}
@@ -38,36 +38,36 @@ func SearchPathIValue(data []byte, key string, path ...string) int64 {
 	return value
 }
 
-// search key
-// 查询某一个key值 string
-func SearchSValue(data []byte, key string) *string {
+// search value
+// 查询某个路径path下的key值 bool
+func SearchBValue(data []byte, key string, path ...string) bool {
 	if data == nil {
-		return nil
+		return false
 	}
 	js, err := sjson.NewJson(data)
 	if checkError(err) {
-		return nil
+		return false
 	}
-	value, err := js.Get(key).String()
+	value, err := js.GetPath(path...).Get(key).Bool()
 	if checkError(err) {
-		return nil
-	}
-	return &value
-}
-
-// search key
-// 查询某一个key值 int
-func SearchIValue(data []byte, key string) int64 {
-	if data == nil {
-		return -1
-	}
-	js, err := sjson.NewJson(data)
-	if checkError(err) {
-		return -1
-	}
-	value, err := js.Get(key).Int64()
-	if checkError(err) {
-		return -1
+		return false
 	}
 	return value
+}
+
+// search value
+// 查询某个路径path下的key值 float64 --> int64
+func SearchFIValue(data []byte, key string, path ...string) int64 {
+	if data == nil {
+		return -1
+	}
+	js, err := sjson.NewJson(data)
+	if checkError(err) {
+		return -1
+	}
+	value, err := js.GetPath(path...).Get(key).Float64()
+	if checkError(err) {
+		return -1
+	}
+	return int64(value)
 }

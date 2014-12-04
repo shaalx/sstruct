@@ -40,14 +40,60 @@ func (t *ToutiaoAction) QueryOne() {
 func (t *ToutiaoAction) Analyse() {
 	one := t.persis.QueryOne()
 	buf := bean.I2Bytes(one)
-	key := "display_info"
-	path := []string{"tips"}
-	sear := search.SearchPathSValue(buf, key, path...)
-	if sear == nil {
-		return
-	}
-	fmt.Println(*sear)
+	// key := "display_info"
+	// path := []string{"tips"}
+	// sear := search.SearchSValue(buf, key, path...)
+	// if sear == nil {
+	// 	return
+	// }
+	// fmt.Println(*sear)
 
-	totn := search.SearchIValue(buf, "total_number")
-	fmt.Println(totn)
+	// totn := search.SearchIValue(buf, "total_number", []string{}...)
+	// fmt.Println(totn)
+
+	ary := search.SearchArray(buf, "data", []string{}...)
+	fmt.Println(len(ary))
+
+	ary0buf := bean.I2Bytes(ary[0])
+	abstract := search.SearchSValue(ary0buf, "abstract", []string{}...)
+	if abstract != nil {
+		fmt.Println(*abstract)
+	}
+
+	maps := search.TTStem(ary0buf)
+	fmt.Println(maps)
+
+	// abs := maps["abstract"]
+	// abss, ok := abs.(*string)
+	// if ok {
+	// 	fmt.Println(*abss)
+	// }
+	TTShow(maps)
+	TTShows(buf)
+}
+
+func TTShow(stem map[string]interface{}) {
+	for key, val := range stem {
+		// fmt.Println(key, val)
+		switch key {
+		case "tag", "keywords", "abstract", "title", "article_url", "middle_image":
+			vals, ok := val.(*string)
+			if ok && vals != nil {
+				fmt.Printf("%s : %s\n", key, *vals)
+			}
+		case "has_image", "publish_time":
+			fmt.Println(val)
+		}
+	}
+}
+
+func TTShows(data []byte) {
+	arys := search.SearchArray(data, "data", []string{}...)
+	for i, ary := range arys {
+		aryb := bean.I2Bytes(ary)
+		maps := search.TTStem(aryb)
+		TTShow(maps)
+		fmt.Println("*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*", i)
+		fmt.Println()
+	}
 }
