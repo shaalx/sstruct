@@ -13,6 +13,6 @@ func main() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	fmt.Println(string(bs))
-	var p persistence.MgoPers
+	var p persistence.MgoPersistence
 	p.Do(bs)
 }

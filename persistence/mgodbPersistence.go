@@ -6,11 +6,11 @@ import (
 	"github.com/shaalx/sstruct/mgodb"
 )
 
-type MgoPers struct {
+type MgoPersistence struct {
 	Persistence
 }
 
-func (m MgoPers) Do(bs []byte) bool {
+func (m MgoPersistence) Do(bs []byte) bool {
 	server := []string{"", "newsmgo", "firstbanner"}
 	dbserver := mgodb.SetLocalDB(server...)
 	defer dbserver.Close()
