@@ -28,7 +28,7 @@ More info [me](http://localhost:8080)
 
 ## Community
 
-* [http://beego.me/community](http://localhost:8080)
+* [http://localhost:8080](http://localhost:8080)
 
 ## LICENSE
 
