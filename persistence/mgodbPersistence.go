@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	// "github.com/shaalx/sstruct/fetch"
+	"github.com/shaalx/sstruct/mgo/bson"
 	"github.com/shaalx/sstruct/mgodb"
 )
 
@@ -26,6 +27,6 @@ func (m MgoPersistence) Do(bs []byte) bool {
 	return m.MgoDB.Save(i)
 }
 
-func (m *MgoPersistence) QueryOne() interface{} {
-	return m.MgoDB.SelectAny(nil)
+func (m *MgoPersistence) QueryOne() *bson.M {
+	return m.MgoDB.Select(nil)
 }

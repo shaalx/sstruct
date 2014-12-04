@@ -12,6 +12,6 @@ func main() {
 	// act := action.YodaoMgoAction{}
 
 	act.Init()
-	act.Persistence()
-	// act.QueryOne()
+	// act.Persistence()
+	act.QueryOne()
 }

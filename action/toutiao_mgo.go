@@ -2,6 +2,7 @@ package action
 
 import (
 	"fmt"
+	"github.com/shaalx/sstruct/bean"
 	"github.com/shaalx/sstruct/fetch"
 	"github.com/shaalx/sstruct/mgodb"
 	"github.com/shaalx/sstruct/persistence"
@@ -31,6 +32,8 @@ func (t *ToutiaoAction) Persistence() {
 func (t *ToutiaoAction) QueryOne() {
 	one := t.persis.QueryOne()
 	fmt.Println(one)
+	bs := bean.I2Bytes(one)
+	fmt.Println(string(bs))
 }
 
 func (t *ToutiaoAction) Analyse() {

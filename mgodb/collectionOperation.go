@@ -71,17 +71,17 @@ func (d *DB) Update(selector bson.M, change interface{}) bool {
 	return true
 }
 
-// select one data(into interface{})
-func (d *DB) Select(selector bson.M) interface{} {
+// select one data(into interface{}/*bson.M)
+func (d *DB) Select(selector bson.M) *bson.M {
 	collection := d.collection
-	var result interface{}
+	var result bson.M
 	err := collection.Find(selector).One(&result)
 	Log(err)
 	if err != nil {
 		return nil
 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
 	}
-	return result
+	return &result
 }
 
 // select data into bson.M{}
