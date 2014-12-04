@@ -6,6 +6,7 @@ import (
 	"github.com/shaalx/sstruct/fetch"
 	"github.com/shaalx/sstruct/mgodb"
 	"github.com/shaalx/sstruct/persistence"
+	"github.com/shaalx/sstruct/search"
 )
 
 type ToutiaoAction struct {
@@ -37,5 +38,16 @@ func (t *ToutiaoAction) QueryOne() {
 }
 
 func (t *ToutiaoAction) Analyse() {
+	one := t.persis.QueryOne()
+	buf := bean.I2Bytes(one)
+	key := "display_info"
+	path := []string{"tips"}
+	sear := search.SearchPathSValue(buf, key, path...)
+	if sear == nil {
+		return
+	}
+	fmt.Println(*sear)
 
+	totn := search.SearchIValue(buf, "total_number")
+	fmt.Println(totn)
 }
