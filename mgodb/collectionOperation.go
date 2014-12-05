@@ -150,18 +150,18 @@ func (d *DB) SelectSort(selector bson.M, sortor ...string) *bson.M {
 	return &result
 }
 
-// // select sorted app
-// func (d *DB) SelectSortApp(selector bson.M, sortor ...string) *App {
-// 	collection := d.collection
-// 	var result App
-// 	err := collection.Find(selector).Sort(sortor...).One(&result)
-// 	Log(err)
-// 	if err != nil {
-// 		return nil
-// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-// 	}
-// 	return &result
-// }
+// select sorted News
+func (d *DB) SelectSortNews(selector bson.M, sortor ...string) *News {
+	collection := d.collection
+	var result News
+	err := collection.Find(selector).Sort(sortor...).One(&result)
+	log.IsError("{mongodb select sorted news}", err)
+	if err != nil {
+		return nil
+		// log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+	}
+	return &result
+}
 
 // select sorted data into bson.M{}
 func (d *DB) SelectSortAny(selector bson.M, sortor ...string) *bson.M {

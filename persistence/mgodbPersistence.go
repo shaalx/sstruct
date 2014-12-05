@@ -34,3 +34,7 @@ func (m *MgoPersistence) QueryOne() *bson.M {
 func (m *MgoPersistence) QueryNewsOne(selector bson.M) *structs.News {
 	return m.MgoDB.SelectNews(selector)
 }
+
+func (m *MgoPersistence) QuerySortedNewsOne(selector bson.M, srotor ...string) *structs.News {
+	return m.MgoDB.SelectSortNews(selector, srotor...)
+}
