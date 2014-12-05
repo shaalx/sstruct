@@ -8,6 +8,7 @@ import (
 	"github.com/shaalx/sstruct/persistence"
 	// "github.com/shaalx/sstruct/pkg3/mgo/bson"
 	"github.com/shaalx/sstruct/search"
+	. "github.com/shaalx/sstruct/structs"
 )
 
 type ToutiaoAction struct {
@@ -96,6 +97,29 @@ func TTContent(data []byte) []map[string]interface{} {
 	return result
 }
 
+func TTContents(data []byte) []Toutiao {
+	arys := search.SearchArray(data, "data", []string{}...)
+	result := make([]Toutiao, len(arys))
+	for i, ary := range arys {
+		aryb := bean.I2Bytes(ary)
+		maps := search.TTStem(aryb)
+		// var tt Toutiao
+		// tt.Title = getKey(maps, "title")
+		tt := Toutiao{Title: getKey(maps, "title"), Abstract: getKey(maps, "abstract"), Keywords: getKey(maps, "keywords"), Middle_image: getKey(maps, "middle_image"), Article_url: getKey(maps, "article_url")}
+		result[i] = tt
+	}
+	return result
+}
+func getKey(maps map[string]interface{}, key string) string {
+	if maps == nil {
+		return ""
+	}
+	val, ok := maps[key].(string)
+	if ok {
+		return val
+	}
+	return ""
+}
 func TTShows(data []byte) {
 	arys := search.SearchArray(data, "data", []string{}...)
 	for i, ary := range arys {
@@ -112,4 +136,10 @@ func (self *ToutiaoAction) LatestNews() []map[string]interface{} {
 	buf := bean.I2Bytes(one.Content)
 	TTShows(buf)
 	return TTContent(buf)
+}
+
+func (self *ToutiaoAction) TTLatestNews() []Toutiao {
+	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
+	buf := bean.I2Bytes(one.Content)
+	return TTContents(buf)
 }

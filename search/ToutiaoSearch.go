@@ -25,7 +25,7 @@ func TTStem(data []byte) map[string]interface{} {
 	stem["abstract"] = SearchSValue(data, "abstract", []string{}...)
 	stem["has_image"] = SearchBValue(data, "has_image", []string{}...)
 	stem["article_url"] = SearchSValue(data, "article_url", []string{}...)
-	// stem["publish_time"] = SearchFIValue(data, "publish_time", []string{}...)
+	stem["publish_time"] = SearchFIValue(data, "publish_time", []string{}...)
 	has_image, ok := stem["has_image"].(bool)
 	if has_image && ok {
 		stem["middle_image"] = SearchSValue(data, "url", []string{"middle_image"}...)
