@@ -14,9 +14,9 @@ func main() {
 	// act := action.ItunesMgoAction{}
 
 	act.Init()
-	// act.Persistence()
+	act.Persistence()
 	// act.QueryOne()
-	act.Analyse()
+	// act.Analyse()
 
 	time.Sleep(time.Second * 4)
 }
