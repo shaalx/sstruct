@@ -14,7 +14,7 @@ func main() {
 	// act := action.ItunesMgoAction{}
 
 	act.Init()
-	// act.Persistence()
+	act.Persistence()
 	// act.QueryOne()
 	// act.Analyse()
 	act.LatestNews()
