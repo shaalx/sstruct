@@ -6,19 +6,19 @@ import (
 
 // search value
 // 查询某个路径path下的key值 string
-func SearchSValue(data []byte, key string, path ...string) *string {
+func SearchSValue(data []byte, key string, path ...string) string {
 	if data == nil {
-		return nil
+		return ""
 	}
 	js, err := sjson.NewJson(data)
 	if checkError(err) {
-		return nil
+		return ""
 	}
 	value, err := js.GetPath(path...).Get(key).String()
 	if checkError(err) {
-		return nil
+		return ""
 	}
-	return &value
+	return value
 }
 
 // search value

@@ -57,8 +57,8 @@ func (self *ToutiaoAction) Analyse() {
 
 	ary0buf := bean.I2Bytes(ary[0])
 	abstract := search.SearchSValue(ary0buf, "abstract", []string{}...)
-	if abstract != nil {
-		fmt.Println(*abstract)
+	if abstract != "" {
+		fmt.Println(abstract)
 	}
 
 	maps := search.TTStem(ary0buf)
@@ -78,14 +78,22 @@ func TTShow(stem map[string]interface{}) {
 		// fmt.Println(key, val)
 		switch key {
 		case "tag", "keywords", "abstract", "title", "article_url", "middle_image":
-			vals, ok := val.(*string)
-			if ok && vals != nil {
-				fmt.Printf("%s : %s\n", key, *vals)
-			}
+			fmt.Printf("%s : %s\n", key, val)
 		case "has_image", "publish_time":
 			fmt.Println(val)
 		}
 	}
+}
+
+func TTContent(data []byte) []map[string]interface{} {
+	arys := search.SearchArray(data, "data", []string{}...)
+	result := make([]map[string]interface{}, len(arys))
+	for i, ary := range arys {
+		aryb := bean.I2Bytes(ary)
+		maps := search.TTStem(aryb)
+		result[i] = maps
+	}
+	return result
 }
 
 func TTShows(data []byte) {
@@ -99,8 +107,9 @@ func TTShows(data []byte) {
 	}
 }
 
-func (self *ToutiaoAction) LatestNews() {
-	one := self.persis.QuerySortedNewsOne(nil, "unixdate")
+func (self *ToutiaoAction) LatestNews() []map[string]interface{} {
+	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
 	buf := bean.I2Bytes(one.Content)
 	TTShows(buf)
+	return TTContent(buf)
 }
