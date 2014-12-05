@@ -3,6 +3,7 @@ package mgodb
 import (
 	"github.com/shaalx/sstruct/log"
 	"github.com/shaalx/sstruct/pkg3/mgo/bson"
+	. "github.com/shaalx/sstruct/structs"
 )
 
 // check data exists in mongodb
@@ -86,18 +87,16 @@ func (d *DB) SelectAny(selector bson.M) *bson.M {
 	return &result
 }
 
-// // select a homegroup
-// func (d *DB) SelectHomegroup(selector bson.M) *Homegroup {
-// 	collection := d.collection
-// 	var result Homegroup
-// 	err := collection.Find(selector).One(&result)
-// 	Log(err)
-// 	if err != nil {
-// 		return nil
-// 		log.Printf("%s select error : %v\n", d.ToString(), err.Error())
-// 	}
-// 	return &result
-// }
+// select a News
+func (d *DB) SelectNews(selector bson.M) *News {
+	collection := d.collection
+	var result News
+	err := collection.Find(selector).One(&result)
+	if log.IsError("{mongodb select news}", err) {
+		return nil
+	}
+	return &result
+}
 
 // // select an app
 // func (d *DB) SelectApp(selector bson.M) *App {

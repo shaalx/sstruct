@@ -30,3 +30,7 @@ func (m MgoPersistence) Do(bs []byte) bool {
 func (m *MgoPersistence) QueryOne() *bson.M {
 	return m.MgoDB.Select(nil)
 }
+
+func (m *MgoPersistence) QueryNewsOne(selector bson.M) *structs.News {
+	return m.MgoDB.SelectNews(selector)
+}

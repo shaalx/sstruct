@@ -28,8 +28,8 @@ More info [me](http://localhost:8080)
 
 ## Community
 
-* [http://localhost:8080](http://localhost:8080)
-
+* go packages download [gopm.io](http://gopm.io)
+* [zhihu-golang-web](http://zhihudaily.ahorn.me/)
 ## LICENSE
 
 this is licensed under the new BSD Licence, Version 2.0

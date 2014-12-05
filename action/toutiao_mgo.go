@@ -38,8 +38,8 @@ func (t *ToutiaoAction) QueryOne() {
 }
 
 func (t *ToutiaoAction) Analyse() {
-	one := t.persis.QueryOne()
-	buf := bean.I2Bytes(one)
+	one := t.persis.QueryNewsOne(nil)
+	buf := bean.I2Bytes(one.Content)
 	// key := "display_info"
 	// path := []string{"tips"}
 	// sear := search.SearchSValue(buf, key, path...)
