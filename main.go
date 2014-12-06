@@ -14,7 +14,10 @@ func main() {
 	// act := action.ItunesMgoAction{}
 
 	act.Init()
-	act.Persistence()
+	for {
+		act.Persistence()
+		time.Sleep(time.Second * 7200)
+	}
 	// act.QueryOne()
 	// act.Analyse()
 	act.LatestNews()
