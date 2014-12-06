@@ -18,7 +18,7 @@ type DB struct {
 服务器 str[0];数据库 str[1]; 集合 str[2]*/
 func SetDB(str ...string) *DB {
 	db := new(DB)
-	dialUrl := "mongodb://capturedata:woaini-2010@" + str[0] + "/appstore"
+	dialUrl := "mongodb://database:password@" + str[0] + "/collections"
 	session, err := mgo.Dial(dialUrl)
 	if log.IsError("{connect mongodb}", err) {
 		return nil
