@@ -1,1 +1,0 @@
-db.toutiao.find({"unixdate":{"$gt":141770800,"$lt":1417746507}})
