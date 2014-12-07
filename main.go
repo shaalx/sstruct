@@ -15,7 +15,7 @@ func main() {
 
 	act.Init()
 	// for {
-	// 	act.Persistence()
+	act.Persistence()
 	// 	time.Sleep(time.Second * 7200)
 	// }
 	// act.QueryOne()
