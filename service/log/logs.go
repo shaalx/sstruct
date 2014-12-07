@@ -1,7 +1,7 @@
 package log
 
 import (
-	"../../pkg3/logs"
+	"github.com/shaalx/sstruct/pkg3/logs"
 )
 
 var (

@@ -1,10 +1,10 @@
 package service
 
 import (
-	"../persistence"
-	"../persistence/mgodb"
-	"./fetch"
 	"fmt"
+	"github.com/shaalx/sstruct/persistence"
+	"github.com/shaalx/sstruct/persistence/mgodb"
+	"github.com/shaalx/sstruct/service/fetch"
 	"strings"
 )
 

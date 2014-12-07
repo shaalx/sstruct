@@ -1,11 +1,11 @@
 package persistence
 
 import (
-	"../bean"
-	"../pkg3/mgo/bson"
-	"../service/log"
-	"./mgodb"
 	"encoding/json"
+	"github.com/shaalx/sstruct/bean"
+	"github.com/shaalx/sstruct/persistence/mgodb"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
+	"github.com/shaalx/sstruct/service/log"
 )
 
 type MgoPersistence struct {

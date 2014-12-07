@@ -1,13 +1,13 @@
 package service
 
 import (
-	. "../bean"
-	"../persistence"
-	"../persistence/mgodb"
-	"../utils"
-	"./fetch"
-	"./search"
 	"fmt"
+	. "github.com/shaalx/sstruct/bean"
+	"github.com/shaalx/sstruct/persistence"
+	"github.com/shaalx/sstruct/persistence/mgodb"
+	"github.com/shaalx/sstruct/service/fetch"
+	"github.com/shaalx/sstruct/service/search"
+	"github.com/shaalx/sstruct/utils"
 )
 
 type ToutiaoAction struct {

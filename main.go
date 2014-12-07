@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./service"
+	"github.com/shaalx/sstruct/service"
 	"time"
 )
 

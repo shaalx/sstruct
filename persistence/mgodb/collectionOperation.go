@@ -1,9 +1,9 @@
 package mgodb
 
 import (
-	. "../../bean"
-	"../../pkg3/mgo/bson"
-	"../../service/log"
+	. "github.com/shaalx/sstruct/bean"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
+	"github.com/shaalx/sstruct/service/log"
 )
 
 // check data exists in mongodb

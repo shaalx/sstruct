@@ -1,7 +1,7 @@
 package search
 
 import (
-	"../log"
+	"github.com/shaalx/sstruct/service/log"
 )
 
 func checkError(err error) bool {

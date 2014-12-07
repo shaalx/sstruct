@@ -1,7 +1,7 @@
 package search
 
 import (
-	sjson "../../pkg3/go-simplejson"
+	sjson "github.com/shaalx/sstruct/pkg3/go-simplejson"
 )
 
 // search value

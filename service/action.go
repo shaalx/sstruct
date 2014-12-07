@@ -1,7 +1,7 @@
 package service
 
 import (
-	"./fetch"
+	"github.com/shaalx/sstruct/service/fetch"
 )
 
 type Action struct {

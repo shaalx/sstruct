@@ -1,7 +1,7 @@
 package bean
 
 import (
-	"../utils"
+	"github.com/shaalx/sstruct/utils"
 )
 
 type News struct {

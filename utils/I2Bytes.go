@@ -1,9 +1,9 @@
 package utils
 
 import (
-	"../pkg3/mgo/bson"
-	"../service/log"
 	"encoding/json"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
+	"github.com/shaalx/sstruct/service/log"
 )
 
 // 解码 有 问题

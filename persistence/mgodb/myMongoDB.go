@@ -1,8 +1,8 @@
 package mgodb
 
 import (
-	"../../pkg3/mgo"
-	"../../service/log"
+	"github.com/shaalx/sstruct/pkg3/mgo"
+	"github.com/shaalx/sstruct/service/log"
 	"strings"
 )
 

@@ -1,8 +1,8 @@
 package fetch
 
 import (
-	"../../pkg3/httplib"
-	"../log"
+	"github.com/shaalx/sstruct/pkg3/httplib"
+	"github.com/shaalx/sstruct/service/log"
 	"net"
 	"net/http"
 	"time"
