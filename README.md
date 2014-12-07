@@ -16,10 +16,10 @@ Open-source, fetch news from toutiao and zhihu app. Just for study and research.
 
 ## Packages from the third party
 
-*httblib [astaxie beego](http://beego.me/)
-*logs [astaxie beego](http://beego.me/)
-*go-simplejson [github](https://github.com/)
-*mgo [mongodb](http://www.mongodb.org/)
+* httblib [astaxie beego](http://beego.me/)
+* logs [astaxie beego](http://beego.me/)
+* go-simplejson [github](https://github.com/)
+* mgo [mongodb](http://www.mongodb.org/)
 
 ## Community
 
