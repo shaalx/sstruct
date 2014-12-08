@@ -6,6 +6,7 @@ sstruct
 
 
 go get github.com/shaalx/sstruct
+git clone http://github.com/shaalx/sstruct.git
 
 
 ## Discription
