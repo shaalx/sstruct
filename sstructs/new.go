@@ -116,6 +116,7 @@ func SetValueOfCopy(instance interface{}, value []interface{}) interface{} {
 	newInstance := reflect.New(reflect.TypeOf(instance))
 	app := newInstance.Interface()
 	elem := reflect.ValueOf(app).Elem()
+	fmt.Println(elem.NumField())
 	for i, v := range value {
 		elem.Field(i).Set(reflect.ValueOf(v))
 	}
@@ -134,6 +135,7 @@ func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
 	// newInstance := reflect.New(reflect.ValueOf(instance).Elem().Type())
 	// app := newInstance.Interface()
 	elem := reflect.ValueOf(instance).Elem()
+	fmt.Println(elem.NumField())
 	for i, v := range value {
 		elem.Field(i).Set(reflect.ValueOf(v))
 	}

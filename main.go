@@ -71,17 +71,32 @@ func test_set() {
 	v[0] = "chengshi"
 	v[1] = "yingyu"
 	v[2] = 24
+	// v[3] = &app
 	// res := SetValueOfCopy(&app, v)
-	res := SetValue(app, v)
+	res := SetValue(&app, v)
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
 	fmt.Println(res)
-	Jsonable(res)
+	fmt.Println()
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res json")
+	b := Jsonable(res)
+	fmt.Println()
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res un-json")
+	Unjsonable(b)
+	fmt.Println()
 	// Analyse(res)
-	str := Str{&res, res}
-	Jsonable(str)
-	fmt.Printf("%#v\n", str)
-	fmt.Println("a", str.A)
-	fmt.Println("b", str.B)
-
-	Jsonable(app)
+	// str := Str{&res, res}
+	// Jsonable(str)
+	// fmt.Printf("%#v\n", str)
+	// fmt.Println("a", str.A)
+	// fmt.Println("b", str.B)
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* app")
 	fmt.Printf("%#v\n", app)
+	fmt.Println()
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* app json")
+	Jsonable(app)
+	fmt.Println()
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* app un-json")
+	Jsonable(app)
+	fmt.Println()
+
 }
