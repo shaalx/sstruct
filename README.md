@@ -6,25 +6,21 @@ sstruct
 
 
 go get github.com/shaalx/sstruct
+git clone http://github.com/shaalx/sstruct.git
 
 
-## B
+## Discription
 
-[![Build Status](https://drone.io/github.com/astaxie/beego/status.png)](http://localhost:8080)
-[![GoDoc](http://godoc.org/github.com/astaxie/beego?status.svg)](http://localhost:8080)
+Open-source, fetch news from toutiao and zhihu app. Just for study and research.
 
-open-source, high-performance web framework.
+[wisdomswing.gmail.com](wisdomswing.gmail.com)
 
-More info [me](http://localhost:8080)
+## Packages from the third party
 
-## Features
-
-* 1
-
-## Documentation
-
-* [English](http://localhost:8080)
-* [中文文档](http://localhost:8080)
+* httblib [astaxie beego](http://beego.me/)
+* logs [astaxie beego](http://beego.me/)
+* go-simplejson [github](https://github.com/)
+* mgo [mongodb](http://www.mongodb.org/)
 
 ## Community
 
