@@ -5,8 +5,8 @@
 
 > code：
 
-	> 传递地址，可以改变源
-	
+	1. 传递地址，可以改变源
+
 	func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
 		kind := reflect.TypeOf(instance).Kind()
 		if reflect.Ptr != kind {
@@ -20,7 +20,7 @@
 		return instance
 	}
 
-	> 传递值，仅改变副本
+	2. 传递值，仅改变副本
 
 	func SetValueOfCopy(instance interface{}, value []interface{}) interface{} {
 		kind := reflect.TypeOf(instance).Kind()
