@@ -4,7 +4,7 @@
 * 1. 地址与值
 传地址，可以改变原来的值；传值只可以改变副本。
 
-code：
+>code：
 	func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
 		kind := reflect.TypeOf(instance).Kind()
 		if reflect.Ptr != kind {
