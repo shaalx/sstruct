@@ -8,7 +8,8 @@ import (
 
 func main() {
 	// test_normal()
-	test_imnormal()
+	// test_imnormal()
+	test_set()
 }
 
 func test_normal() {
@@ -35,7 +36,9 @@ func test_imnormal() {
 	iapp := ChangeWithIJ(app, 0)
 	fmt.Println(iapp, app)
 	a, ok := iapp.(*App)
-	fmt.Println(a, ok)
+	if ok {
+		fmt.Printf("%#v\n", a)
+	}
 	// app.Println()
 	// i := Change(app)
 	// fmt.Println(i)
@@ -52,5 +55,33 @@ func test_imnormal() {
 	// Jsonable(alloc1)
 	// Jsonable(alloc2)
 	// Jsonable(alloc3)
-	// AnalyseLoop(i)
+	// AnalyseLoop(a)
+	Jsonable(a)
+}
+
+type Str struct {
+	A *interface{}
+	B interface{}
+}
+
+func test_set() {
+	app := App{Name: "City", Address: "Shanghai"}
+	var v []interface{}
+	v = make([]interface{}, 3)
+	v[0] = "chengshi"
+	v[1] = "yingyu"
+	v[2] = 24
+	// res := SetValueOfCopy(&app, v)
+	res := SetValue(app, v)
+	fmt.Println(res)
+	Jsonable(res)
+	// Analyse(res)
+	str := Str{&res, res}
+	Jsonable(str)
+	fmt.Printf("%#v\n", str)
+	fmt.Println("a", str.A)
+	fmt.Println("b", str.B)
+
+	Jsonable(app)
+	fmt.Printf("%#v\n", app)
 }

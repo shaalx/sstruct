@@ -10,6 +10,7 @@ type App struct {
 	Name    string
 	Address string
 	// Child   Node
+	Age int
 }
 
 func (self *App) String() string {

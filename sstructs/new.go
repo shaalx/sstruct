@@ -98,3 +98,44 @@ func ChangeWithIJ(i interface{}, j int) interface{} {
 	fmt.Println(i)
 	return i
 }
+
+func SetValue(instance interface{}, value []interface{}) interface{} {
+	kind := reflect.TypeOf(instance).Kind()
+	if reflect.Ptr == kind {
+		return SetValueOfPtr(instance, value)
+	}
+	return SetValueOfCopy(instance, value)
+}
+
+// set value of instance
+func SetValueOfCopy(instance interface{}, value []interface{}) interface{} {
+	kind := reflect.TypeOf(instance).Kind()
+	if reflect.Ptr == kind {
+		return nil
+	}
+	newInstance := reflect.New(reflect.TypeOf(instance))
+	app := newInstance.Interface()
+	elem := reflect.ValueOf(app).Elem()
+	for i, v := range value {
+		elem.Field(i).Set(reflect.ValueOf(v))
+	}
+	return app
+}
+
+// set value of ptr
+func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
+	kind := reflect.TypeOf(instance).Kind()
+	if reflect.Ptr != kind {
+		return nil
+	}
+	// reflect.ValueOf(&instance).Elem().Set(reflect.ValueOf(value))
+	// return instance
+
+	// newInstance := reflect.New(reflect.ValueOf(instance).Elem().Type())
+	// app := newInstance.Interface()
+	elem := reflect.ValueOf(instance).Elem()
+	for i, v := range value {
+		elem.Field(i).Set(reflect.ValueOf(v))
+	}
+	return instance
+}
