@@ -82,3 +82,19 @@ func ChangeWithI(i, j interface{}) interface{} {
 	fmt.Println(i)
 	return i
 }
+
+func ChangeWithIJ(i interface{}, j int) interface{} {
+	kind := reflect.TypeOf(i).Kind()
+	if reflect.Ptr == kind {
+		reflect.ValueOf(&i).Elem().Set(reflect.ValueOf("ptr"))
+	} else {
+		newInstance := reflect.New(reflect.TypeOf(i))
+		app := newInstance.Interface()
+		elem := reflect.ValueOf(app).Elem()
+		elem.Field(j).Set(reflect.ValueOf("inst"))
+		return app
+	}
+
+	fmt.Println(i)
+	return i
+}

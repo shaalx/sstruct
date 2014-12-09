@@ -32,10 +32,14 @@ func test_normal() {
 
 func test_imnormal() {
 	app := App{Name: "City", Address: "Shanghai"}
-	app.Println()
-	i := Change(app)
-	fmt.Println(i)
-	ChangeWithI(i, app)
+	iapp := ChangeWithIJ(app, 0)
+	fmt.Println(iapp, app)
+	a, ok := iapp.(*App)
+	fmt.Println(a, ok)
+	// app.Println()
+	// i := Change(app)
+	// fmt.Println(i)
+	// ChangeWithI(i, app)
 	// alloc1 := Alloc(app)
 	// fmt.Println(alloc1)
 
