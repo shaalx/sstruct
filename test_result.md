@@ -3,6 +3,7 @@
 
 * 1. 地址与值
 传地址，可以改变原来的值；传值只可以改变副本。
+
 code：
 	func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
 		kind := reflect.TypeOf(instance).Kind()
@@ -32,6 +33,7 @@ code：
 		return app
 	}
 * 2. 结构体属性若无另一个结构体的属性，传递值一切OK，传递指针panic。
+传递自身指针会引起panic，其他不会哦！！
 
 * 3. 构造好的变量，如何复制给结构体变量呢？ 只可能自己重新定义结构体，属性类型为interface{}，而且接收的值一定为地址，如*main.App
 

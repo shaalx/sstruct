@@ -66,12 +66,13 @@ type Str struct {
 
 func test_set() {
 	app := App{Name: "City", Address: "Shanghai"}
+	app2 := App{Name: "City", Address: "Shanghai"}
 	var v []interface{}
-	v = make([]interface{}, 3)
+	v = make([]interface{}, 4)
 	v[0] = "chengshi"
 	v[1] = "yingyu"
 	v[2] = 24
-	// v[3] = &app
+	v[3] = &app2
 	// res := SetValueOfCopy(&app, v)
 	res := SetValue(&app, v)
 	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
