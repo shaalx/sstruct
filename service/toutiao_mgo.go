@@ -142,3 +142,10 @@ func (self *ToutiaoAction) TTLatestNews() []Toutiao {
 	buf := utils.I2Bytes(one.Content)
 	return TTContents(buf)
 }
+
+func (self *ToutiaoAction) News(i int64) interface{} {
+	fmt.Println(i)
+	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
+	buf := utils.I2Bytes(one.Content)
+	return TTContents(buf)
+}
