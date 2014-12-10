@@ -20,7 +20,7 @@ var (
 	v    []interface{} = []interface{}{"chengshi", "yingyu", 24, &app2, []string{"u1", "u2", "u3"}}
 )
 
-func TestSetValueCopy(t *testing.T) {
+func Test_SetValueCopy(t *testing.T) {
 	res := SetValue(app, v)
 	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
 	fmt.Printf("%#v\n", res)
@@ -29,7 +29,7 @@ func TestSetValueCopy(t *testing.T) {
 	fmt.Println()
 }
 
-func TestSetValuePtr(t *testing.T) {
+func Test_SetValuePtr(t *testing.T) {
 	res := SetValue(&app, v)
 	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
 	fmt.Printf("%#v\n", res)
@@ -38,7 +38,7 @@ func TestSetValuePtr(t *testing.T) {
 	fmt.Println()
 }
 
-func TestSetValueAtIPtr(t *testing.T) {
+func Test_SetValueAtIPtr(t *testing.T) {
 	for i, it := range v {
 		res := SetValueAtI(&app, i, it)
 		fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
