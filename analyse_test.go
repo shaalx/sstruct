@@ -10,13 +10,23 @@ type Apping struct {
 	Name    string
 	Address string
 	// Child   Node
+	Age    int
+	Apps   *Apping
+	Users  []string
+	Appeds Apped
+}
+
+type Apped struct {
+	Name    string
+	Address string
+	// Child   Node
 	Age   int
 	Apps  *Apping
 	Users []string
 }
 
 var (
-	apping = Apping{"Shanghai", "ECNU", 25, nil, []string{"User1", "User2"}}
+	apping = Apping{"Shanghai", "ECNU", 25, nil, []string{"User1", "User2"}, Apped{}}
 )
 
 func Test_Analyse(t *testing.T) {
@@ -29,10 +39,11 @@ func Test_Analyse(t *testing.T) {
 	fmt.Println()
 
 	linfoPtr := list.New()
-	linfoPtr = Analyse(&apping, linfoPtr)
+	Analyse(&apping, linfoPtr)
 	for e := linfoPtr.Back(); e != nil; e = e.Prev() {
 		fmt.Println(e.Value)
 	}
+	fmt.Println()
 }
 
 func Benchmark_Analyse(b *testing.B) {

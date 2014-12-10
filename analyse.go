@@ -2,7 +2,6 @@ package sstruct
 
 import (
 	"container/list"
-	"fmt"
 	"reflect"
 )
 
@@ -14,24 +13,19 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		return linfo
 	}
 	kind := typeOf.Kind()
-	linfo.PushFront(typeOf)
 	switch kind {
 	case reflect.Ptr:
-		linfoPtr := AnalysePtr(instance, linfo)
-		Join(linfo, linfoPtr)
+		AnalysePtr(instance, linfo)
 		return linfo
 	case reflect.Struct:
-		// linfoLoop := Analyse(instance, linfo)
-		// Join(linfo, linfoLoop)
-		// return linfo
-		fmt.Println("this is right for a struct")
+		linfo.PushFront(typeOf)
+		elem := reflect.ValueOf(instance)
+		for i := 0; i < elem.NumField(); i++ {
+			t := elem.Field(i).Type()
+			linfo.PushFront(t)
+		}
 	default:
 		return linfo
-	}
-	elem := reflect.ValueOf(instance)
-	for i := 0; i < elem.NumField(); i++ {
-		t := elem.Field(i).Type()
-		linfo.PushFront(t)
 	}
 	return linfo
 }
@@ -42,6 +36,7 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 	if Exist(linfo, reflect.TypeOf(instance)) {
 		return linfo
 	}
+	linfo.PushFront(reflect.TypeOf(instance))
 	elem := reflect.ValueOf(instance).Elem()
 	for i := 0; i < elem.NumField(); i++ {
 		t := elem.Field(i).Type()
@@ -52,9 +47,9 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 
 // check the type exist in the list
 func Exist(linfo *list.List, typeOf reflect.Type) bool {
-	if 100 < linfo.Len() {
-		return true
-	}
+	// if 10 < linfo.Len() {
+	// 	return true
+	// }
 	for e := linfo.Back(); e != nil; e = e.Prev() {
 		etype, ok := e.Value.(reflect.Type)
 		if ok && typeOf == etype {
