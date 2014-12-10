@@ -45,4 +45,4 @@
 	reflect.ValueOf(&instance).Elem().Set(reflect.ValueOf(value))
 	值将直接覆盖该结构体块。
 
-![test log](test_log.jpg) "TEST LOG"
+![test log](test_log.jpg)
