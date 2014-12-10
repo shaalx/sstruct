@@ -5,6 +5,7 @@ import (
 	"reflect"
 )
 
+// set value for an instance
 func SetValue(instance interface{}, value []interface{}) interface{} {
 	kind := reflect.TypeOf(instance).Kind()
 	if reflect.Ptr == kind {
@@ -54,6 +55,7 @@ func SetValueOfPtr(instance interface{}, value []interface{}) bool {
 	return true
 }
 
+// set value for instance at i
 func SetValueAtI(instance interface{}, i int, value interface{}) bool {
 	kind := reflect.TypeOf(instance).Kind()
 	if reflect.Ptr != kind {
