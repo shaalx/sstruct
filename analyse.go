@@ -7,7 +7,6 @@ import (
 
 // analyse the instance of struct
 func Analyse(instance interface{}, linfo *list.List) *list.List {
-	// linfo := list.New()
 	typeOf := reflect.TypeOf(instance)
 	if Exist(linfo, typeOf) {
 		return linfo
@@ -22,7 +21,12 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		elem := reflect.ValueOf(instance)
 		for i := 0; i < elem.NumField(); i++ {
 			t := elem.Field(i).Type()
+			// 	switch t.Kind() {
+			// 	case reflect.Ptr, reflect.Struct:
+			// 		Analyse(instance, linfo)
+			// 	default:
 			linfo.PushFront(t)
+			// 	}
 		}
 	default:
 		return linfo
@@ -32,7 +36,6 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 
 // analyse the instance of struct  ptr
 func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
-	// linfo := list.New()
 	if Exist(linfo, reflect.TypeOf(instance)) {
 		return linfo
 	}
@@ -47,9 +50,6 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 
 // check the type exist in the list
 func Exist(linfo *list.List, typeOf reflect.Type) bool {
-	// if 10 < linfo.Len() {
-	// 	return true
-	// }
 	for e := linfo.Back(); e != nil; e = e.Prev() {
 		etype, ok := e.Value.(reflect.Type)
 		if ok && typeOf == etype {
