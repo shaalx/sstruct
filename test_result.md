@@ -44,3 +44,5 @@
 * 反射可破坏结构体内部结构，如指针构造时：
 	reflect.ValueOf(&instance).Elem().Set(reflect.ValueOf(value))
 	值将直接覆盖该结构体块。
+
+	__**zkvyxw**__
