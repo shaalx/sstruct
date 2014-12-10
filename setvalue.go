@@ -1,4 +1,4 @@
-package oper
+package sstruct
 
 import (
 	// "fmt"
