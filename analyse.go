@@ -48,6 +48,10 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 	return linfo
 }
 
+func AnalyseCopy(instance interface{}, linfo *list.List) {
+
+}
+
 // check the type exist in the list
 func Exist(linfo *list.List, typeOf reflect.Type) bool {
 	for e := linfo.Back(); e != nil; e = e.Prev() {
