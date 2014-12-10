@@ -45,4 +45,4 @@
 	reflect.ValueOf(&instance).Elem().Set(reflect.ValueOf(value))
 	值将直接覆盖该结构体块。
 
-	__**zkvyxw**__
+![test log](test_log.jpg)
