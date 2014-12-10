@@ -9,8 +9,9 @@ type App struct {
 	Name    string
 	Address string
 	// Child   Node
-	Age  int
-	Apps *App
+	Age   int
+	Apps  *App
+	Users []string
 }
 
 func main() {
@@ -21,16 +22,17 @@ func test_set() {
 	app := App{Name: "City", Address: "Shanghai"}
 	app2 := App{Name: "City", Address: "Shanghai"}
 	var v []interface{}
-	v = make([]interface{}, 4)
+	v = make([]interface{}, 5)
 	v[0] = "chengshi"
 	v[1] = "yingyu"
 	v[2] = 24
 	v[3] = &app2
+	v[4] = []string{"u1", "u2", "u3"}
 	// res := SetValueOfCopy(&app, v)
-	res := SetValue(&app, v)
+	res := SetValue(app, v)
 	SetValueAtI(&app, 0, "shijiazhuang")
 	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res")
-	fmt.Println(res)
+	fmt.Printf("%#v\n", res)
 	fmt.Println()
 	// fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*.* res json")
 	// /*b := */ Jsonable(res)

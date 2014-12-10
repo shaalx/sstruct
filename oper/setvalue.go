@@ -1,28 +1,36 @@
 package oper
 
 import (
-	"fmt"
+	// "fmt"
 	"reflect"
 )
 
 func SetValue(instance interface{}, value []interface{}) interface{} {
 	kind := reflect.TypeOf(instance).Kind()
 	if reflect.Ptr == kind {
-		return SetValueOfPtr(instance, value)
+		ok := SetValueOfPtr(instance, value)
+		if ok {
+			return instance
+		} else {
+			return nil
+		}
 	}
-	return SetValueOfCopy(instance, value)
+	return SetValueOfCopy(reflect.TypeOf(instance), value)
 }
 
 // set value of instance
-func SetValueOfCopy(instance interface{}, value []interface{}) interface{} {
-	kind := reflect.TypeOf(instance).Kind()
+func SetValueOfCopy(typeOf reflect.Type, value []interface{}) interface{} {
+	kind := typeOf.Kind()
 	if reflect.Ptr == kind {
 		return nil
 	}
-	newInstance := reflect.New(reflect.TypeOf(instance))
+	newInstance := reflect.New(typeOf)
 	app := newInstance.Interface()
 	elem := reflect.ValueOf(app).Elem()
-	fmt.Println(elem.NumField())
+	// if length of value is over elem.NumField
+	if len(value) > elem.NumField() {
+		value = value[:elem.NumField()]
+	}
 	for i, v := range value {
 		elem.Field(i).Set(reflect.ValueOf(v))
 	}
@@ -30,17 +38,20 @@ func SetValueOfCopy(instance interface{}, value []interface{}) interface{} {
 }
 
 // set value of ptr
-func SetValueOfPtr(instance interface{}, value []interface{}) interface{} {
+func SetValueOfPtr(instance interface{}, value []interface{}) bool {
 	kind := reflect.TypeOf(instance).Kind()
 	if reflect.Ptr != kind {
-		return nil
+		return false
 	}
 	elem := reflect.ValueOf(instance).Elem()
-	fmt.Println(elem.NumField())
+	// if length of value is over elem.NumField
+	if len(value) > elem.NumField() {
+		value = value[:elem.NumField()]
+	}
 	for i, v := range value {
 		elem.Field(i).Set(reflect.ValueOf(v))
 	}
-	return instance
+	return true
 }
 
 func SetValueAtI(instance interface{}, i int, value interface{}) bool {
