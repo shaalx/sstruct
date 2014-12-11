@@ -14,6 +14,7 @@ type Apping struct {
 	Apps   *Apping
 	Users  []string
 	Appeds Apped
+	Time   *int
 }
 
 type Apped struct {
@@ -26,7 +27,7 @@ type Apped struct {
 }
 
 var (
-	apping = Apping{"Shanghai", "ECNU", 25, nil, []string{"User1", "User2"}, Apped{}}
+	apping = Apping{"Shanghai", "ECNU", 25, nil, []string{"User1", "User2"}, Apped{}, nil}
 )
 
 func Test_Analyse(t *testing.T) {
