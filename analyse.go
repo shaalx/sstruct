@@ -4,8 +4,6 @@ import (
 	"container/list"
 	"fmt"
 	"reflect"
-	"strings"
-	// "unsafe"
 )
 
 // analyse the instance of struct
@@ -21,12 +19,15 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		return linfo
 	case reflect.Struct:
 		linfo.PushFront(typeOf)
-		Analyseing(reflect.ValueOf(instance))
 		elem := reflect.ValueOf(instance)
 		for i := 0; i < elem.NumField(); i++ {
 			t := elem.Field(i).Type()
+			// 	switch t.Kind() {
+			// 	case reflect.Ptr, reflect.Struct:
+			// 		Analyse(instance, linfo)
+			// 	default:
 			linfo.PushFront(t)
-			Analyseing(elem.Field(i))
+			// 	}
 		}
 	default:
 		return linfo
@@ -36,8 +37,7 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 
 // analyse the instance of struct  ptr
 func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
-	typeOf := reflect.TypeOf(instance)
-	if reflect.Ptr != typeOf.Kind() || Exist(linfo, typeOf) {
+	if Exist(linfo, reflect.TypeOf(instance)) {
 		return linfo
 	}
 	linfo.PushFront(reflect.TypeOf(instance))
@@ -47,38 +47,6 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 		linfo.PushFront(t)
 	}
 	return linfo
-}
-
-func Analyseing(valueOf reflect.Value) {
-	fmt.Println("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
-	typeOf := valueOf.Type()
-	fmt.Print(typeOf)
-	switch typeOf.Kind() {
-	case reflect.Struct:
-		fmt.Println("  Struct")
-		for i := 0; i < valueOf.NumField(); i++ {
-			t := valueOf.Field(i).Type()
-			fmt.Println(t)
-		}
-	case reflect.Ptr:
-		fmt.Println("  Ptr")
-		if sysType(typeOf.String()) {
-			fmt.Println("\tSystem type")
-		} else {
-			newInstance := reflect.New(typeOf)
-			app := newInstance.Interface()
-			fmt.Println(app)
-			// v := reflect.NewAt(typeOf, unsafe.New(app))
-			// fmt.Println(v)
-			// elem := reflect.ValueOf(app).Elem()
-			// for i := 0; i < elem.NumField(); i++ {
-			// 	fmt.Println(elem.Field(i))
-			// }
-		}
-	default:
-		fmt.Println("  default system type")
-	}
-	fmt.Println("-------------------------------\n")
 }
 
 // check the type exist in the list
@@ -96,8 +64,4 @@ func Join(ldst, lsrc *list.List) {
 	for e := lsrc.Back(); e != nil; e = e.Prev() {
 		ldst.PushFront(e.Value)
 	}
-}
-
-func sysType(typeName string) bool {
-	return !strings.Contains(typeName, ".")
 }
