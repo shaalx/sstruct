@@ -74,6 +74,7 @@ func Analyseing(valueOf reflect.Value) {
 			// for i := 0; i < elem.NumField(); i++ {
 			// 	fmt.Println(elem.Field(i))
 			// }
+
 		}
 	default:
 		fmt.Println("  default system type")
