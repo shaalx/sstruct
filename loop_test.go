@@ -24,8 +24,8 @@ type Appe struct {
 	Name    string
 	Address string
 	// Child   Node
-	Age int
-	// Apps  *Apping
+	Age   int
+	Apps  Apping
 	Users []string
 }
 
