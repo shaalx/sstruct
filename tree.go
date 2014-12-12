@@ -2,7 +2,9 @@ package sstruct
 
 import (
 	"container/list"
+	"fmt"
 	"reflect"
+	"strings"
 )
 
 func tree(valueOf reflect.Value, linfo *list.List) {
@@ -33,4 +35,32 @@ func existInTree(linfo *list.List, typeOf reflect.Type) bool {
 		}
 	}
 	return false
+}
+
+func TreeFish(valueOf reflect.Value, linfo *list.List) *list.List {
+	typeOf := valueOf.Type()
+	fish := list.New()
+	fish.PushFront(typeOf)
+	switch typeOf.Kind() {
+	case reflect.Struct:
+		for i := 0; i < valueOf.NumField(); i++ {
+			fishtree := TreeFish(valueOf.Field(i), linfo)
+			fish.PushFront(fishtree)
+		}
+	default:
+	}
+	linfo.PushFront(fish)
+	return fish
+}
+
+func ShowTreeFish(fishtree *list.List, length int) {
+	for e := fishtree.Back(); e != nil; e = e.Prev() {
+		childFish, ok := e.Value.(*list.List)
+		if ok {
+			ShowTreeFish(childFish, length+1)
+		} else {
+			fmt.Print(strings.Repeat("\t", length))
+			fmt.Println(e.Value)
+		}
+	}
 }

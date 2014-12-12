@@ -33,10 +33,12 @@ import (
 func Test_Tree(t *testing.T) {
 	fmt.Println()
 	linfo := list.New()
-	tree(reflect.ValueOf(appin), linfo)
-	for e := linfo.Back(); e != nil; e = e.Prev() {
-		fmt.Println(e.Value)
-	}
+	fish := TreeFish(reflect.ValueOf(apping), linfo)
+	linfo.PushFront(fish)
+	// for e := linfo.Back(); e != nil; e = e.Prev() {
+	// 	fmt.Println(e.Value)
+	// }
+	ShowTreeFish(linfo, 0)
 
 }
 
