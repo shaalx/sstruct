@@ -21,16 +21,16 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		AnalysePtr(instance, linfo)
 		return linfo
 	case reflect.Struct:
-		linfo.PushFront(typeOf)
+		// linfo.PushFront(typeOf)
 		/*linfoing1 = */ Analyseing(reflect.ValueOf(instance), linfo)
 
 		elem := reflect.ValueOf(instance)
-		for i := 0; i < elem.NumField(); i++ {
-			t := elem.Field(i).Type()
-			linfo.PushFront(t)
-			// /*linfoing2 := */ Analyseing(elem.Field(i), linfo)
-			// Join(linfoing1, linfoing2)
-		}
+		// for i := 0; i < elem.NumField(); i++ {
+		// 	t := elem.Field(i).Type()
+		// 	linfo.PushFront(t)
+		// 	// /*linfoing2 := */ Analyseing(elem.Field(i), linfo)
+		// 	// Join(linfoing1, linfoing2)
+		// }
 		for i := 0; i < elem.NumField(); i++ {
 			// t := elem.Field(i).Type()
 			// linfo.PushFront(t)
@@ -59,17 +59,18 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 }
 
 func Analyseing(valueOf reflect.Value, linfo *list.List) *list.List {
-	fmt.Println("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
+	fmt.Println(".*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
 	typeOf := valueOf.Type()
 	// fmt.Println(typeOf)
-	if Exist(linfo, typeOf) && reflect.Struct == typeOf.Kind() {
-		return linfo
-	}
+	// if Exist(linfo, typeOf) && reflect.Struct == typeOf.Kind() {
+	// 	return linfo
+	// }
 	// linfo := list.New()
-	linfo.PushFront(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+	linfo.PushFront("\nanalysing :")
 	switch typeOf.Kind() {
 	case reflect.Struct:
-		fmt.Println("  Struct")
+		linfo.PushFront(typeOf)
+		// fmt.Println("  Struct")
 		for i := 0; i < valueOf.NumField(); i++ {
 			t := valueOf.Field(i).Type()
 			linfo.PushFront(t)
@@ -93,10 +94,9 @@ func Analyseing(valueOf reflect.Value, linfo *list.List) *list.List {
 	// 	}
 	default:
 		// fmt.Println("  default system type")
-		// linfo.PushFront(typeOf)
+		linfo.PushFront(typeOf)
 	}
-	fmt.Println("-------------------------------\n")
-	linfo.PushFront("\n")
+	// fmt.Println("-------------------------------\n")
 	return linfo
 }
 
