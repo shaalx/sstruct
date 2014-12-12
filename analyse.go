@@ -14,7 +14,7 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 	if Exist(linfo, typeOf) {
 		return linfo
 	}
-	linfoing1 := list.New()
+	// linfoing1 := list.New()
 	kind := typeOf.Kind()
 	switch kind {
 	case reflect.Ptr:
@@ -22,19 +22,25 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		return linfo
 	case reflect.Struct:
 		linfo.PushFront(typeOf)
-		linfoing1 = Analyseing(reflect.ValueOf(instance))
+		/*linfoing1 = */ Analyseing(reflect.ValueOf(instance), linfo)
 
 		elem := reflect.ValueOf(instance)
 		for i := 0; i < elem.NumField(); i++ {
 			t := elem.Field(i).Type()
 			linfo.PushFront(t)
-			linfoing2 := Analyseing(elem.Field(i))
-			Join(linfoing1, linfoing2)
+			// /*linfoing2 := */ Analyseing(elem.Field(i), linfo)
+			// Join(linfoing1, linfoing2)
+		}
+		for i := 0; i < elem.NumField(); i++ {
+			// t := elem.Field(i).Type()
+			// linfo.PushFront(t)
+			/*linfoing2 := */ Analyseing(elem.Field(i), linfo)
+			// Join(linfoing1, linfoing2)
 		}
 	default:
-		return linfoing1
+		// return linfoing1
 	}
-	return linfoing1
+	return linfo /*ing1*/
 }
 
 // analyse the instance of struct  ptr
@@ -52,19 +58,22 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 	return linfo
 }
 
-func Analyseing(valueOf reflect.Value) *list.List {
+func Analyseing(valueOf reflect.Value, linfo *list.List) *list.List {
 	fmt.Println("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
 	typeOf := valueOf.Type()
-	fmt.Print(typeOf)
-	linfo := list.New()
-	linfo.PushFront("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
+	// fmt.Println(typeOf)
+	if Exist(linfo, typeOf) && reflect.Struct == typeOf.Kind() {
+		return linfo
+	}
+	// linfo := list.New()
+	linfo.PushFront(">/\\\\/>/\\\\/>/\\\\/>/\\\\/>/\\\\/>/\\\\/")
 	switch typeOf.Kind() {
 	case reflect.Struct:
 		fmt.Println("  Struct")
 		for i := 0; i < valueOf.NumField(); i++ {
 			t := valueOf.Field(i).Type()
 			linfo.PushFront(t)
-			fmt.Println(t)
+			// fmt.Println(t)
 		}
 	// case reflect.Ptr:
 	// 	fmt.Println("  Ptr")
@@ -83,10 +92,11 @@ func Analyseing(valueOf reflect.Value) *list.List {
 
 	// 	}
 	default:
-		fmt.Println("  default system type")
-		linfo.PushFront(typeOf)
+		// fmt.Println("  default system type")
+		// linfo.PushFront(typeOf)
 	}
 	fmt.Println("-------------------------------\n")
+	linfo.PushFront("\n")
 	return linfo
 }
 
