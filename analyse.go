@@ -14,6 +14,7 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 	if Exist(linfo, typeOf) {
 		return linfo
 	}
+	linfoing1 := list.New()
 	kind := typeOf.Kind()
 	switch kind {
 	case reflect.Ptr:
@@ -21,17 +22,19 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		return linfo
 	case reflect.Struct:
 		linfo.PushFront(typeOf)
-		Analyseing(reflect.ValueOf(instance))
+		linfoing1 = Analyseing(reflect.ValueOf(instance))
+
 		elem := reflect.ValueOf(instance)
 		for i := 0; i < elem.NumField(); i++ {
 			t := elem.Field(i).Type()
 			linfo.PushFront(t)
-			Analyseing(elem.Field(i))
+			linfoing2 := Analyseing(elem.Field(i))
+			Join(linfoing1, linfoing2)
 		}
 	default:
-		return linfo
+		return linfoing1
 	}
-	return linfo
+	return linfoing1
 }
 
 // analyse the instance of struct  ptr
@@ -49,37 +52,42 @@ func AnalysePtr(instance interface{}, linfo *list.List) *list.List {
 	return linfo
 }
 
-func Analyseing(valueOf reflect.Value) {
+func Analyseing(valueOf reflect.Value) *list.List {
 	fmt.Println("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
 	typeOf := valueOf.Type()
 	fmt.Print(typeOf)
+	linfo := list.New()
+	linfo.PushFront("\n.*.*.*.*.*.*.*.*.*.*.*.*.*.*.*")
 	switch typeOf.Kind() {
 	case reflect.Struct:
 		fmt.Println("  Struct")
 		for i := 0; i < valueOf.NumField(); i++ {
 			t := valueOf.Field(i).Type()
+			linfo.PushFront(t)
 			fmt.Println(t)
 		}
-	case reflect.Ptr:
-		fmt.Println("  Ptr")
-		if sysType(typeOf.String()) {
-			fmt.Println("\tSystem type")
-		} else {
-			newInstance := reflect.New(typeOf)
-			app := newInstance.Interface()
-			fmt.Println(app)
-			// v := reflect.NewAt(typeOf, unsafe.New(app))
-			// fmt.Println(v)
-			// elem := reflect.ValueOf(app).Elem()
-			// for i := 0; i < elem.NumField(); i++ {
-			// 	fmt.Println(elem.Field(i))
-			// }
+	// case reflect.Ptr:
+	// 	fmt.Println("  Ptr")
+	// 	if sysType(typeOf.String()) {
+	// 		fmt.Println("\tSystem type")
+	// 	} else {
+	// 		newInstance := reflect.New(typeOf)
+	// 		app := newInstance.Interface()
+	// 		fmt.Println(app)
+	// 		// v := reflect.NewAt(typeOf, unsafe.New(app))
+	// 		// fmt.Println(v)
+	// 		// elem := reflect.ValueOf(app).Elem()
+	// 		// for i := 0; i < elem.NumField(); i++ {
+	// 		// 	fmt.Println(elem.Field(i))
+	// 		// }
 
-		}
+	// 	}
 	default:
 		fmt.Println("  default system type")
+		linfo.PushFront(typeOf)
 	}
 	fmt.Println("-------------------------------\n")
+	return linfo
 }
 
 // check the type exist in the list
