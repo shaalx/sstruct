@@ -66,7 +66,7 @@ func Analyseing(valueOf reflect.Value, linfo *list.List) *list.List {
 		return linfo
 	}
 	// linfo := list.New()
-	linfo.PushFront(">/\\\\/>/\\\\/>/\\\\/>/\\\\/>/\\\\/>/\\\\/")
+	linfo.PushFront(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 	switch typeOf.Kind() {
 	case reflect.Struct:
 		fmt.Println("  Struct")
