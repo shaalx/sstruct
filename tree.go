@@ -79,6 +79,7 @@ func SpiltFish(fishRunes []rune) *list.List {
 	if 0 > start {
 		return linfo
 	}
+
 	childFishOne := SpiltFish(fishRunes[start+1 : end])
 	// linfo.PushFront(childFishOne)
 	left := make([]rune, start+1)
