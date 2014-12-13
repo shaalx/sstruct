@@ -7,38 +7,13 @@ import (
 	"testing"
 )
 
-// type Apping struct {
-// 	Name    string
-// 	Address string
-// 	// Child   Node
-// 	Age int
-// 	// Apps   *Apping
-// 	Users  []string
-// 	Appeds Apped
-// }
-
-// type Apped struct {
-// 	Name    string
-// 	Address string
-// 	// Child   Node
-// 	Age int
-// 	// Apps  *Apping
-// 	Users []string
-// }
-
-// var (
-// 	appi = Apping{"Shanghai", "ECNU", 25, []string{"User1", "User2"}, Apped{}}
-// )
-
 func Test_Tree(t *testing.T) {
 	fmt.Println()
 	linfo := list.New()
 	fish := TreeFish(reflect.ValueOf(apping), linfo)
-	linfo.PushFront(fish)
-	// for e := linfo.Back(); e != nil; e = e.Prev() {
-	// 	fmt.Println(e.Value)
-	// }
+	// linfo.PushFront(fish)
 	ShowTreeFish(linfo, 0)
+	ShowTreeFish(fish, 0)
 
 }
 
