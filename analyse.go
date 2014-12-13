@@ -22,7 +22,7 @@ func Analyse(instance interface{}, linfo *list.List) *list.List {
 		return linfo
 	case reflect.Struct:
 		// linfo.PushFront(typeOf)
-		/*linfoing1 = */ Analyseing(reflect.ValueOf(instance), linfo)
+		// /*linfoing1 = */ Analyseing(reflect.ValueOf(instance), linfo)
 
 		elem := reflect.ValueOf(instance)
 		// for i := 0; i < elem.NumField(); i++ {

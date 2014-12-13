@@ -49,7 +49,7 @@ func TreeFish(valueOf reflect.Value, linfo *list.List) *list.List {
 		}
 	default:
 	}
-	linfo.PushFront(fish)
+	// linfo.PushFront(fish)
 	return fish
 }
 
@@ -63,4 +63,47 @@ func ShowTreeFish(fishtree *list.List, length int) {
 			fmt.Println(e.Value)
 		}
 	}
+}
+
+func SpiltFish(fishRunes []rune) *list.List {
+	fmt.Println(string(fishRunes))
+	linfo := list.New()
+	linfo.PushFront(string(fishRunes))
+	end := FirstIndexOf(fishRunes, []rune("}")[0])
+	fmt.Println(end)
+	if 0 > end {
+		return linfo
+	}
+	start := LastIndexOf(fishRunes[:end], []rune("{")[0])
+	fmt.Println(start)
+	if 0 > start {
+		return linfo
+	}
+	childFishOne := SpiltFish(fishRunes[start+1 : end])
+	// linfo.PushFront(childFishOne)
+	left := make([]rune, start+1)
+	left = fishRunes[:start]
+	left = append(left, fishRunes[end+1:]...)
+	childFishTwo := SpiltFish(left)
+	childFishTwo.PushFront(childFishOne)
+	linfo.PushFront(childFishTwo)
+	return linfo
+}
+
+func FirstIndexOf(runes []rune, r rune) int {
+	for i, it := range runes {
+		if it == r {
+			return i
+		}
+	}
+	return -1
+}
+
+func LastIndexOf(runes []rune, r rune) int {
+	for i := len(runes); i > 0; i-- {
+		if runes[i-1] == r {
+			return i - 1
+		}
+	}
+	return -1
 }
