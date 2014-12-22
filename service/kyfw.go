@@ -55,13 +55,13 @@ func (self *KYFWAction) Analyse() {
 	}
 }
 
-func Searching(news News) {
-	fmt.Println(news.DisplayDate)
-	buf := utils.I2Bytes(news.Content)
-	status := search.KYFWStatus(buf)
+func Searching(data []byte) {
+	// fmt.Println(news.DisplayDate)
+	// buf := utils.I2Bytes(news.Content)
+	status := search.KYFWStatus(data)
 	fmt.Println(status)
 	if status {
-		res := search.Data(buf)
+		res := search.Data(data)
 		// fmt.Println(res)
 		for _, v := range res {
 			KYFWShow(v)
@@ -84,8 +84,9 @@ func (self *KYFWAction) Search() {
 	url := "https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=2015-02-27&leftTicketDTO.from_station=SJP&leftTicketDTO.to_station=SHH&purpose_codes=0X00"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
-	news := B2News(bs)
-	Searching(news)
+	// fmt.Println(string(bs))
+	// news := B2News(bs)
+	Searching(bs)
 }
 
 func KYFWShow(m map[string]interface{}) {
