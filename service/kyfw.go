@@ -87,14 +87,15 @@ func (self *KYFWAction) Search() {
 	// fmt.Println(string(bs))
 	// news := B2News(bs)
 	Searching(bs)
+	self.persis.Do(bs)
 }
 
 func KYFWShow(m map[string]interface{}) {
-	fmt.Printf("[ %v ] ---> [ %v ] :  %v ( %v )\n", m["from_station_name"], m["to_station_name"], m["station_train_code"], m["lishi"])
-	fmt.Printf("[硬座] ：%v\n", m["yz_num"])
-	fmt.Printf("[软座] ：%v\n", m["rz_num"])
+	fmt.Printf("%v : %v >>> %v  %v ~ %v  < %v > \n\n", m["station_train_code"], m["from_station_name"], m["to_station_name"], m["start_time"], m["arrive_time"], m["lishi"])
+	fmt.Printf("[软座] ：%v\t", m["rz_num"])
+	fmt.Printf("[硬座] ：%v\t", m["yz_num"])
 	fmt.Printf("[硬卧] ：%v\n", m["yw_num"])
-	fmt.Println("--------------------------------------------------------\n")
+	fmt.Println("--------------------------------------------------------")
 }
 
 func (self *KYFWAction) LatestNews() []map[string]interface{} {

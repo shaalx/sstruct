@@ -20,8 +20,8 @@ func main() {
 	// 	time.Sleep(time.Second * 7200)
 	// }
 	// act.QueryOne()
-	// act.Analyse()
-	act.Search()
+	act.Analyse()
+	// act.Search()
 	// act.LatestNews()
 
 	time.Sleep(time.Second * 4)
