@@ -8,19 +8,21 @@ import (
 func main() {
 	// var act action.Action
 	// act := action.ZhihuMgoAction{}
-	act := service.ToutiaoAction{}
+	// act := service.ToutiaoAction{}
 	// act := action.KuwoMgoAction{}
 	// act := action.YodaoMgoAction{}
 	// act := action.ItunesMgoAction{}
+	act := service.KYFWAction{}
 
 	act.Init()
 	// for {
-	act.Persistence()
+	// act.Persistence()
 	// 	time.Sleep(time.Second * 7200)
 	// }
 	// act.QueryOne()
 	// act.Analyse()
-	act.LatestNews()
+	act.Search()
+	// act.LatestNews()
 
 	time.Sleep(time.Second * 4)
 }
