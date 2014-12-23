@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/shaalx/sstruct/service"
-	"time"
+	// "time"
 )
 
 func main() {
@@ -24,5 +24,5 @@ func main() {
 	act.Search()
 	// act.LatestNews()
 
-	time.Sleep(time.Second * 4)
+	// time.Sleep(time.Second * 4)
 }

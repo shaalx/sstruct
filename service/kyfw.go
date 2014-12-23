@@ -64,7 +64,18 @@ func Searching(data []byte) {
 		res := search.Data(data)
 		// fmt.Println(res)
 		for _, v := range res {
-			KYFWShow(v)
+			train_code, ok := v["station_train_code"]
+			if !ok {
+				continue
+			}
+			code_str, ok := train_code.(string)
+			if !ok {
+				continue
+			}
+			fmt.Println(code_str)
+			if "Z198" == code_str || "Z270" == code_str {
+				KYFWShow(v)
+			}
 		}
 	} else {
 		log.LOGS.Notice("%s", "查询失败，重试中...")
