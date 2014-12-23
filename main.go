@@ -23,6 +23,6 @@ func main() {
 	// act.Analyse()
 	act.Search()
 	// act.LatestNews()
-
+	defer act.Close()
 	// time.Sleep(time.Second * 4)
 }
