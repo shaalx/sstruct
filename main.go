@@ -1,28 +1,10 @@
 package main
 
 import (
-	"github.com/shaalx/sstruct/service"
+	"github.com/shaalx/sstruct/action"
 	// "time"
 )
 
 func main() {
-	// var act action.Action
-	// act := action.ZhihuMgoAction{}
-	// act := service.ToutiaoAction{}
-	// act := action.KuwoMgoAction{}
-	// act := action.YodaoMgoAction{}
-	// act := action.ItunesMgoAction{}
-	act := service.KYFWAction{}
-
-	act.Init()
-	// for {
-	// act.Persistence()
-	// 	time.Sleep(time.Second * 7200)
-	// }
-	// act.QueryOne()
-	// act.Analyse()
-	act.Search()
-	// act.LatestNews()
-	defer act.Close()
-	// time.Sleep(time.Second * 4)
+	action.KyfwAction()
 }

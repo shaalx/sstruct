@@ -10,3 +10,12 @@ func ToutiaoLatestNews() []Toutiao {
 	toutiao.Init()
 	return toutiao.TTLatestNews()
 }
+
+func KyfwAction() {
+	var serv service.Service
+	serv = &service.KYFWAction{}
+	serv.Init()
+	serv.Persistence()
+	serv.Analyse()
+	serv.Close()
+}
