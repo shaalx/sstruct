@@ -15,7 +15,8 @@ func KyfwAction() {
 	var serv service.Service
 	serv = &service.KYFWAction{}
 	serv.Init()
-	serv.Persistence()
-	serv.Analyse()
+	// serv.Persistence()
+	// serv.Analyse()
+	serv.Search()
 	serv.Close()
 }
