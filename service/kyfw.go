@@ -80,6 +80,7 @@ func Searching(data []byte) {
 
 func (self *KYFWAction) Search() {
 	url := "https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=2015-02-27&leftTicketDTO.from_station=SJP&leftTicketDTO.to_station=SHH&purpose_codes=0X00"
+	// url := "https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=2015-03-15&leftTicketDTO.from_station=SJP&leftTicketDTO.to_station=SHH&purpose_codes=0X00"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	Searching(bs)

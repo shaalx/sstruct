@@ -3,6 +3,7 @@ package action
 import (
 	. "github.com/shaalx/sstruct/bean"
 	"github.com/shaalx/sstruct/service"
+	"time"
 )
 
 func ToutiaoLatestNews() []Toutiao {
@@ -17,6 +18,9 @@ func KyfwAction() {
 	serv.Init()
 	// serv.Persistence()
 	// serv.Analyse()
-	serv.Search()
+	for {
+		serv.Search()
+		time.Sleep(time.Second * 1)
+	}
 	serv.Close()
 }
