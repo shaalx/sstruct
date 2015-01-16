@@ -25,6 +25,7 @@ func Do1(url, ipaddr string) []byte {
 	// cookie := http.Cookie{Name: "Cookie", Value: cookiestr}
 	// request.SetCookie(&cookie)
 	request.Param("api_key", "d2V8R7f5mVjS2jNfnv1p4Fvd2lYZwfFl7wtCLWCJ")
+	request.Param("pattern", "all")
 	bs, err := request.Bytes()
 	if log.IsError("{fetch json data error}", err) {
 		return nil
