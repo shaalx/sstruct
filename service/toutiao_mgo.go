@@ -150,3 +150,6 @@ func (self *ToutiaoAction) News(i int64) interface{} {
 	buf := utils.I2Bytes(one.Content)
 	return TTContents(buf)
 }
+
+func (self *ToutiaoAction) Search() {}
+func (self *ToutiaoAction) Close()  {}

@@ -14,13 +14,14 @@ func ToutiaoLatestNews() []Toutiao {
 
 func KyfwAction() {
 	var serv service.Service
-	serv = &service.KYFWAction{}
+	// serv = &service.KYFWAction{}
+	serv = &service.ToutiaoAction{}
 	serv.Init()
-	// serv.Persistence()
+	serv.Persistence()
 	// serv.Analyse()
-	for {
-		serv.Search()
-		time.Sleep(time.Second * 1)
-	}
+	// for {
+	// 	serv.Search()
+	time.Sleep(time.Second * 1)
+	// }
 	serv.Close()
 }
