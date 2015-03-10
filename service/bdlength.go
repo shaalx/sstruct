@@ -61,9 +61,9 @@ func Searching2(data []byte) {
 }
 
 func (self *BDLENAction) Search() {
-	url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=我可以打你吗？曾经啊，多美的一个词！` +
-		`多么痛的领悟,` +
-		`你曾是我的全部！&format=json`
+	url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=盗梦空间是一部好电影，` +
+		`大家对它的评价非常的高。` +
+		`&format=json`
 	// url := "http://map.baidu.com/?newmap=1&reqflag=pcmap&biz=1&from=webmap&qt=nav&da_src=pcmappg.searchBox.button&c=1&sn=2$$$$$$上海市$$0$$$$&en=2$$$$$$石家庄市$$0$$$$&sc=1&ec=1&rn=5&time_index=-1&day=-1&extinfo=63&tn=B_NORMAL_MAP&nn=0&ie=utf-8&l=7&b=(12184537.219999999,3297450.195;14087129.219999999,4903082.195)&t=1421214039805"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do1(url, ipaddr)
