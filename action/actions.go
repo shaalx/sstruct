@@ -29,8 +29,9 @@ func TopicAction() {
 	var serv service.Service
 	serv = &service.TopicAction{}
 	serv.Init()
-	// serv.Search()
-	serv.Analyse()
+	// serv.Persistence()
+	serv.Search()
+	// serv.Analyse()
 	time.Sleep(time.Second * 1)
 	serv.Close()
 }
