@@ -5,12 +5,13 @@ import (
 	"github.com/shaalx/sstruct/persistence"
 	"github.com/shaalx/sstruct/persistence/mgodb"
 	"github.com/shaalx/sstruct/service/fetch"
+	// "strings"
 	// "github.com/shaalx/sstruct/service/log"
 	// "github.com/shaalx/sstruct/bean"
 	"github.com/shaalx/sstruct/service/search"
 	"github.com/shaalx/sstruct/utils"
 	"sort"
-	"time"
+	// "time"
 )
 
 type Topic struct {
@@ -134,8 +135,45 @@ func processSentence(topicsOrigin TopicSlice) string {
 	id := TopicMaps["HED"].Id
 	topics = append(topics, TopicMaps["HED"])
 	for _, v := range topicsOrigin {
-		if v.Parent == id {
+		// if v.Parent == id {
+		// 	topics = append(topics, v)
+		// }
+		// 句子核心句法成分
+		if topics.Contain(&v) {
+			continue
+		}
+		if v.isPicked(id, []string{"SBV", "VOB"}...) {
 			topics = append(topics, v)
+		}
+		// 其他关键字
+		if topics.Contain(&v) {
+			continue
+		}
+		if v.isPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
+			topics = append(topics, v)
+		}
+		// 提取定语：SBV，HED的定语ATT
+		// // ATT --> SBV
+		// if topicsOrigin[v.Parent].isPicked(-2, "SBV") && v.isPicked(-2, "ATT") {
+		// 	topics = append(topics, v)
+		// }
+		// ATT --> ATT --> ... --> ?
+		att := v
+		atts := make(TopicSlice, 0)
+		for {
+			if att.isPicked(-2, "ATT") {
+				atts = append(atts, att)
+			} else {
+				if att.isPicked(-2, []string{"HED", "SBV", "ADV"}...) {
+
+					topics = append(topics, atts...)
+				}
+				break
+			}
+			if -1 == att.Parent {
+				break
+			}
+			att = topicsOrigin[att.Parent]
 		}
 	}
 	sort.Sort(topics)
@@ -145,8 +183,25 @@ func processSentence(topicsOrigin TopicSlice) string {
 		result += it.Const
 		topicsStr += it.String()
 	}
-	// fmt.Println(result)
+	fmt.Printf("%s\n%s\n", topicsStrOrigin, topicsStr)
 	return result + "\n" + topicsStrOrigin + "\n" + topicsStr + "\n"
+}
+
+// 句法成分是否为指定条件
+func (t Topic) isPicked(parent int64, relate ...string) bool {
+	if -2 == parent {
+		goto goodDaddy
+	}
+	if parent != t.Parent {
+		return false
+	}
+goodDaddy:
+	for _, it := range relate {
+		if t.Relate == it {
+			return true
+		}
+	}
+	return false
 }
 
 func (self *TopicAction) Search() {
@@ -154,15 +209,17 @@ func (self *TopicAction) Search() {
 	stringSaveChan = make(chan string, 5)
 	go utils.SaveString(stringSaveChan)
 	for {
-		// sentence := "佳洁士双效炫白牙膏被处罚603万元。这也是我国目前针对虚假违法广告的最大罚单。"
+		// sentence := "北海已成为中国对外开放中升起的一颗明星。"
 		sentence := <-stringChan
 		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
 		ipaddr := "202.120.87.152"
 		bs := fetch.Do1(url, ipaddr)
 		self.persis.Do(bs)
 		self.analyse(sentence, bs)
-		time.Sleep(time.Second * 1)
+		// break
 	}
+	a := make(chan bool, 1)
+	<-a
 }
 
 func (self *TopicAction) Close() {
@@ -182,4 +239,13 @@ func (c TopicSlice) Less(i, j int) bool {
 
 func (c TopicSlice) Swap(i, j int) {
 	c[i], c[j] = c[j], c[i]
+}
+
+func (t *TopicSlice) Contain(topic *Topic) bool {
+	for _, it := range *t {
+		if it.Id == topic.Id {
+			return true
+		}
+	}
+	return false
 }

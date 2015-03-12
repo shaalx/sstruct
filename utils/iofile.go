@@ -19,7 +19,7 @@ func deleteEnter(filename string) {
 	reader := bufio.NewReader(rfile)
 
 	// 写文件
-	wfile, err := os.OpenFile("w_"+filename, os.O_CREATE, os.ModeDevice)
+	wfile, err := os.OpenFile("w_"+filename, os.O_CREATE|os.O_WRONLY, os.ModeDevice)
 	defer wfile.Close()
 	if log.IsError("open file error", err) {
 		return
