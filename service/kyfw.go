@@ -26,7 +26,7 @@ func (self *KYFWAction) Persistence() {
 	url := "https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=2015-02-27&leftTicketDTO.from_station=SJP&leftTicketDTO.to_station=SHH&purpose_codes=0X00"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
-	self.persis.Do(bs)
+	self.persis.Do(bs, "")
 }
 
 func (self *KYFWAction) QueryOne() {
@@ -84,7 +84,7 @@ func (self *KYFWAction) Search() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	Searching(bs)
-	self.persis.Do(bs)
+	self.persis.Do(bs, "")
 }
 
 func KYFWShow(m map[string]interface{}) {

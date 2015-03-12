@@ -1,5 +1,5 @@
 package persistence
 
 type Persistence struct {
-	Do func([]byte) bool
+	Do func(bytes []byte, notice string) bool
 }

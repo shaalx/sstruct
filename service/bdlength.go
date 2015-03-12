@@ -26,7 +26,7 @@ func (self *BDLENAction) Persistence() {
 	url := "http://map.baidu.com/?newmap=1&reqflag=pcmap&biz=1&from=webmap&qt=nav&da_src=pcmappg.searchBox.button&c=1&sn=2$$$$$$%E5%8C%97%E4%BA%AC%E5%B8%82$$0$$$$&en=2$$$$$$%E7%9F%B3%E5%AE%B6%E5%BA%84%E5%B8%82$$0$$$$&sc=1&ec=1&rn=5&time_index=-1&day=-1&extinfo=63&tn=B_NORMAL_MAP&nn=0&ie=utf-8&l=7&b=(12184537.219999999,3297450.195;14087129.219999999,4903082.195)&t=1421214039805"
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
-	self.persis.Do(bs)
+	self.persis.Do(bs, "")
 }
 
 func (self *BDLENAction) QueryOne() {
@@ -68,7 +68,7 @@ func (self *BDLENAction) Search() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do1(url, ipaddr)
 	// Searching2(bs)
-	self.persis.Do(bs)
+	self.persis.Do(bs, "")
 }
 
 func KYFWShow2(m map[string]interface{}) {

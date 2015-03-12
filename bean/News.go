@@ -8,6 +8,7 @@ import (
 
 type News struct {
 	Content     interface{} `content`
+	Notice      string
 	UnixDate    int64
 	DisplayDate string
 }

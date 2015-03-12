@@ -30,8 +30,8 @@ func TopicAction() {
 	serv = &service.TopicAction{}
 	serv.Init()
 	// serv.Persistence()
-	serv.Search()
-	// serv.Analyse()
+	// serv.Search()
+	serv.Analyse()
 	time.Sleep(time.Second * 1)
 	serv.Close()
 }

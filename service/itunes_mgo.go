@@ -26,5 +26,5 @@ func (i *ItunesMgoAction) Persistence() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	fmt.Println(string(bs))
-	i.persis.Do(bs)
+	i.persis.Do(bs, "")
 }
