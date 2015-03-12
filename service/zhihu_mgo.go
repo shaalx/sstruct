@@ -26,5 +26,5 @@ func (z *ZhihuMgoAction) Persistence() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	fmt.Println(string(bs))
-	z.persis.Do(bs)
+	z.persis.Do(bs, "")
 }

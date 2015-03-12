@@ -21,9 +21,11 @@ func Do1(url, ipaddr string) []byte {
 	request.Header("Connection", "keep-alive")
 	request.Header("Proxy-Connection", "keep-alive")
 	request.Header("Design-Agent", "AppStore/2.0 iOS/7.1.1 model/iPod5,1 build/11D201 (4; dt:81)")
-	cookiestr := `JSESSIONID=4C992C1B138715E5EB262A0FE61CACC2;BIGipServerotn=1357906442.24610.0000;_jc_save_showZtkyts=true;current_captcha_type=C;_jc_save_detail=true;_jc_save_fromStation=%u77F3%u5BB6%u5E84%2CSJP;_jc_save_toStation=%u4E0A%u6D77%2CSHH;_jc_save_fromDate=2015-02-27;_jc_save_toDate=2014-12-22;_jc_save_wfdc_flag=dc`
-	cookie := http.Cookie{Name: "Cookie", Value: cookiestr}
-	request.SetCookie(&cookie)
+	// cookiestr := `JSESSIONID=4C992C1B138715E5EB262A0FE61CACC2;BIGipServerotn=1357906442.24610.0000;_jc_save_showZtkyts=true;current_captcha_type=C;_jc_save_detail=true;_jc_save_fromStation=%u77F3%u5BB6%u5E84%2CSJP;_jc_save_toStation=%u4E0A%u6D77%2CSHH;_jc_save_fromDate=2015-02-27;_jc_save_toDate=2014-12-22;_jc_save_wfdc_flag=dc`
+	// cookie := http.Cookie{Name: "Cookie", Value: cookiestr}
+	// request.SetCookie(&cookie)
+	request.Param("api_key", "d2V8R7f5mVjS2jNfnv1p4Fvd2lYZwfFl7wtCLWCJ")
+	request.Param("pattern", "all")
 	bs, err := request.Bytes()
 	if log.IsError("{fetch json data error}", err) {
 		return nil

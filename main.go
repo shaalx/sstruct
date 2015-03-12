@@ -6,5 +6,6 @@ import (
 )
 
 func main() {
-	action.KyfwAction()
+	// action.KyfwAction()
+	action.TopicAction()
 }

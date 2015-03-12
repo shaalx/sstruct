@@ -29,7 +29,7 @@ func (self *ToutiaoAction) Persistence() {
 	ipaddr := "202.120.87.152"
 	bs := fetch.Do(url, ipaddr)
 	// fmt.Println(string(bs))
-	self.persis.Do(bs)
+	self.persis.Do(bs, "")
 }
 
 func (self *ToutiaoAction) QueryOne() {

@@ -22,3 +22,21 @@ func SearchArray(data []byte, key string, path ...string) []interface{} {
 	}
 	return ary
 }
+
+/*
+* 获取路径下的数组，只有数组
+ */
+func SearchArrays(data []byte, path ...string) []interface{} {
+	if data == nil {
+		return nil
+	}
+	js, err := sjson.NewJson(data)
+	if checkError(err) {
+		return nil
+	}
+	ary, err := js.GetPath(path...).Array()
+	if checkError(err) {
+		return nil
+	}
+	return ary
+}

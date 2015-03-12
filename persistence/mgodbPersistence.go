@@ -17,9 +17,10 @@ func (m *MgoPersistence) init() {
 	log.LOGS.Notice("mgoPersistence init...")
 }
 
-func (m MgoPersistence) Do(bs []byte) bool {
+func (m MgoPersistence) Do(bs []byte, notice string) bool {
 	news := bean.News{}
 	news.Init()
+	news.Notice = notice
 	err := json.Unmarshal(bs, &news.Content)
 	if log.IsError("{mongodb data unmarshal news}", err) {
 		return false

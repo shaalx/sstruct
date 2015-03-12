@@ -31,5 +31,5 @@ func (k *KuwoMgoAction) Persistence() {
 	stmp = strings.Replace(stmp, "'total':'49522','pn':'0','rn':'20','category':'0','new_album':'1','new_album_cnt':'107','artistlist':", "", -1)
 	fmt.Println(string(stmp))
 
-	k.persis.Do([]byte(stmp))
+	k.persis.Do([]byte(stmp), "")
 }
