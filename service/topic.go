@@ -189,18 +189,18 @@ func (t *Topic) WeightUp(w float32) {
 }
 
 func (self *TopicAction) Search() {
-	// stringChan := utils.ReadAll("file.txt")
+	stringChan := utils.ReadAll("file.txt")
 	stringSaveChan = make(chan string, 5)
 	go utils.SaveString(stringSaveChan)
 	for {
-		sentence := "政协委员朱维群、黄洁夫、胡晓义、李彦宏、俞敏洪谈促进民生改善与社会和谐稳定。"
-		// sentence := <-stringChan
+		// sentence := "政协委员朱维群、黄洁夫、胡晓义、李彦宏、俞敏洪谈促进民生改善与社会和谐稳定。"
+		sentence := <-stringChan
 		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
 		ipaddr := "202.120.87.152"
 		bs := fetch.Do1(url, ipaddr)
 		self.persis.Do(bs, sentence)
 		self.analyse(sentence, bs)
-		break
+		// break
 	}
 	a := make(chan bool, 1)
 	<-a
