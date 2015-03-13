@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// 删除文件中的enter键 ：[10 13]，最后将文件内容保存至w_filename.txt中
 func deleteEnter(filename string) {
 	// 读文件
 	rfile, err := os.Open(filename)
@@ -42,6 +43,7 @@ func deleteEnter(filename string) {
 	}
 }
 
+// 读取文件 1，删除enter键； 2，读取处理结果到chan中，返回chan
 func ReadAll(filename string) chan string {
 	deleteEnter(filename)
 	stringChan := make(chan string, 10)
@@ -68,6 +70,7 @@ func ReadAll(filename string) chan string {
 	return stringChan
 }
 
+// 保存处理结果，结果从chan中读取
 func SaveString(stringChan chan string) {
 	file, err := os.OpenFile("result.txt", os.O_CREATE, os.ModeDevice)
 	if nil != err {
