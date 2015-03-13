@@ -45,14 +45,14 @@ func (self *TopicAction) QueryOne() {
 }
 
 func (self *TopicAction) Analyse() {
-	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
-
+	newses := self.persis.QuerySortedLimitNNewses(nil, 2, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
 	go utils.SaveString(stringSaveChan)
-
-	bsfirst := utils.I2Bytes(one.Content)
-	self.analyse(one.Notice, bsfirst)
+	for _, it := range newses {
+		bsfirst := utils.I2Bytes(it.Content)
+		self.analyse(it.Notice, bsfirst)
+	}
 	FirstStep()
 }
 
@@ -103,6 +103,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 			topic := Topic{id, cont, relate, parent, 0.0, 0}
 			topics[i] = &topic
 		}
+		fmt.Println(sentence)
 		stringSaveChan <- sentence
 		stringSaveChan <- processSentence(topics)
 	}
@@ -380,8 +381,9 @@ func (c CellSlice) OutFreqAndWeight() {
 		if threshold >= v.Freq {
 			continue
 		}
-		strStat := fmt.Sprintf("%v\t%v\t%v\t%v\n", v.Freq, topicmap2[v.Word].Weight, topicmap2[v.Word].Const, topicmap2[v.Word].Relate)
+		strStat := fmt.Sprintf("%v\t%v\t%v\t%v", v.Freq, topicmap2[v.Word].Weight, topicmap2[v.Word].Const, topicmap2[v.Word].Relate)
 		stringSaveChan <- strStat
+		fmt.Println(strStat)
 	}
 	fmt.Println("the end.")
 }

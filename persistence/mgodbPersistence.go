@@ -39,3 +39,7 @@ func (m *MgoPersistence) QueryNewsOne(selector bson.M) *bean.News {
 func (m *MgoPersistence) QuerySortedNewsOne(selector bson.M, srotor ...string) *bean.News {
 	return m.MgoDB.SelectSortNews(selector, srotor...)
 }
+
+func (m *MgoPersistence) QuerySortedLimitNNewses(selector bson.M, n int, srotor ...string) []bean.News {
+	return m.MgoDB.SelectSortLimitNNewses(selector, n, srotor...)
+}
