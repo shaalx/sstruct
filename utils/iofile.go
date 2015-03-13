@@ -63,6 +63,7 @@ func ReadAll(filename string) chan string {
 				log.LOGS.Debug("%s%s\n", it, "。")
 			}
 		}
+		stringChan <- "end"
 	}(filestrings)
 	return stringChan
 }
@@ -74,9 +75,7 @@ func SaveString(stringChan chan string) {
 	}
 	for {
 		str := <-stringChan
-		file.WriteString(str + "\t")
-		str2 := <-stringChan
-		file.WriteString(str2 + "\n")
+		file.WriteString(str + "\n")
 	}
 	defer file.Close()
 }

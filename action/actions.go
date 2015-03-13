@@ -27,7 +27,7 @@ func KyfwAction() {
 	serv.Search()
 	time.Sleep(time.Second * 1)
 	// }
-	serv.Close()
+	defer serv.Close()
 }
 
 func TopicAction() {
@@ -38,5 +38,5 @@ func TopicAction() {
 	serv.Search()
 	// serv.Analyse()
 	time.Sleep(time.Second * 1)
-	serv.Close()
+	defer serv.Close()
 }
