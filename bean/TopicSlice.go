@@ -31,7 +31,14 @@ func (t *TopicSlice) EjRepeat() *TopicSlice {
 	length := len(*t)
 	ejMap := make(map[int64]*Topic, length)
 	for _, it := range *t {
-		ejMap[it.Id] = it
+		m, ok := ejMap[it.Id]
+		if ok {
+			if it.Weight > m.Weight {
+				ejMap[it.Id] = it
+			}
+		} else {
+			ejMap[it.Id] = it
+		}
 	}
 	i := 0
 	result := make(TopicSlice, len(ejMap))

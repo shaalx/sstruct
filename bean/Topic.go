@@ -1,6 +1,9 @@
 package bean
 
 import "fmt"
+import (
+	"sort"
+)
 
 type Topic struct {
 	Id     int64
@@ -40,4 +43,64 @@ func (t Topic) String() string {
 	// tStr := fmt.Sprintf("Id %d\t ,Const %s\t ,Relate %s ,Parent %d\n", t.Id, t.Const, t.Relate, t.Parent)
 	tStr := fmt.Sprintf("%d\t %s\t %d\t %s\t%.3f\n", t.Id, t.Relate, t.Parent, t.Const, t.Weight)
 	return tStr
+}
+
+type TopicMatix []TopicSlice
+
+func (t *TopicMatix) Print(cells CellSlice) {
+	constMap := make(map[string]int32, 1)
+	for _, v := range cells {
+		constMap[v.Word] = v.Freq
+		// fmt.Println(v.Word, v.Freq)
+	}
+	constStr := ""
+	var score float32
+	str1 := ""
+	sentences := make(Sens, len(*t))
+	for i, it := range *t {
+		// fmt.Println(i)
+		score = 0.0
+		str1 = ""
+		var sen Sen
+		for _, tpoic := range it {
+			constStr = tpoic.Const
+			fr, ok := constMap[constStr]
+			if ok {
+				score += float32(fr) * tpoic.Weight
+				// fmt.Print(score)
+				// fmt.Print("-", fr, "=", constStr)
+			}
+			str1 += tpoic.Const
+			sen = Sen{Str: str1, Sum: score, Avg: score / float32(len(str1))}
+		}
+		sentences[i] = &sen
+	}
+	sort.Sort(sentences)
+	for _, it := range sentences {
+		fmt.Println(it)
+	}
+}
+
+type Sen struct {
+	Str string
+	Sum float32
+	Avg float32
+}
+
+func (s *Sen) String() string {
+	return fmt.Sprintf("%.3f\t %.3f\t %s\t", s.Avg, s.Sum, s.Str)
+}
+
+type Sens []*Sen
+
+func (c Sens) Len() int {
+	return len(c)
+}
+
+func (c Sens) Less(i, j int) bool {
+	return c[i].Avg > c[j].Avg
+}
+
+func (c Sens) Swap(i, j int) {
+	c[i], c[j] = c[j], c[i]
 }

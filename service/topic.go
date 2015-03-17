@@ -22,6 +22,7 @@ type TopicAction struct {
 var (
 	TopicServer    = []string{"", "sstruct", "topic"}
 	stringSaveChan chan string
+	TopicMatrix    TopicMatix
 )
 
 func (self *TopicAction) Init() {
@@ -43,9 +44,10 @@ func (self *TopicAction) QueryOne() {
 }
 
 func (self *TopicAction) Analyse() {
-	newses := self.persis.QuerySortedLimitNNewses(nil, 2, "-unixdate")
+	newses := self.persis.QuerySortedLimitNNewses(nil, 16, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
+	TopicMatrix = make(TopicMatix, 0)
 	go utils.SaveString(stringSaveChan, "result.txt")
 	for _, it := range newses {
 		bsfirst := utils.I2Bytes(it.Content)
@@ -58,6 +60,8 @@ func (self *TopicAction) Search() {
 	stringChan := utils.ReadAll("file.txt")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
+	TopicMatrix = make(TopicMatix, 0)
+	i := 1
 	go utils.SaveString(stringSaveChan, "result.txt")
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
@@ -71,6 +75,8 @@ func (self *TopicAction) Search() {
 		self.persis.Do(bs, sentence)
 		self.analyse(sentence, bs)
 		// break
+		fmt.Println(i)
+		i++
 	}
 	FirstStep()
 	a := make(chan bool, 1)
@@ -120,6 +126,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 	}
 	topics := make(TopicSlice, 0)
 	id := hedTopic.Id
+	hedTopic.WeightUp(1.0)
 	topics = append(topics, hedTopic)
 	for _, v := range topicsOrigin {
 		// 句子核心句法成分
@@ -184,6 +191,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 	}
 	topics = *topics.EjRepeat()
 	TopicSet = append(TopicSet, topics...)
+	TopicMatrix = append(TopicMatrix, topics)
 	sort.Sort(topics)
 	result := ""
 	topicsStr := ""
@@ -207,6 +215,7 @@ func FirstStep() {
 	sort.Sort(sort.Reverse(cells))
 	// cells.String()
 	cells.OutFreqAndWeight()
+	TopicMatrix.Print(cells)
 }
 
 func Stating() Stats {
