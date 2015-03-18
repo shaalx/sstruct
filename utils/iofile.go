@@ -56,7 +56,7 @@ func ReadAll(filename string) chan string {
 	filestrings := strings.Split(filestring, "。")
 	go func([]string) {
 		for _, substring := range filestrings {
-			substrings := strings.Split(substring, "。")
+			substrings := strings.Split(substring, "，")
 			for _, it := range substrings {
 				if 0 >= len(it) {
 					continue
