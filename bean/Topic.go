@@ -57,6 +57,10 @@ func (t *TopicMatix) Print(cells CellSlice) {
 	var score float32
 	str1 := ""
 	sentences := make(Sens, len(*t))
+	sum_length := 0
+	for _, it := range *t {
+		sum_length += len(it)
+	}
 	for i, it := range *t {
 		// fmt.Println(i)
 		score = 0.0
@@ -66,12 +70,12 @@ func (t *TopicMatix) Print(cells CellSlice) {
 			constStr = tpoic.Const
 			fr, ok := constMap[constStr]
 			if ok {
-				score += float32(fr)*0.2 + tpoic.Weight
+				score += float32(fr)/float32(sum_length)*0.3 + tpoic.Weight/float32(len(it))*0.7
 				// fmt.Print(score)
 				// fmt.Print("-", fr, "=", constStr)
 			}
 			str1 += tpoic.Const
-			sen = Sen{Str: str1, Sum: score, Avg: score / float32(len(it))}
+			sen = Sen{Str: str1, Sum: score, Avg: score}
 		}
 		sentences[i] = &sen
 	}

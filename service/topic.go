@@ -44,7 +44,7 @@ func (self *TopicAction) QueryOne() {
 }
 
 func (self *TopicAction) Analyse() {
-	newses := self.persis.QuerySortedLimitNNewses(nil, 138, "-unixdate")
+	newses := self.persis.QuerySortedLimitNNewses(nil, 9, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
 	TopicMatrix = make(TopicMatix, 0)
@@ -146,7 +146,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			topics = append(topics, v)
 		}
 		// 专有名词做定语
-		if v.IsPicked(-2, "ATT") && 3 <= len(v.Const) {
+		if v.IsPicked(-2, "ATT") && 6 <= len(v.Const) {
 			v.WeightUp(0.5)
 			topics = append(topics, v)
 		}
