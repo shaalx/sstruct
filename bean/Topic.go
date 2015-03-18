@@ -49,8 +49,12 @@ type TopicMatix []TopicSlice
 
 func (t *TopicMatix) Print(cells CellSlice) {
 	constMap := make(map[string]int32, 1)
+	var maxFr int32
 	for _, v := range cells {
 		constMap[v.Word] = v.Freq
+		if maxFr < v.Freq {
+			maxFr = v.Freq
+		}
 		// fmt.Println(v.Word, v.Freq)
 	}
 	constStr := ""
@@ -70,7 +74,7 @@ func (t *TopicMatix) Print(cells CellSlice) {
 			constStr = tpoic.Const
 			fr, ok := constMap[constStr]
 			if ok {
-				score += float32(fr)/float32(sum_length)*0.3 + tpoic.Weight/float32(len(it))*0.7
+				score += float32(fr)/float32(maxFr)*0.1 + tpoic.Weight/float32(len(it))*0.9
 				// fmt.Print(score)
 				// fmt.Print("-", fr, "=", constStr)
 			}
