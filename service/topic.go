@@ -125,73 +125,88 @@ func processSentence(topicsOrigin TopicSlice) string {
 		topicsStrOrigin += it.String()
 	}
 	topics := make(TopicSlice, 0)
-	id := hedTopic.Id
-	hedTopic.WeightUp(1.0)
-	topics = append(topics, hedTopic)
+	hedTopic.WeightUp(0.3)
+	// topics = append(topics, hedTopic)
 	for _, v := range topicsOrigin {
-		// 句子核心句法成分
-		if topics.Contain(v) {
-			continue
+		// if v.IsPicked(id, []string{"SBV", "VOB"}...) {
+		// if v.IsPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
+		// // ATT --> ATT --> ... --> ?
+		// 		if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			topics = make(TopicSlice, 0)
 		}
-		if v.IsPicked(id, []string{"SBV", "VOB"}...) {
-			v.WeightUp(0.4)
-			topics = append(topics, v)
-		}
-		// 其他关键字
-		if topics.Contain(v) {
-			continue
-		}
-		if v.IsPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
-			v.WeightUp(0.2)
-			topics = append(topics, v)
-		}
-		// 专有名词做定语
-		if v.IsPicked(-2, "ATT") && 6 <= len(v.Const) {
-			v.WeightUp(0.5)
-			topics = append(topics, v)
-		}
-		// 提取定语：SBV，HED的定语ATT
-		// // ATT --> SBV
-		// if topicsOrigin[v.Parent].IsPicked(-2, "SBV") && v.IsPicked(-2, "ATT") {
-		// 	topics = append(topics, v)
+		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "SBV"}...); ok {
+		// 	topics = append(topics, resultTopics...)
+		// 	for _, it := range topics {
+		// 		it.WeightUp(0.1)
+		// 	}
+		// 	TopicMatrix = append(TopicMatrix, topics)
+		// TopicSet = append(TopicSet, topics...)
+		// topics = make(TopicSlice,0)
 		// }
-		// ATT --> ATT --> ... --> ?
-		att := v
-		atts := make(TopicSlice, 0)
-		for {
-			if att.IsPicked(-2, "ATT") {
-				att.WeightUp(0.2)
-				atts = append(atts, att)
-			} else {
-				if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
-					// if 1 >= len(atts) {
-					// 	break
-					// }
-					att.WeightUp(0.1 * (float32)(len(atts)))
-					atts = append(atts, att)
-					for _, it := range atts {
-						it.WeightUp(0.1)
-					}
-					topics = append(topics, atts...)
-				} else {
-					if 1 < len(atts) {
-						for _, it := range atts {
-							it.WeightUp(0.1)
-						}
-						topics = append(topics, atts...)
-					}
-				}
-				break
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "VOB"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
 			}
-			if -1 == att.Parent {
-				break
-			}
-			att = topicsOrigin[att.Parent]
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			topics = make(TopicSlice, 0)
 		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "VOB"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			topics = make(TopicSlice, 0)
+		}
+		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "VOB"}...); ok {
+		// 	topics = append(topics, resultTopics...)
+		// 	for _, it := range topics {
+		// 		it.WeightUp(0.1)
+		// 	}
+		// 	TopicMatrix = append(TopicMatrix, topics)
+		// TopicSet = append(TopicSet, topics...)
+		// topics = make(TopicSlice,0)
+		// }
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			topics = make(TopicSlice, 0)
+		}
+		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ADV", "HED"}...); ok {
+		// 	topics = append(topics, resultTopics...)
+		// 	for _, it := range topics {
+		// 		it.WeightUp(0.1)
+		// 	}
+		// 	TopicMatrix = append(TopicMatrix, topics)
+		// 	TopicSet = append(TopicSet, topics...)
+		// 	topics = make(TopicSlice, 0)
+		// }
+		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "POB"}...); ok {
+		// 	topics = append(topics, resultTopics...)
+		// 	for _, it := range topics {
+		// 		it.WeightUp(0.1)
+		// 	}
+		// 	TopicMatrix = append(TopicMatrix, topics)
+		// TopicSet = append(TopicSet, topics...)
+		// }
 	}
 	topics = *topics.EjRepeat()
-	TopicSet = append(TopicSet, topics...)
-	TopicMatrix = append(TopicMatrix, topics)
+	TopicSet = append(TopicSet, topicsOrigin...)
+	TopicMatrix = append(TopicMatrix, topicsOrigin)
 	sort.Sort(topics)
 	result := ""
 	topicsStr := ""
