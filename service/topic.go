@@ -44,7 +44,7 @@ func (self *TopicAction) QueryOne() {
 }
 
 func (self *TopicAction) Analyse() {
-	newses := self.persis.QuerySortedLimitNNewses(nil, 45, "-unixdate")
+	newses := self.persis.QuerySortedLimitNNewses(nil, 16, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
 	TopicMatrix = make(TopicMatix, 0)
