@@ -34,6 +34,24 @@ goodDaddy:
 	return false
 }
 
+// ATT,ATT,SBV   (ATT)   t.IsCond(topics,[]string{"ATT","ATT","SBV"}...)
+func (t Topic) IsCond(topics TopicSlice, relate ...string) (bool, TopicSlice) {
+	id := t.Id
+	resultTopics := make(TopicSlice, 0)
+	for _, it := range relate {
+		if id == -1 {
+			return true, resultTopics
+		}
+		tNow := topics[id]
+		if tNow.Relate != it {
+			return false, nil
+		}
+		id = tNow.Parent
+		resultTopics = append(resultTopics, tNow)
+	}
+	return true, resultTopics
+}
+
 // 增加权重
 func (t *Topic) WeightUp(w float32) {
 	t.Weight += w
