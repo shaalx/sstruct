@@ -160,17 +160,17 @@ func processSentence(topicsOrigin TopicSlice) string {
 		atts := make(TopicSlice, 0)
 		for {
 			if att.IsPicked(-2, "ATT") {
-				atts = append(atts, att)
 				att.WeightUp(0.2)
+				atts = append(atts, att)
 			} else {
 				if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
-					if 1 >= len(atts) {
-						break
-					}
+					// if 1 >= len(atts) {
+					// 	break
+					// }
 					att.WeightUp(0.1 * (float32)(len(atts)))
 					atts = append(atts, att)
 					for _, it := range atts {
-						it.WeightUp(att.Weight)
+						it.WeightUp(0.1)
 					}
 					topics = append(topics, atts...)
 				} else {

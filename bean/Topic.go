@@ -66,12 +66,12 @@ func (t *TopicMatix) Print(cells CellSlice) {
 			constStr = tpoic.Const
 			fr, ok := constMap[constStr]
 			if ok {
-				score += float32(fr) * tpoic.Weight
+				score += float32(fr)*0.2 + tpoic.Weight
 				// fmt.Print(score)
 				// fmt.Print("-", fr, "=", constStr)
 			}
 			str1 += tpoic.Const
-			sen = Sen{Str: str1, Sum: score, Avg: score / float32(len(str1))}
+			sen = Sen{Str: str1, Sum: score, Avg: score / float32(len(it))}
 		}
 		sentences[i] = &sen
 	}
