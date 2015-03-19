@@ -1,5 +1,9 @@
 package bean
 
+// import (
+// 	"fmt"
+// )
+
 // 排序
 type TopicSlice []*Topic
 
@@ -24,6 +28,14 @@ func (t *TopicSlice) Contain(topic *Topic) bool {
 		}
 	}
 	return false
+}
+
+func (t *TopicSlice) String() string {
+	str := ""
+	for _, it := range *t {
+		str += it.String()
+	}
+	return str
 }
 
 // 排除重复值

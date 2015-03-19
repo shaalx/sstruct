@@ -16,7 +16,7 @@ type Cell struct {
 type CellSlice []*Cell
 
 var sentence string
-var threshold = int32(3)
+var threshold = int32(0)
 var filter []string = []string{
 	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我们", "我", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 }
