@@ -1,7 +1,8 @@
 package bean
 
-import "fmt"
 import (
+	"fmt"
+	"math"
 	"sort"
 )
 
@@ -92,10 +93,8 @@ func (t *TopicMatix) Print(cells CellSlice) {
 			constStr = tpoic.Const
 			fr, ok := constMap[constStr]
 			if ok {
-				score += (float32(fr) - float32(fr)/float32(sum_length)) * (float32(fr) - float32(fr)/float32(sum_length)) / float32(fr) / float32(sum_length)
-				// score += float32(fr)/float32(maxFr)*0.7 + tpoic.Weight/float32(len(it))*0.3
-				// fmt.Print(score)
-				// fmt.Print("-", fr, "=", constStr)
+				score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
+				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			str1 += tpoic.Const
 			sen = Sen{Str: str1, Sum: score, Avg: score}
