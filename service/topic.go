@@ -147,7 +147,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// if v.IsPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
 		// // ATT --> ATT --> ... --> ?
 		// 		if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
-		if v.IsPicked(-2, []string{"SBV", "ATT", "VOB", "HED"}...) {
+		if v.IsPicked(-2, []string{"SBV", "ATT", "VOB", "HED", "POB", "ADV", "COO", "RAD", "LAD", "FOB"}...) {
 			inTopics = append(inTopics, v)
 			TopicMatrix = append(TopicMatrix, TopicSlice{v})
 		}

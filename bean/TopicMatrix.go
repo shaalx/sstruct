@@ -11,11 +11,11 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我们", "我", "这个", "这么", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我", "这个", "这么", "将", "一个", "家", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
 }
 
 func IsFilterContains(str string) bool {
-	filters := strings.Join(filter, "")
+	filters := strings.Join(filter, ",")
 	return strings.Contains(filters, str)
 }
 
@@ -50,15 +50,24 @@ func (t *TopicMatix) Statistics() {
 	var score float64
 	// 组合关键字
 	sentences := make(Sens, len(*t))
+	// 后续处理
+	var minFreq int32
 	for i, key_slice := range *t {
 		score = 0.0
+		minFreq = 10000
 		for _, key_word := range key_slice {
 			fr, ok := key_freq[key_word.Const]
+			if minFreq > fr {
+				minFreq = fr
+			}
 			if ok {
 				score += math.Pow(float64(fr)-nq, 2.0) / nq
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
+		}
+		if minFreq < 2 {
+			score *= 0.5
 		}
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
@@ -75,8 +84,9 @@ func (t *TopicMatix) Statistics() {
 	for _, it := range sentences {
 		statStr := it.String()
 		stringSaveChan <- statStr
-		fmt.Println(statStr)
+		// fmt.Println(statStr)
 	}
+	fmt.Print(sentences.Top(20))
 }
 
 type Sen struct {
@@ -86,7 +96,8 @@ type Sen struct {
 }
 
 func (s *Sen) String() string {
-	return fmt.Sprintf("%.3f\t %.3f\t %s\t", s.Avg, s.Sum, s.Str)
+	// return fmt.Sprintf("%.3f\t %.3f\t %s\t", s.Avg, s.Sum, s.Str)
+	return fmt.Sprintf("%.2f\t %s\t", s.Avg, s.Str)
 }
 
 type Sens []*Sen
@@ -101,6 +112,17 @@ func (c Sens) Less(i, j int) bool {
 
 func (c Sens) Swap(i, j int) {
 	c[i], c[j] = c[j], c[i]
+}
+
+func (s Sens) Top(n int) string {
+	resStr := ""
+	for i, it := range s {
+		if i >= n {
+			return resStr
+		}
+		resStr += fmt.Sprintf("%d\t %s\n", i+1, it)
+	}
+	return resStr
 }
 
 // 排除重复值

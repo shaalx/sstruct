@@ -26,13 +26,3 @@ func KyfwAction() {
 	}
 	defer serv.Close()
 }
-
-func TopicAction() {
-	var serv service.Service
-	serv = &service.TopicAction{}
-	serv.Init()
-	// serv.Persistence()
-	// serv.Search()
-	serv.Analyse(22)
-	defer serv.Close()
-}
