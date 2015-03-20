@@ -44,7 +44,7 @@ func (self *TopicAction) QueryOne() {
 }
 
 func (self *TopicAction) Analyse() {
-	newses := self.persis.QuerySortedLimitNNewses(nil, 17, "-unixdate")
+	newses := self.persis.QuerySortedLimitNNewses(nil, 22, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicSet = make(TopicSlice, 0)
 	TopicMatrix = make(TopicMatix, 0)
@@ -135,23 +135,23 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// if v.IsPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
 		// // ATT --> ATT --> ... --> ?
 		// 		if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
-		// if v.IsPicked(-2, []string{"SBV", "ATT"}...) {
-		// 	inTopics = append(inTopics, v)
-		// 	TopicMatrix = append(TopicMatrix, TopicSlice{v})
-		// 	TopicSet = append(TopicSet, v)
-		// }
-		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "SBV"}...); ok {
-		// 	topics = append(topics, resultTopics...)
-		// 	for _, it := range topics {
-		// 		it.WeightUp(0.2)
-		// 	}
-		// 	sort.Sort(topics)
-		// 	inTopics = append(inTopics, topics...)
-		// 	TopicMatrix = append(TopicMatrix, topics)
-		// 	TopicSet = append(TopicSet, topics...)
-		// 	fmt.Println(topics.String())
-		// 	topics = make(TopicSlice, 0)
-		// }
+		if v.IsPicked(-2, []string{"SBV", "ATT", "VOB", "HED"}...) {
+			inTopics = append(inTopics, v)
+			TopicMatrix = append(TopicMatrix, TopicSlice{v})
+			TopicSet = append(TopicSet, v)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "SBV"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.2)
+			}
+			sort.Sort(topics)
+			inTopics = append(inTopics, topics...)
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -176,6 +176,18 @@ func processSentence(topicsOrigin TopicSlice) string {
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
+		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"VOB", "HED"}...); ok {
+		// 	topics = append(topics, resultTopics...)
+		// 	for _, it := range topics {
+		// 		it.WeightUp(0.2)
+		// 	}
+		// 	sort.Sort(topics)
+		// 	inTopics = append(inTopics, topics...)
+		// 	TopicMatrix = append(TopicMatrix, topics)
+		// 	TopicSet = append(TopicSet, topics...)
+		// 	fmt.Println(topics.String())
+		// 	topics = make(TopicSlice, 0)
+		// }
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "VOB"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -212,6 +224,18 @@ func processSentence(topicsOrigin TopicSlice) string {
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"VOB", "COO"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			inTopics = append(inTopics, topics...)
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -236,18 +260,18 @@ func processSentence(topicsOrigin TopicSlice) string {
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
-		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "POB"}...); ok {
-		// 	topics = append(topics, resultTopics...)
-		// 	for _, it := range topics {
-		// 		it.WeightUp(0.1)
-		// 	}
-		// 	sort.Sort(topics)
-		// 	inTopics = append(inTopics, topics...)
-		// 	TopicMatrix = append(TopicMatrix, topics)
-		// 	TopicSet = append(TopicSet, topics...)
-		// 	fmt.Println(topics.String())
-		// 	topics = make(TopicSlice, 0)
-		// }
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "POB"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			inTopics = append(inTopics, topics...)
+			TopicMatrix = append(TopicMatrix, topics)
+			TopicSet = append(TopicSet, topics...)
+			fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "POB"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -261,10 +285,11 @@ func processSentence(topicsOrigin TopicSlice) string {
 			topics = make(TopicSlice, 0)
 		}
 	}
-	inTopics = *inTopics.EjRepeat()
-	sort.Sort(inTopics)
-	TopicSet = append(TopicSet, inTopics...)
+	// inTopics = *inTopics.EjRepeat()
+	// sort.Sort(inTopics)
+	// TopicSet = append(TopicSet, inTopics...)
 	// TopicMatrix = append(TopicMatrix, inTopics)
+
 	// sort.Sort(topics)
 	// result := ""
 	// topicsStr := ""

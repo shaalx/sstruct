@@ -84,6 +84,10 @@ func (t *TopicMatix) Print(cells CellSlice) {
 	for _, it := range *t {
 		sum_length += len(it)
 	}
+	var k int32
+	for _, f := range constMap {
+		k += f
+	}
 	for i, it := range *t {
 		// fmt.Println(i)
 		score = 0.0
@@ -93,7 +97,8 @@ func (t *TopicMatix) Print(cells CellSlice) {
 			constStr = tpoic.Const
 			fr, ok := constMap[constStr]
 			if ok {
-				score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
+				score += float32(float64(math.Pow(float64(fr-k/int32(len(constMap))), 2.0)) / float64(k/int32(len(constMap))))
+				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			str1 += tpoic.Const
@@ -101,6 +106,11 @@ func (t *TopicMatix) Print(cells CellSlice) {
 		}
 		sentences[i] = &sen
 	}
+	// // 统计topicSlice 结果频数
+	// senConstMap := make(map[string]int, 1)
+	// for _, it := range sentences {
+	// 	senConstMap[it.Str] += 1
+	// }
 	sort.Sort(sentences)
 	for _, it := range sentences {
 		// if it.Avg < 0.01 {

@@ -22,10 +22,10 @@ func KyfwAction() {
 	// serv.Analyse()
 	// for {
 	// 	serv.Search()
-	time.Sleep(time.Second * 1)
+	// time.Sleep(time.Second * 1)
 	// }
 	serv.Search()
-	time.Sleep(time.Second * 1)
+	// time.Sleep(time.Second * 1)
 	// }
 	defer serv.Close()
 }
