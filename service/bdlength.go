@@ -36,7 +36,7 @@ func (self *BDLENAction) QueryOne() {
 	fmt.Println(string(bs))
 }
 
-func (self *BDLENAction) Analyse() {
+func (self *BDLENAction) Analyse(n int) {
 	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
 	buf := utils.I2Bytes(one.Content)
 	fmt.Println(one.DisplayDate)

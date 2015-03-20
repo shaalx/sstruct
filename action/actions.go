@@ -19,14 +19,11 @@ func KyfwAction() {
 	serv = &service.BDLENAction{}
 	serv.Init()
 	serv.Persistence()
-	// serv.Analyse()
-	// for {
-	// 	serv.Search()
-	// time.Sleep(time.Second * 1)
-	// }
-	serv.Search()
-	// time.Sleep(time.Second * 1)
-	// }
+	serv.Analyse(0)
+	for {
+		serv.Search()
+		time.Sleep(time.Second * 1)
+	}
 	defer serv.Close()
 }
 
@@ -36,7 +33,6 @@ func TopicAction() {
 	serv.Init()
 	// serv.Persistence()
 	// serv.Search()
-	serv.Analyse()
-	time.Sleep(time.Second * 1)
+	serv.Analyse(22)
 	defer serv.Close()
 }

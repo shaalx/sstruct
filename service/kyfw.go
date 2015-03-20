@@ -36,7 +36,7 @@ func (self *KYFWAction) QueryOne() {
 	fmt.Println(string(bs))
 }
 
-func (self *KYFWAction) Analyse() {
+func (self *KYFWAction) Analyse(n int) {
 	one := self.persis.QuerySortedNewsOne(nil, "-unixdate")
 	buf := utils.I2Bytes(one.Content)
 	fmt.Println(one.DisplayDate)

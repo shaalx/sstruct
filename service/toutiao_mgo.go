@@ -39,7 +39,7 @@ func (self *ToutiaoAction) QueryOne() {
 	fmt.Println(string(bs))
 }
 
-func (self *ToutiaoAction) Analyse() {
+func (self *ToutiaoAction) Analyse(n int) {
 	one := self.persis.QueryNewsOne(nil)
 	buf := utils.I2Bytes(one.Content)
 	// key := "display_info"

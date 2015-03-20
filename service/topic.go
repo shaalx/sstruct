@@ -30,10 +30,22 @@ func (self *TopicAction) Init() {
 }
 
 func (self *TopicAction) Persistence() {
-	url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=盗梦空间是一部好电影。大家对它的评价非常的高。&format=json`
-	ipaddr := "202.120.87.152"
-	bs := fetch.Do1(url, ipaddr)
-	self.persis.Do(bs, "")
+	stringChan := utils.ReadAll("file.txt")
+	i := 1
+	for {
+		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
+		sentence := <-stringChan
+		if sentence == "end" {
+			break
+		}
+		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
+		ipaddr := "202.120.87.152"
+		bs := fetch.Do1(url, ipaddr)
+		self.persis.Do(bs, sentence)
+		fmt.Println(i)
+		i++
+	}
+	<-make(chan bool, 1)
 }
 
 func (self *TopicAction) QueryOne() {
@@ -43,8 +55,8 @@ func (self *TopicAction) QueryOne() {
 	fmt.Println(string(bs))
 }
 
-func (self *TopicAction) Analyse() {
-	newses := self.persis.QuerySortedLimitNNewses(nil, 22, "-unixdate")
+func (self *TopicAction) Analyse(n int) {
+	newses := self.persis.QuerySortedLimitNNewses(nil, n, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
 	go utils.SaveString(stringSaveChan, "result.txt")
