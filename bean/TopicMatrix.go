@@ -11,12 +11,12 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我", "这个", "这么", "将", "一个", "家", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "", "", "", "", "", "", "", "", "", "", "", "", "",
 }
 
 func IsFilterContains(str string) bool {
 	filters := strings.Join(filter, ",")
-	return strings.Contains(filters, str)
+	return strings.Contains(filters, ","+str+",")
 }
 
 // 统计结果
