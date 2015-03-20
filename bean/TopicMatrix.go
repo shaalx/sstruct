@@ -63,6 +63,8 @@ func (t *TopicMatix) Statistics() {
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
 	}
+	// 排除重复
+	sentences = *sentences.EjRepeat()
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
@@ -99,4 +101,25 @@ func (c Sens) Less(i, j int) bool {
 
 func (c Sens) Swap(i, j int) {
 	c[i], c[j] = c[j], c[i]
+}
+
+// 排除重复值
+func (t *Sens) EjRepeat() *Sens {
+	length := len(*t)
+	ejMap := make(map[string]*Sen, length)
+	for _, it := range *t {
+		// _, ok := ejMap[it.Str]
+		// if ok {
+		// 	continue
+		// } else {
+		ejMap[it.Str] = it
+		// }
+	}
+	i := 0
+	result := make(Sens, len(ejMap))
+	for _, v := range ejMap {
+		result[i] = v
+		i++
+	}
+	return &result
 }

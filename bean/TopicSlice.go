@@ -1,13 +1,9 @@
 package bean
 
-// import (
-// 	"fmt"
-// )
+// 按照词序排序
 
 // 排序
 type TopicSlice []*Topic
-
-var TopicSet TopicSlice
 
 func (c TopicSlice) Len() int {
 	return len(c)

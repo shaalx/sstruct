@@ -46,7 +46,6 @@ func (self *TopicAction) QueryOne() {
 func (self *TopicAction) Analyse() {
 	newses := self.persis.QuerySortedLimitNNewses(nil, 22, "-unixdate")
 	stringSaveChan = make(chan string, 5)
-	TopicSet = make(TopicSlice, 0)
 	TopicMatrix = make(TopicMatix, 0)
 	go utils.SaveString(stringSaveChan, "result.txt")
 	for _, it := range newses {
@@ -60,7 +59,6 @@ func (self *TopicAction) Analyse() {
 func (self *TopicAction) Search() {
 	stringChan := utils.ReadAll("file.txt")
 	stringSaveChan = make(chan string, 5)
-	TopicSet = make(TopicSlice, 0)
 	TopicMatrix = make(TopicMatix, 0)
 	i := 1
 	go utils.SaveString(stringSaveChan, "result.txt")
@@ -140,7 +138,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 		if v.IsPicked(-2, []string{"SBV", "ATT", "VOB", "HED"}...) {
 			inTopics = append(inTopics, v)
 			TopicMatrix = append(TopicMatrix, TopicSlice{v})
-			TopicSet = append(TopicSet, v)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "SBV"}...); ok {
 			topics = append(topics, resultTopics...)
@@ -150,7 +147,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -162,7 +158,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -174,7 +169,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -186,7 +180,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// 	sort.Sort(topics)
 		// 	inTopics = append(inTopics, topics...)
 		// 	TopicMatrix = append(TopicMatrix, topics)
-		// 	TopicSet = append(TopicSet, topics...)
 		// 	fmt.Println(topics.String())
 		// 	topics = make(TopicSlice, 0)
 		// }
@@ -198,7 +191,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -210,7 +202,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -222,7 +213,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -234,7 +224,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -246,7 +235,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -258,7 +246,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -270,7 +257,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
@@ -282,14 +268,12 @@ func processSentence(topicsOrigin TopicSlice) string {
 			sort.Sort(topics)
 			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
-			TopicSet = append(TopicSet, topics...)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 	}
 	// inTopics = *inTopics.EjRepeat()
 	// sort.Sort(inTopics)
-	// TopicSet = append(TopicSet, inTopics...)
 	// TopicMatrix = append(TopicMatrix, inTopics)
 
 	// sort.Sort(topics)
@@ -305,23 +289,4 @@ func processSentence(topicsOrigin TopicSlice) string {
 
 func (self *TopicAction) Close() {
 	self.persis.MgoDB.Close()
-}
-
-// 统计
-
-func FirstStep() {
-	freq := Stating()
-	cells := freq.Map2Slice()
-	sort.Sort(sort.Reverse(cells))
-	// cells.String()
-	cells.OutFreqAndWeight()
-	TopicMatrix.Statistics()
-}
-
-func Stating() Stats {
-	stats := make(Stats, 1)
-	for _, it := range TopicSet {
-		stats[it.Const]++
-	}
-	return stats
 }
