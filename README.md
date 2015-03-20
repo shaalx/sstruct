@@ -25,13 +25,14 @@ Open-source, fetch news from toutiao and zhihu app. Just for study and research.
 
 ## Community
 
-* go packages download [gopm.io](http://gopm.io)
-* ltp[Language Technology Platform] (http://www.ltp-cloud.com/dashboard/traffics/)
+* ltp [Language Technology Platform] (http://www.ltp-cloud.com/dashboard/traffics/)
 * [ltp-github](https://github.com/HIT-SCIR/ltp)
+* go packages download [gopm.io](http://gopm.io)
 
 ## LICENSE
 
 this is licensed under the new BSD Licence, Version 2.0
 (http://www.apache.org/licenses/LICENSE-2.0.html).
 
+## NOTICE
 ltp-notice (http://www.ltp-cloud.com/)
