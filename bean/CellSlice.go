@@ -13,13 +13,18 @@ type Cell struct {
 	Freq int32
 }
 
+func (c Cell) String() string {
+	return fmt.Sprintf("%d\t %s", c.Freq, c.Word)
+}
+
 type CellSlice []*Cell
 
 var sentence string
 var threshold = int32(0)
-var filter []string = []string{
-	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我们", "我", "这个", "这么", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
-}
+
+// var filter []string = []string{
+// 	"的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我们", "我", "这个", "这么", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",
+// }
 
 func (s Stats) Map2Slice() CellSlice {
 	cellSlice := make(CellSlice, 0)
@@ -61,7 +66,7 @@ func (c CellSlice) Len() int {
 }
 
 func (c CellSlice) Less(i, j int) bool {
-	return c[i].Freq < c[j].Freq
+	return c[i].Freq > c[j].Freq
 }
 
 func (c CellSlice) Swap(i, j int) {
@@ -73,7 +78,7 @@ func (c CellSlice) String() {
 		if threshold >= v.Freq {
 			continue
 		}
-		fmt.Printf("%d\t %v\n", i, v)
+		fmt.Printf("%d\t %s\n", i, v.String())
 	}
 }
 

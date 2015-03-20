@@ -53,7 +53,8 @@ func (self *TopicAction) Analyse() {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
 	}
-	FirstStep()
+	TopicMatrix.Statistics()
+	// FirstStep()
 }
 
 func (self *TopicAction) Search() {
@@ -78,7 +79,8 @@ func (self *TopicAction) Search() {
 		fmt.Println(i)
 		i++
 	}
-	FirstStep()
+	TopicMatrix.Statistics()
+	// FirstStep()
 	a := make(chan bool, 1)
 	<-a
 }
@@ -313,7 +315,7 @@ func FirstStep() {
 	sort.Sort(sort.Reverse(cells))
 	// cells.String()
 	cells.OutFreqAndWeight()
-	TopicMatrix.Print(cells)
+	TopicMatrix.Statistics()
 }
 
 func Stating() Stats {

@@ -30,6 +30,14 @@ func (t *TopicSlice) Contain(topic *Topic) bool {
 	return false
 }
 
+func (t *TopicSlice) WordStrings() string {
+	str := ""
+	for _, it := range *t {
+		str += it.Const
+	}
+	return str
+}
+
 func (t *TopicSlice) String() string {
 	str := ""
 	for _, it := range *t {
