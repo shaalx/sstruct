@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/shaalx/sstruct/persistence"
 	"github.com/shaalx/sstruct/persistence/mgodb"
+	"github.com/shaalx/sstruct/pkg3/mgo/bson"
 	"github.com/shaalx/sstruct/service/fetch"
 	// "strings"
 	// "github.com/shaalx/sstruct/service/log"
@@ -71,11 +72,17 @@ func (self *TopicAction) PersistenceWithUnixDate(date int64) {
 	// <-make(chan bool, 1)
 }
 
-func (self *TopicAction) QueryOne() {
-	one := self.persis.QueryOne()
-	fmt.Println(one)
-	bs := utils.I2Bytes(one)
-	fmt.Println(string(bs))
+func (self *TopicAction) AnalyseWithUnixDate(date int64) {
+	selector := bson.M{"unixdate": date}
+	newses := self.persis.QueryNewses(selector)
+	stringSaveChan = make(chan string, 5)
+	TopicMatrix = make(TopicMatix, 0)
+	go utils.SaveString(stringSaveChan, "result.txt")
+	for _, it := range newses {
+		bsfirst := utils.I2Bytes(it.Content)
+		self.analyse(it.Notice, bsfirst)
+	}
+	TopicMatrix.Statistics()
 }
 
 func (self *TopicAction) Analyse(n int) {

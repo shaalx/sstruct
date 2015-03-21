@@ -163,6 +163,18 @@ func (d *DB) SelectSortNews(selector bson.M, sortor ...string) *News {
 	return &result
 }
 
+// select  Newses
+func (d *DB) SelectNewses(selector bson.M) []News {
+	collection := d.collection
+	var result []News
+	err := collection.Find(selector).All(&result)
+	if err != nil {
+		// log.Printf("%s select error : %v\n", d.ToString(), err.Error())
+		return nil
+	}
+	return result
+}
+
 // select sorted News limit within 20
 func (d *DB) SelectSortLimitNNewses(selector bson.M, n int, sortor ...string) []News {
 	collection := d.collection
