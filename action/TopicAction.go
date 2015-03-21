@@ -7,6 +7,12 @@ import (
 	"time"
 )
 
+func TopicAction() {
+	// TopicActionAnalyseN()
+	// TopicAction_PersistenceWithUnixDate() // 获得分词
+	TopicAction_AnalyseWithUnixDate() // 分析结果
+}
+
 func TopicAction_PersistenceWithUnixDate() {
 	start := time.Now()
 	CURRENT_FILENAME = "file2.txt"
@@ -24,7 +30,7 @@ func TopicAction_PersistenceWithUnixDate() {
 func TopicAction_AnalyseWithUnixDate() {
 	start := time.Now()
 	var date int64
-	date = 1426924715
+	date = 1426946958
 
 	var serv service.Service
 	serv = &service.TopicAction{}
@@ -36,7 +42,7 @@ func TopicAction_AnalyseWithUnixDate() {
 	time.Sleep(time.Second)
 }
 
-func TopicAction() {
+func TopicActionAnalyseN() {
 	start := time.Now()
 
 	var serv service.Service

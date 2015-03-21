@@ -81,7 +81,7 @@ func (t *TopicMatix) Statistics() {
 	// 保存结果
 	stringSaveChan := make(chan string, 5)
 	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
-	fmt.Printf("\n%s\t %s\t %s\t\n", "index", "avg", "key-word")
+	fmt.Printf("\n%s\t %s\t %s\t %s\n", "index", "avg", "key-word", "freq")
 	for _, it := range sentences {
 		statStr := it.String()
 		stringSaveChan <- statStr
