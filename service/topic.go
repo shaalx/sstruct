@@ -6,6 +6,7 @@ import (
 	"github.com/shaalx/sstruct/persistence/mgodb"
 	"github.com/shaalx/sstruct/pkg3/mgo/bson"
 	"github.com/shaalx/sstruct/service/fetch"
+	. "github.com/shaalx/sstruct/vars"
 	// "strings"
 	// "github.com/shaalx/sstruct/service/log"
 	. "github.com/shaalx/sstruct/bean"
@@ -31,11 +32,11 @@ func (self *TopicAction) Init() {
 }
 
 func (self *TopicAction) Log(date int64) {
-	utils.AppendFile("log.txt", "file.txt\t"+utils.UnixDateString(date))
+	utils.AppendFile(LOG_FILE, CURRENT_FILENAME+"\t"+utils.UnixDateString(date))
 }
 
 func (self *TopicAction) Persistence() {
-	stringChan := utils.ReadAll("./file/file.txt")
+	stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
@@ -54,7 +55,7 @@ func (self *TopicAction) Persistence() {
 }
 
 func (self *TopicAction) PersistenceWithUnixDate(date int64) {
-	stringChan := utils.ReadAll("./file/file.txt")
+	stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
@@ -77,7 +78,7 @@ func (self *TopicAction) AnalyseWithUnixDate(date int64) {
 	newses := self.persis.QueryNewses(selector)
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
-	go utils.SaveString(stringSaveChan, "./result/result.txt")
+	go utils.SaveString(stringSaveChan, SPILT_DIR+CURRENT_FILENAME)
 	for _, it := range newses {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
@@ -89,7 +90,7 @@ func (self *TopicAction) Analyse(n int) {
 	newses := self.persis.QuerySortedLimitNNewses(nil, n, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
-	go utils.SaveString(stringSaveChan, "./result/result.txt")
+	go utils.SaveString(stringSaveChan, SPILT_DIR+CURRENT_FILENAME)
 	for _, it := range newses {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
@@ -99,11 +100,11 @@ func (self *TopicAction) Analyse(n int) {
 }
 
 func (self *TopicAction) Search() {
-	stringChan := utils.ReadAll("./file/file.txt")
+	stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
 	i := 1
-	go utils.SaveString(stringSaveChan, "./result/result.txt")
+	go utils.SaveString(stringSaveChan, SPILT_DIR+CURRENT_FILENAME)
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
 		sentence := <-stringChan

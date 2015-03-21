@@ -3,6 +3,7 @@ package bean
 import (
 	"fmt"
 	"github.com/shaalx/sstruct/utils"
+	. "github.com/shaalx/sstruct/vars"
 	"math"
 	"sort"
 	"strings"
@@ -79,7 +80,7 @@ func (t *TopicMatix) Statistics() {
 
 	// 保存结果
 	stringSaveChan := make(chan string, 5)
-	go utils.SaveString(stringSaveChan, "./result/stat.txt")
+	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
 	fmt.Printf("\n%s\t %s\t %s\t\n", "index", "avg", "key-word")
 	for _, it := range sentences {
 		statStr := it.String()

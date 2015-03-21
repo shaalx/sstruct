@@ -4,6 +4,7 @@ import (
 	"bufio"
 	// "fmt"
 	"github.com/shaalx/sstruct/service/log"
+	. "github.com/shaalx/sstruct/vars"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -20,7 +21,7 @@ func DeleteEnter(filename string) {
 	reader := bufio.NewReader(rfile)
 
 	// 写文件
-	wfile, err := os.OpenFile("w_"+filename, os.O_CREATE|os.O_WRONLY, os.ModeDevice)
+	wfile, err := os.OpenFile(TEMP_FILENAME, os.O_CREATE|os.O_WRONLY, os.ModeDevice)
 	defer wfile.Close()
 	if log.IsError("open file error", err) {
 		return
@@ -48,7 +49,7 @@ func DeleteEnter(filename string) {
 func ReadAll(filename string) chan string {
 	DeleteEnter(filename)
 	stringChan := make(chan string, 10)
-	b, err := ioutil.ReadFile("w_" + filename)
+	b, err := ioutil.ReadFile(TEMP_FILENAME)
 	if err != nil {
 		return nil
 	}
@@ -71,7 +72,7 @@ func ReadAll(filename string) chan string {
 	// 删除临时文件
 	defer func(filename string) {
 		os.Remove(filename)
-	}("w_" + filename)
+	}(TEMP_FILENAME)
 	return stringChan
 }
 
