@@ -1,0 +1,1 @@
+db.topic.find({"unixdate":1426922794})

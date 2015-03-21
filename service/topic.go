@@ -48,6 +48,25 @@ func (self *TopicAction) Persistence() {
 	<-make(chan bool, 1)
 }
 
+func (self *TopicAction) PersistenceWithUnixDate(date int64) {
+	stringChan := utils.ReadAll("file.txt")
+	i := 1
+	for {
+		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
+		sentence := <-stringChan
+		if sentence == "end" {
+			break
+		}
+		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
+		ipaddr := "202.120.87.152"
+		bs := fetch.Do1(url, ipaddr)
+		self.persis.DoWithUnixDate(bs, sentence, date)
+		fmt.Println(i)
+		i++
+	}
+	<-make(chan bool, 1)
+}
+
 func (self *TopicAction) QueryOne() {
 	one := self.persis.QueryOne()
 	fmt.Println(one)
