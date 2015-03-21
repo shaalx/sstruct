@@ -35,7 +35,7 @@ func (self *TopicAction) Log(date int64) {
 }
 
 func (self *TopicAction) Persistence() {
-	stringChan := utils.ReadAll("file.txt")
+	stringChan := utils.ReadAll("./file/file.txt")
 	i := 1
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
@@ -54,7 +54,7 @@ func (self *TopicAction) Persistence() {
 }
 
 func (self *TopicAction) PersistenceWithUnixDate(date int64) {
-	stringChan := utils.ReadAll("file.txt")
+	stringChan := utils.ReadAll("./file/file.txt")
 	i := 1
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
@@ -77,7 +77,7 @@ func (self *TopicAction) AnalyseWithUnixDate(date int64) {
 	newses := self.persis.QueryNewses(selector)
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
-	go utils.SaveString(stringSaveChan, "result.txt")
+	go utils.SaveString(stringSaveChan, "./result/result.txt")
 	for _, it := range newses {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
@@ -89,7 +89,7 @@ func (self *TopicAction) Analyse(n int) {
 	newses := self.persis.QuerySortedLimitNNewses(nil, n, "-unixdate")
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
-	go utils.SaveString(stringSaveChan, "result.txt")
+	go utils.SaveString(stringSaveChan, "./result/result.txt")
 	for _, it := range newses {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
@@ -99,11 +99,11 @@ func (self *TopicAction) Analyse(n int) {
 }
 
 func (self *TopicAction) Search() {
-	stringChan := utils.ReadAll("file.txt")
+	stringChan := utils.ReadAll("./file/file.txt")
 	stringSaveChan = make(chan string, 5)
 	TopicMatrix = make(TopicMatix, 0)
 	i := 1
-	go utils.SaveString(stringSaveChan, "result.txt")
+	go utils.SaveString(stringSaveChan, "./result/result.txt")
 	for {
 		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
 		sentence := <-stringChan
