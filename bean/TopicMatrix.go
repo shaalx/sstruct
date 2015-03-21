@@ -11,7 +11,7 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "，", "。", " ", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "", "", "", "", "", "", "", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "", "", "", "", "", "", "", "", "", "", "",
 }
 
 func IsFilterContains(str string) bool {
@@ -54,7 +54,7 @@ func (t *TopicMatix) Statistics() {
 	var minFreq int32
 	for i, key_slice := range *t {
 		score = 0.0
-		minFreq = 10000
+		minFreq = 1000
 		for _, key_word := range key_slice {
 			fr, ok := key_freq[key_word.Const]
 			if minFreq > fr {
@@ -67,7 +67,7 @@ func (t *TopicMatix) Statistics() {
 			}
 		}
 		if minFreq < 2 {
-			score *= 0.5
+			score *= 0.3
 		}
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
@@ -80,7 +80,7 @@ func (t *TopicMatix) Statistics() {
 	// 保存结果
 	stringSaveChan := make(chan string, 5)
 	go utils.SaveString(stringSaveChan, "stat.txt")
-	fmt.Printf("\n%s\t %s\t %s\t\n", "avg", "sum", "key-word")
+	fmt.Printf("\n%s\t %s\t %s\t\n", "index", "avg", "key-word")
 	for _, it := range sentences {
 		statStr := it.String()
 		stringSaveChan <- statStr
