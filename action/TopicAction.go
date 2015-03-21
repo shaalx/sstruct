@@ -3,12 +3,13 @@ package action
 import (
 	"github.com/shaalx/sstruct/service"
 	"github.com/shaalx/sstruct/service/log"
+	. "github.com/shaalx/sstruct/vars"
 	"time"
 )
 
 func TopicAction_PersistenceWithUnixDate() {
 	start := time.Now()
-
+	CURRENT_FILENAME = "file2.txt"
 	var serv service.Service
 	serv = &service.TopicAction{}
 	serv.Init()

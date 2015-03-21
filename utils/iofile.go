@@ -98,3 +98,15 @@ func AppendFile(filename string, content string) {
 	file.WriteString(content + "\n")
 	defer file.Close()
 }
+
+// 文件目录
+func ReadDir(dir string) []string {
+	files, _ := ioutil.ReadDir(dir)
+	filenames := make([]string, 0)
+	for _, it := range files {
+		if !it.IsDir() {
+			filenames = append(filenames, it.Name())
+		}
+	}
+	return filenames
+}
