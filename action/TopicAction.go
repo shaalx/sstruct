@@ -13,6 +13,7 @@ func TopicAction() {
 	serv = &service.TopicAction{}
 	serv.Init()
 	serv.PersistenceWithUnixDate(start.Unix())
+	serv.Log(start.Unix())
 	// serv.Persistence()
 	// serv.Search()
 	// serv.Analyse(33)

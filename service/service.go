@@ -7,4 +7,5 @@ type Service interface {
 	Analyse(int)
 	Search()
 	Close()
+	Log(date int64)
 }

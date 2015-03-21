@@ -61,3 +61,7 @@ func DateToString() string {
 func UnixFormatS(sec int64) string {
 	return time.Unix(sec, 0).Format("2006-01-02 15:04:05")
 }
+
+func UnixDateString(date int64) string {
+	return strconv.FormatInt(date, 10)
+}

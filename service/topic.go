@@ -29,6 +29,10 @@ func (self *TopicAction) Init() {
 	self.persis.MgoDB = mgodb.SetLocalDB(TopicServer...)
 }
 
+func (self *TopicAction) Log(date int64) {
+	utils.AppendFile("log.txt", "file.txt\t"+utils.UnixDateString(date))
+}
+
 func (self *TopicAction) Persistence() {
 	stringChan := utils.ReadAll("file.txt")
 	i := 1
@@ -64,7 +68,7 @@ func (self *TopicAction) PersistenceWithUnixDate(date int64) {
 		fmt.Println(i)
 		i++
 	}
-	<-make(chan bool, 1)
+	// <-make(chan bool, 1)
 }
 
 func (self *TopicAction) QueryOne() {

@@ -83,3 +83,13 @@ func SaveString(stringChan chan string, filename string) {
 	}
 	defer file.Close()
 }
+
+// 追加
+func AppendFile(filename string, content string) {
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, os.ModeDevice)
+	if log.IsError("{append to file error}", err) {
+		return
+	}
+	file.WriteString(content + "\n")
+	defer file.Close()
+}
