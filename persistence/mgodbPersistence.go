@@ -28,6 +28,18 @@ func (m MgoPersistence) Do(bs []byte, notice string) bool {
 	return m.MgoDB.Save(news)
 }
 
+// 在某一时间内，算作某时刻
+func (m MgoPersistence) DoWithUnixDate(bs []byte, notice string, date int64) bool {
+	news := bean.News{}
+	news.InitWithUnixDate(date)
+	news.Notice = notice
+	err := json.Unmarshal(bs, &news.Content)
+	if log.IsError("{mongodb data unmarshal news}", err) {
+		return false
+	}
+	return m.MgoDB.Save(news)
+}
+
 func (m *MgoPersistence) QueryOne() *bson.M {
 	return m.MgoDB.Select(nil)
 }

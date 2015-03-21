@@ -18,6 +18,12 @@ func (self *News) Init() {
 	self.DisplayDate = utils.UnixFormatS(self.UnixDate)
 }
 
+func (self *News) InitWithUnixDate(date int64) string {
+	self.UnixDate = date
+	self.DisplayDate = utils.UnixFormatS(self.UnixDate)
+	return self.DisplayDate
+}
+
 func Bytes2News(data []byte) *News {
 	news := News{}
 	err := json.Unmarshal(data, &news)
