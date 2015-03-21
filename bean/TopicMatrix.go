@@ -11,7 +11,7 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "", "", "", "", "", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "", "", "", "", "", "", "", "", "", "",
 }
 
 func IsFilterContains(str string) bool {
@@ -86,18 +86,19 @@ func (t *TopicMatix) Statistics() {
 		stringSaveChan <- statStr
 		// fmt.Println(statStr)
 	}
-	fmt.Print(sentences.Top(20))
+	fmt.Print(sentences.Top(50))
 }
 
 type Sen struct {
 	Str string
 	Sum float64
 	Avg float64
+	Fre int
 }
 
 func (s *Sen) String() string {
 	// return fmt.Sprintf("%.3f\t %.3f\t %s\t", s.Avg, s.Sum, s.Str)
-	return fmt.Sprintf("%.2f\t %s\t", s.Avg, s.Str)
+	return fmt.Sprintf("%.2f\t %s\t %d", s.Avg, s.Str, s.Fre)
 }
 
 type Sens []*Sen
@@ -129,17 +130,20 @@ func (s Sens) Top(n int) string {
 func (t *Sens) EjRepeat() *Sens {
 	length := len(*t)
 	ejMap := make(map[string]*Sen, length)
+	ejMapCount := make(map[string]int, length)
 	for _, it := range *t {
 		// _, ok := ejMap[it.Str]
 		// if ok {
 		// 	continue
 		// } else {
 		ejMap[it.Str] = it
+		ejMapCount[it.Str]++
 		// }
 	}
 	i := 0
 	result := make(Sens, len(ejMap))
 	for _, v := range ejMap {
+		v.Fre = ejMapCount[v.Str]
 		result[i] = v
 		i++
 	}
