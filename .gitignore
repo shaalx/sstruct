@@ -1,4 +1,6 @@
 /*.txt
 /file
 /result
-/static
+/static/stat
+/static/spilt
+/static/*.txt
