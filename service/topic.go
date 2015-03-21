@@ -120,7 +120,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 			topics[i] = &topic
 		}
 		fmt.Println(sentence)
-		stringSaveChan <- sentence
+		// stringSaveChan <- sentence
 		stringSaveChan <- processSentence(topics)
 	}
 }
@@ -135,7 +135,10 @@ func processSentence(topicsOrigin TopicSlice) string {
 		if (*it).IsPicked(-2, "HED") {
 			hedTopic = it
 		}
-		topicsStrOrigin += it.String()
+		if it.Relate == "WP" {
+			continue
+		}
+		topicsStrOrigin += it.CutWords() + "\t"
 	}
 	topics := make(TopicSlice, 0)
 	hedTopic.WeightUp(0.3)
@@ -296,7 +299,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 	// 	topicsStr += it.String()
 	// }
 	// fmt.Printf("%s\n%s\n", topicsStrOrigin, topicsStr)
-	return /*result + "\n" + */ topicsStrOrigin + "\n" /*+ topicsStr + "\n"*/
+	return /*result + "\n" + */ topicsStrOrigin /*+ "\n" + topicsStr + "\n"*/
 }
 
 func (self *TopicAction) Close() {

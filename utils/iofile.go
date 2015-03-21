@@ -79,7 +79,7 @@ func SaveString(stringChan chan string, filename string) {
 	}
 	for {
 		str := <-stringChan
-		file.WriteString(str + "\n")
+		file.WriteString(str)
 	}
 	defer file.Close()
 }
