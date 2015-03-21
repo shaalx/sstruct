@@ -7,6 +7,9 @@ import (
 	"time"
 )
 
+func init() {
+	CURRENT_FILENAME = "file2.txt"
+}
 func TopicAction() {
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
@@ -15,7 +18,6 @@ func TopicAction() {
 
 func TopicAction_PersistenceWithUnixDate() {
 	start := time.Now()
-	CURRENT_FILENAME = "file2.txt"
 	var serv service.Service
 	serv = &service.TopicAction{}
 	serv.Init()
