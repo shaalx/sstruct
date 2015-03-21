@@ -68,6 +68,10 @@ func ReadAll(filename string) chan string {
 		}
 		stringChan <- "end"
 	}(filestrings)
+	// 删除临时文件
+	defer func(filename string) {
+		os.Remove(filename)
+	}("w_" + filename)
 	return stringChan
 }
 
