@@ -87,7 +87,23 @@ func (t *TopicMatix) Statistics() {
 		stringSaveChan <- statStr
 		// fmt.Println(statStr)
 	}
-	fmt.Print(sentences.Top(50))
+	topN := len(key_freq)/500 + 4
+	topNS, topNSC := sentences.Top(topN)
+	fmt.Print(topNS)
+	key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "", "", "."}
+	Precise(topNSC, key_words)
+}
+
+func Precise(tops, key_words []string) {
+	key_wordsJ := strings.Join(key_words, "|")
+	count := 0.0
+	for _, it := range tops {
+		if strings.Contains(key_wordsJ, "|"+it+"|") {
+			count += 1
+		}
+	}
+	fmt.Printf("精确率：\t%.3f\n", count/float64(len(key_words)))
+	fmt.Printf("召回率：\t%.3f\n", count/float64(len(tops)))
 }
 
 type Sen struct {
@@ -117,15 +133,17 @@ func (c Sens) Swap(i, j int) {
 	c[i], c[j] = c[j], c[i]
 }
 
-func (s Sens) Top(n int) string {
+func (s Sens) Top(n int) (string, []string) {
 	resStr := ""
+	topNStr := make([]string, n)
 	for i, it := range s {
 		if i >= n {
-			return resStr
+			return resStr, topNStr[:n]
 		}
 		resStr += fmt.Sprintf("%d\t %s\n", i+1, it)
+		topNStr[i] = it.Str
 	}
-	return resStr
+	return resStr, topNStr
 }
 
 // 排除重复值
