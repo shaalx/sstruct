@@ -110,6 +110,7 @@ func (c Sens) Len() int {
 
 func (c Sens) Less(i, j int) bool {
 	return c[i].Avg > c[j].Avg
+	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
 }
 
 func (c Sens) Swap(i, j int) {
