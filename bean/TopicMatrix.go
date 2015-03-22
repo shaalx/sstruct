@@ -87,10 +87,11 @@ func (t *TopicMatix) Statistics() {
 		stringSaveChan <- statStr
 		// fmt.Println(statStr)
 	}
-	topN := len(key_freq)/500 + 7
+	topN := len(key_freq)/500 + 5
 	topNS, topNSC := sentences.Top(topN)
 	fmt.Print(topNS)
-	key_words := []string{".", "扫脸", "刷脸", "刷脸支付", "支付技术", "扫脸支付", "", "."}
+	// key_words := []string{".", "扫脸", "刷脸", "刷脸支付", "支付技术", "扫脸支付", "", "."}
+	key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "."}
 	Precise(topNSC, key_words)
 }
 
@@ -102,8 +103,8 @@ func Precise(tops, key_words []string) {
 			count += 1
 		}
 	}
-	fmt.Printf("精确率：\t%.3f\n", count/float64(len(key_words)))
-	fmt.Printf("召回率：\t%.3f\n", count/float64(len(tops)))
+	fmt.Printf("精确率：\t%.3f\n", count/float64(len(key_words)-2))
+	fmt.Printf("召回率：\t%.3f\n", count/float64(len(tops)-2))
 }
 
 type Sen struct {
