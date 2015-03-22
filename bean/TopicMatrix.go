@@ -90,7 +90,7 @@ func (t *TopicMatix) Statistics() {
 	topN := len(key_freq)/500 + 5
 	topNS, topNSC := sentences.Top(topN)
 	fmt.Print(topNS)
-	key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "", "", "."}
+	key_words := []string{".", "扫脸", "刷脸", "刷脸技术", "支付", "扫脸支付", "", "."}
 	Precise(topNSC, key_words)
 }
 
@@ -126,7 +126,8 @@ func (c Sens) Len() int {
 
 func (c Sens) Less(i, j int) bool {
 	// return c[i].Avg > c[j].Avg
-	return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
+	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
+	return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg
 }
 
 func (c Sens) Swap(i, j int) {
