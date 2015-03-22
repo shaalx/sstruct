@@ -21,7 +21,7 @@ func (c CellSlice) Len() int {
 }
 
 func (c CellSlice) Less(i, j int) bool {
-	return c[i].Freq > c[j].Freq
+	return c[i].Freq < c[j].Freq
 }
 
 func (c CellSlice) Swap(i, j int) {
@@ -30,6 +30,9 @@ func (c CellSlice) Swap(i, j int) {
 
 func (c CellSlice) String() {
 	for i, v := range c {
+		if v.Freq < int32(3) {
+			continue
+		}
 		fmt.Printf("%d\t %s\n", i, v.String())
 	}
 }

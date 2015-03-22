@@ -12,7 +12,7 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "", "", "", "", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "中", "", "", "", "", "", "", "", "", "",
 }
 
 func IsFilterContains(str string) bool {
@@ -109,8 +109,8 @@ func (c Sens) Len() int {
 }
 
 func (c Sens) Less(i, j int) bool {
-	return c[i].Avg > c[j].Avg
-	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
+	// return c[i].Avg > c[j].Avg
+	return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
 }
 
 func (c Sens) Swap(i, j int) {

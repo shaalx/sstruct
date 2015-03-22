@@ -8,7 +8,7 @@ import (
 )
 
 func init() {
-	CURRENT_FILENAME = "C19-Computer0006.txt"
+	CURRENT_FILENAME = "C34-Economy0002.txt"
 }
 func TopicAction() {
 	// TopicActionAnalyseN()
@@ -32,7 +32,7 @@ func TopicAction_PersistenceWithUnixDate() {
 func TopicAction_AnalyseWithUnixDate() {
 	start := time.Now()
 	var date int64
-	date = 1426986912
+	date = 1426989715
 
 	var serv service.Service
 	serv = &service.TopicAction{}
