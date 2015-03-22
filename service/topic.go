@@ -191,7 +191,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.2)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -202,7 +201,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.2)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -213,7 +211,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.2)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -223,8 +220,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// 	for _, it := range topics {
 		// 		it.WeightUp(0.2)
 		// 	}
-		// 	sort.Sort(topics)
-		// 	inTopics = append(inTopics, topics...)
+		// 	sort.Sort(topics)		//
 		// 	TopicMatrix = append(TopicMatrix, topics)
 		// 	fmt.Println(topics.String())
 		// 	topics = make(TopicSlice, 0)
@@ -235,7 +231,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -246,7 +241,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -257,7 +251,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -268,7 +261,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -279,7 +271,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -290,7 +281,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -301,7 +291,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
@@ -312,7 +301,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 				it.WeightUp(0.1)
 			}
 			sort.Sort(topics)
-			inTopics = append(inTopics, topics...)
 			TopicMatrix = append(TopicMatrix, topics)
 			fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)

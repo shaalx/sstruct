@@ -87,7 +87,7 @@ func (t *TopicMatix) Statistics() {
 		stringSaveChan <- statStr
 		// fmt.Println(statStr)
 	}
-	topN := len(key_freq)/500 + 4
+	topN := len(key_freq)/500 + 5
 	topNS, topNSC := sentences.Top(topN)
 	fmt.Print(topNS)
 	key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "", "", "."}
