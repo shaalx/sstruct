@@ -7,5 +7,5 @@ var (
 	STAT_DIR         = "./static/stat/"    // 统计结果文件夹
 	LOG_FILE         = "log.txt"           // 日志文件
 	TEMP_FILENAME    = "./static/temp.txt" // 临时文件：做文件内容转换
-	KEY_DIR          = "./static/key"
+	KEY_DIR          = "./static/key/"
 )

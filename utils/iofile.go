@@ -110,3 +110,9 @@ func ReadDir(dir string) []string {
 	}
 	return filenames
 }
+
+// 读取key文件
+func ReadKey(filename string) (string, error) {
+	bs, err := ioutil.ReadFile(filename)
+	return string(bs), err
+}

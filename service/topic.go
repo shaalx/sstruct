@@ -150,7 +150,8 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 			topic := Topic{id, cont, relate, parent, 0.0, 0}
 			topics[i] = &topic
 		}
-		fmt.Println(sentence)
+		fmt.Print(".")
+		// fmt.Println(sentence)
 		// stringSaveChan <- sentence
 		stringSaveChan <- processSentence(topics)
 	}
@@ -159,7 +160,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 // 处理句子成分
 func processSentence(topicsOrigin TopicSlice) string {
 	topicsStrOrigin := ""
-	fmt.Println(topicsOrigin.String())
+	// fmt.Println(topicsOrigin.String())
 	// sort.Sort(topicsOrigin)
 	var hedTopic *Topic
 	for _, it := range topicsOrigin {
@@ -193,7 +194,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
@@ -203,7 +204,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "HED"}...); ok {
@@ -213,7 +214,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		// if ok, resultTopics := v.IsCond(topicsOrigin, []string{"VOB", "HED"}...); ok {
@@ -223,7 +224,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// 	}
 		// 	sort.Sort(topics)		//
 		// 	TopicMatrix = append(TopicMatrix, topics)
-		// 	fmt.Println(topics.String())
+		//	// fmt.Println(topics.String())
 		// 	topics = make(TopicSlice, 0)
 		// }
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "VOB"}...); ok {
@@ -233,7 +234,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "VOB"}...); ok {
@@ -243,7 +244,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"COO", "VOB"}...); ok {
@@ -253,7 +254,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"VOB", "COO"}...); ok {
@@ -263,7 +264,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT"}...); ok {
@@ -273,7 +274,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "HED"}...); ok {
@@ -283,7 +284,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "POB"}...); ok {
@@ -293,7 +294,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "POB"}...); ok {
@@ -303,7 +304,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			}
 			sort.Sort(topics)
 			TopicMatrix = append(TopicMatrix, topics)
-			fmt.Println(topics.String())
+			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
 	}

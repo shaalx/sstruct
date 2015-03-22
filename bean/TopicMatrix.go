@@ -78,33 +78,46 @@ func (t *TopicMatix) Statistics() {
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
-	// 保存结果
-	stringSaveChan := make(chan string, 5)
-	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
-	fmt.Printf("\n%s\t %s\t %s\t %s\n", "index", "avg", "key-word", "freq")
-	for _, it := range sentences {
-		statStr := it.String()
-		stringSaveChan <- statStr
-		// fmt.Println(statStr)
-	}
 	topN := len(key_freq)/500 + 5
 	topNS, topNSC := sentences.Top(topN)
 	fmt.Print(topNS)
-	// key_words := []string{".", "扫脸", "刷脸", "刷脸支付", "支付技术", "扫脸支付", "", "."}
-	key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "."}
-	Precise(topNSC, key_words)
+	resultStr := PreciseAndRecall(topNSC)
+	SaveResult(resultStr)
 }
 
-func Precise(tops, key_words []string) {
-	key_wordsJ := strings.Join(key_words, "|")
+// 计算实验结果数据
+func PreciseAndRecall(tops []string) string {
+	resultStr := ""
+	// key_words := []string{".", "扫脸", "刷脸", "刷脸支付", "支付技术", "扫脸支付", "", "."}
+	// key_words := []string{".", "流通", "流通理论", "流通经济学", "经济学", "."}
+	key_word, err := utils.ReadKey(KEY_DIR + CURRENT_FILENAME)
+	if err != nil {
+		fmt.Println(err)
+		return ""
+	}
+	key_words := strings.Split(key_word, "|")
+
 	count := 0.0
 	for _, it := range tops {
-		if strings.Contains(key_wordsJ, "|"+it+"|") {
-			count += 1
+		if strings.Contains(key_word, "|"+it+"|") {
+			count += 1.0
 		}
 	}
-	fmt.Printf("精确率：\t%.3f\n", count/float64(len(key_words)-2))
-	fmt.Printf("召回率：\t%.3f\n", count/float64(len(tops)-2))
+	pricise := fmt.Sprintf("精确率：\t%.3f\n", count/float64(len(key_words)-2))
+	recall := fmt.Sprintf("召回率：\t%.3f\n", count/float64(len(tops)))
+	resultStr += fmt.Sprintf("Top key words:\t%v\n", tops)
+	resultStr += fmt.Sprintf("Key words:\t%v\n", key_words)
+	resultStr += pricise + recall
+	return resultStr
+}
+
+func SaveResult(content string) {
+	// 保存结果
+	stringSaveChan := make(chan string, 5)
+	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
+	// fmt.Printf("\n%s\t %s\t %s\t %s\n", "index", "avg", "key-word", "freq")
+	stringSaveChan <- content
+	fmt.Println(content)
 }
 
 type Sen struct {
