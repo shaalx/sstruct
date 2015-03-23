@@ -1,6 +1,6 @@
 /*.txt
 
 static/log.txt
-static/stat/*
+static/origin/*
 static/spilt/*
 static/corpus/*
