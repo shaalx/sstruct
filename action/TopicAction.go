@@ -7,8 +7,11 @@ import (
 	"time"
 )
 
+var DATE int64
+
 func init() {
-	CURRENT_FILENAME = "C34-Economy0002.txt"
+	CURRENT_FILENAME = "C19-Computer0006.txt"
+	DATE = 1426986912
 }
 func TopicAction() {
 	// TopicActionAnalyseN()
@@ -31,13 +34,11 @@ func TopicAction_PersistenceWithUnixDate() {
 
 func TopicAction_AnalyseWithUnixDate() {
 	start := time.Now()
-	var date int64
-	date = 1426989715
 
 	var serv service.Service
 	serv = &service.TopicAction{}
 	serv.Init()
-	serv.AnalyseWithUnixDate(date)
+	serv.AnalyseWithUnixDate(DATE)
 	defer serv.Close()
 
 	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
