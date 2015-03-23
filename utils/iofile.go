@@ -78,7 +78,7 @@ func ReadAll(filename string) chan string {
 
 // 保存处理结果，结果从chan中读取
 func SaveString(stringChan chan string, filename string) {
-	file, err := os.OpenFile(filename, os.O_CREATE, os.ModeDevice)
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, os.ModeDevice)
 	if nil != err {
 		return
 	}
