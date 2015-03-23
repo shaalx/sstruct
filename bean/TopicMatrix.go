@@ -106,8 +106,8 @@ func PreciseAndRecall(tops []string) string {
 			count += 1.0
 		}
 	}
-	pricise := count / float64(key_words_len)
-	recall := count / float64(key_words_len+1)
+	pricise := count / float64(key_words_len+1)
+	recall := count / float64(key_words_len)
 	b := 1.0
 	f_measrue := (b*b + 1) * pricise * recall / (b*b*pricise + recall)
 
