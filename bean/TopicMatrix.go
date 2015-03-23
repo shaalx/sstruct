@@ -149,8 +149,8 @@ func (c Sens) Len() int {
 }
 
 func (c Sens) Less(i, j int) bool {
-	return c[i].Avg > c[j].Avg // 不可靠
-	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
+	// return c[i].Avg > c[j].Avg // 不可靠
+	return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
 	// return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg
 }
 
