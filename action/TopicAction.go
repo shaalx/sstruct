@@ -32,7 +32,7 @@ func TopicAction_PersistenceWithUnixDate() {
 func TopicAction_AnalyseWithUnixDate() {
 	start := time.Now()
 	var date int64
-	date = 1427031288
+	date = 1426989715
 
 	var serv service.Service
 	serv = &service.TopicAction{}

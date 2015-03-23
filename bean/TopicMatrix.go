@@ -70,6 +70,8 @@ func (t *TopicMatix) Statistics() {
 		if minFreq < 2 {
 			score *= 0.3
 		}
+		// 降低单个词的卡方值
+		score *= math.Log2(float64(len(key_slice) + 1))
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
 	}
@@ -78,11 +80,11 @@ func (t *TopicMatix) Statistics() {
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
-	topN := len(key_freq)/500 + 5
-	topNS, topNSC := sentences.Top(topN)
-	fmt.Print(topNS)
-	resultStr := PreciseAndRecall(topNSC)
-	SaveResult(resultStr)
+	topN := len(key_freq)/500 + 10
+	topFormatString, topNSlice := sentences.Top(topN)
+	fmt.Print(topFormatString)
+	statResultString := PreciseAndRecall(topNSlice)
+	SaveResult(statResultString)
 }
 
 // 计算实验结果数据
@@ -96,15 +98,16 @@ func PreciseAndRecall(tops []string) string {
 		return ""
 	}
 	key_words := strings.Split(key_word, "|")
-
+	key_words_len := len(key_words) - 2
+	tops = tops[:key_words_len+1]
 	count := 0.0
 	for _, it := range tops {
 		if strings.Contains(key_word, "|"+it+"|") {
 			count += 1.0
 		}
 	}
-	pricise := fmt.Sprintf("精确率：\t%.3f\n", count/float64(len(key_words)-2))
-	recall := fmt.Sprintf("召回率：\t%.3f\n", count/float64(len(tops)))
+	pricise := fmt.Sprintf("精确率：\t%.3f\n", count/float64(key_words_len))  // len(key_words)-2
+	recall := fmt.Sprintf("召回率：\t%.3f\n", count/float64(key_words_len+1)) // len(tops)
 	resultStr += fmt.Sprintf("Top key words:\t%v\n", tops)
 	resultStr += fmt.Sprintf("Key words:\t%v\n", key_words)
 	resultStr += pricise + recall
@@ -139,7 +142,7 @@ func (c Sens) Len() int {
 }
 
 func (c Sens) Less(i, j int) bool {
-	// return c[i].Avg > c[j].Avg
+	// return c[i].Avg > c[j].Avg // 不可靠
 	return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg
 	// return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg
 }
