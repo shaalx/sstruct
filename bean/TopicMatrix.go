@@ -117,7 +117,7 @@ func PreciseAndRecall(tops []string) string {
 	priciseString := fmt.Sprintf("精确率：\t%.4f\n", pricise) // len(key_words)-2
 	recallString := fmt.Sprintf("召回率：\t%.4f\n", recall)   // len(tops)
 	f_measrueString := fmt.Sprintf("F-measure：\t%.4f\n", f_measrue)
-
+	resultStr += "\n Co-word \n"
 	resultStr += fmt.Sprintf("Top key words:\t%v\n", tops)
 	resultStr += fmt.Sprintf("Key words:\t%v\n", key_words)
 	resultStr += priciseString + recallString + f_measrueString
