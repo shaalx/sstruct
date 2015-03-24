@@ -97,12 +97,15 @@ func PreciseAndRecall(tops []string) string {
 		fmt.Println(err)
 		return ""
 	}
-	key_words := strings.Split(key_word, "|")
-	key_words_len := len(key_words) - 2
+	key_words := strings.Split(key_word, "\t")
+	key_words_len := len(key_words)
 	tops = tops[:key_words_len+1]
 	count := 0.0
+	containWords := strings.Join(key_words, "|")
+	containWords = "|" + containWords + "|"
+	fmt.Println(containWords)
 	for _, it := range tops {
-		if strings.Contains(key_word, "|"+it+"|") {
+		if strings.Contains(containWords, "|"+it+"|") {
 			count += 1.0
 		}
 	}
