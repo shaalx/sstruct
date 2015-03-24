@@ -9,3 +9,17 @@ Key words:	[﻿华录 发展 自力更生 录像机]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+
+ Co-word 
+Top key words:	[马可尼 他 时 马可尼发明 马可尼电讯]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word 
+Top key words:	[马可尼 马可尼发明 马可尼电讯 马可尼房间 马可尼父亲]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
