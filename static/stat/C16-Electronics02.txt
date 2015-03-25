@@ -23,3 +23,17 @@ Key words:	[﻿华录 发展 自力更生 录像机]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+
+ Co-word Chi 
+Top key words:	[阁楼 通讯 彼此通讯 间]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word Chi 
+Top key words:	[阁楼 通讯 彼此通讯 间]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN

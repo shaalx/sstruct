@@ -13,3 +13,115 @@ Key words:	[ 扫脸支付 刷脸 支付技术 蚂蚁金服 ]
 精确率：	0.2000
 召回率：	0.2500
 F-measure：	0.2222
+
+ Co-word 
+Top key words:	[支付 技术 马云 扫脸]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word 
+Top key words:	[支付 马云 技术 扫脸]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word 
+Top key words:	[支付 支付技术 支付扫脸 扫脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word 
+Top key words:	[支付 技术 支付技术 扫脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word 
+Top key words:	[支付 支付技术 扫脸支付 支付扫脸]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word 
+Top key words:	[支付 支付技术 扫脸支付 支付扫脸]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word 
+Top key words:	[支付 技术 支付技术 扫脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word 
+Top key words:	[支付 技术 支付技术 支付扫脸]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+ Co-word 
+Top key words:	[支付技术 支付扫脸 扫脸支付 刷脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 认证]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word Chi 
+Top key words:	[支付技术 扫脸支付 支付扫脸 刷脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word Chi 
+Top key words:	[支付技术 扫脸支付 支付扫脸 刷脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word Chi 
+Top key words:	[支付 技术 支付技术 扫脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word Chi 
+Top key words:	[支付 支付技术 支付扫脸 扫脸支付]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 认证]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN

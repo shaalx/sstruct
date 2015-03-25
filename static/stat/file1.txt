@@ -23,3 +23,52 @@ Key words:	[ 数字经济 互联网经济 数据经济 数据 梦想 ]
 精确率：	0.6667
 召回率：	0.8000
 F-measure：	0.7273
+
+ Co-word 
+Top key words:	[经济 数据经济 数据 未来世界 马云]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.4000
+召回率：	0.4000
+F-measure：	0.4000
+
+ Co-word 
+Top key words:	[经济 数据经济 数据 未来世界 世界]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.4000
+召回率：	0.4000
+F-measure：	0.4000
+
+ Co-word Chi 
+Top key words:	[经济 数据经济 数据 互联网经济 经济结合]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.6000
+召回率：	0.6000
+F-measure：	0.6000
+
+ Co-word Chi 
+Top key words:	[数据经济 互联网经济 经济结合 数字经济 经济]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.6000
+召回率：	0.6000
+F-measure：	0.6000
+
+ Co-word Chi 
+Top key words:	[今年展会主题 展会主题 互联网公司 公司想 经济]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word Chi 
+Top key words:	[经济 数据经济 数据 互联网经济 数字经济]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.8000
+召回率：	0.8000
+F-measure：	0.8000
+
+ Co-word Chi 
+Top key words:	[经济 数据经济 数据 互联网经济 经济结合]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.6000
+召回率：	0.6000
+F-measure：	0.6000

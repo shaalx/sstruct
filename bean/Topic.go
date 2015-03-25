@@ -11,6 +11,7 @@ type Topic struct {
 	Parent int64
 	Weight float32
 	Freq   int32
+	Pos    string
 }
 
 // 句法成分是否为指定条件

@@ -22,13 +22,16 @@ type TopicAction struct {
 }
 
 var (
-	TopicServer    = []string{"", "sstruct", "topic"}
-	stringSaveChan chan string
-	TopicMatrix    TopicMatix
+	TopicServer       = []string{"", "sstruct", "topic"}
+	stringSaveChan    chan string
+	TopicMatrix       TopicMatix
+	OriginTopicMatrix TopicMatix
+	// posStop           = "|o|p|u|e|c|"
 )
 
 func (self *TopicAction) Init() {
 	self.persis.MgoDB = mgodb.SetLocalDB(TopicServer...)
+	OriginTopicMatrix = make(TopicMatix, 0)
 }
 
 func (self *TopicAction) Log(date int64) {
@@ -83,7 +86,8 @@ func (self *TopicAction) AnalyseWithUnixDate(date int64) {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
 	}
-	TopicMatrix.Statistics()
+	// TopicMatrix.Statistics()
+	TopicMatrix.StatisticsWithOrigin(&OriginTopicMatrix)
 }
 
 func (self *TopicAction) Analyse(n int) {
@@ -147,13 +151,18 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 			cont := search.SearchSValue(utils.I2Bytes(its), "cont", []string{}...)
 			relate := search.SearchSValue(utils.I2Bytes(its), "relate", []string{}...)
 			parent := search.SearchFIValue(utils.I2Bytes(its), "parent", []string{}...)
-			topic := Topic{id, cont, relate, parent, 0.0, 0}
+			pos := search.SearchSValue(utils.I2Bytes(its), "pos", []string{}...)
+			// if strings.Contains(posStop, "|"+pos+"|") {
+			// 	fmt.Println(pos, cont)
+			// }
+			topic := Topic{id, cont, relate, parent, 0.0, 0, pos}
 			topics[i] = &topic
 		}
 		fmt.Print(".")
 		// fmt.Println(sentence)
 		// stringSaveChan <- sentence
 		stringSaveChan <- processSentence(topics)
+		OriginTopicMatrix = append(OriginTopicMatrix, topics)
 	}
 }
 
