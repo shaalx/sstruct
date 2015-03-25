@@ -30,6 +30,7 @@ func IsFilterContains(str string) bool {
 func (t *TopicMatix) Statistics() {
 	// 统计词频，映射到map
 	key_freq := make(map[string]int32, 1)
+	// key_freq_o := make(map[string]int32, 1)
 	for _, key_slice := range *t {
 		for _, key := range key_slice {
 			if strings.Contains(posStop, "|"+key.Pos+"|") || IsFilterContains(key.Const) {
@@ -38,6 +39,15 @@ func (t *TopicMatix) Statistics() {
 			}
 			key_freq[key.Const]++
 		}
+		/*// 一元词
+		if 1 == len(key_slice) {
+			key := key_slice[0]
+			if strings.Contains(posStop, "|"+key.Pos+"|") || IsFilterContains(key.Const) {
+				// fmt.Println(key.Pos, key.Const)
+				continue
+			}
+			key_freq_o[key.Const]++
+		}*/
 		// fmt.Println(key_slice)
 	}
 	// 按照词频排序
@@ -88,7 +98,7 @@ func (t *TopicMatix) Statistics() {
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
-	topN := len(key_freq)/500 + 20
+	topN := /*len(key_freq)/500 + */ 20
 	topFormatString, topNSlice := sentences.Top(topN)
 	fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
@@ -160,7 +170,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 			score *= 0.3
 		}
 		// 降低单个词的卡方值
-		// score *= math.Log2(float64(len(key_slice) + 1))
+		score *= math.Log2(float64(len(key_slice) + 1))
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
 	}

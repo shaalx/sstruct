@@ -19,7 +19,8 @@ func init() {
 	logMapping[1426943167] = "file1.txt"
 	logMapping[1427166719] = "file.txt"
 	logMapping[1427101485] = "C32-Agriculture0002.txt"
-	DATE = 1426989715
+	logMapping[1427031288] = "C34-Economy0002.txt"
+	DATE = 1427031288
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
