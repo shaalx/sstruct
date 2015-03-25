@@ -86,7 +86,7 @@ func (self *TopicAction) AnalyseWithUnixDate(date int64) {
 		bsfirst := utils.I2Bytes(it.Content)
 		self.analyse(it.Notice, bsfirst)
 	}
-	// TopicMatrix.Statistics()
+	TopicMatrix.Statistics()
 	TopicMatrix.StatisticsWithOrigin(&OriginTopicMatrix)
 }
 

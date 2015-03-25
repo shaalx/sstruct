@@ -51,7 +51,7 @@ func (t *TopicMatix) Statistics() {
 		sum_freq_o += freq
 	}
 	sort.Sort(cellSlice)
-	cellSlice.String()
+	// cellSlice.String()
 
 	// 卡方检验
 	// nq 期望值为 sum_freq_o/len(key_freq)
@@ -132,7 +132,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		sum_freq_o += freq
 	}
 	sort.Sort(cellSlice)
-	cellSlice.String()
+	// cellSlice.String()
 
 	// 卡方检验
 	// nq 期望值为 sum_freq_o/len(key_freq)
@@ -241,9 +241,9 @@ func (c Sens) Len() int {
 }
 
 func (c Sens) Less(i, j int) bool {
-	return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg // 比较合理
+	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg // 比较合理
 	// return c[i].Avg > c[j].Avg // 长文不可靠，短文还可以
-	// return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg // 短文较差，长文还可以
+	return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg // 短文较差，长文还可以
 }
 
 func (c Sens) Swap(i, j int) {
