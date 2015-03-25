@@ -72,3 +72,17 @@ Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
 精确率：	0.6000
 召回率：	0.6000
 F-measure：	0.6000
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服 德国]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服 德国]
+Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
