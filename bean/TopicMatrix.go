@@ -160,7 +160,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 			score *= 0.3
 		}
 		// 降低单个词的卡方值
-		score *= math.Log2(float64(len(key_slice) + 1))
+		// score *= math.Log2(float64(len(key_slice) + 1))
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
 		sentences[i] = &sen
 	}
