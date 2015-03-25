@@ -3,6 +3,7 @@ package action
 import (
 	"github.com/shaalx/sstruct/service"
 	"github.com/shaalx/sstruct/service/log"
+	"github.com/shaalx/sstruct/utils"
 	. "github.com/shaalx/sstruct/vars"
 	"time"
 )
@@ -30,7 +31,8 @@ func TopicAction() {
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
-	AutoAnalyse()
+	// AutoAnalyse()
+	AutoPersistence()
 }
 
 func AutoAnalyse() {
@@ -47,6 +49,30 @@ func AutoAnalyse() {
 		serv.AnalyseWithUnixDate(date)
 		log.LOGS.Alert("Time costs : %v", time.Now().Sub(loopstart))
 	}
+	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
+	time.Sleep(time.Second)
+}
+
+func AutoPersistence() {
+	start := time.Now()
+
+	var serv service.Service
+	serv = &service.TopicAction{}
+	serv.Init()
+	defer serv.Close()
+
+	// ORIGIN_DIR
+	files := utils.ReadDir(ORIGIN_DIR)
+	for i, file := range files {
+		log.LOGS.Alert("%d:\t %s\n", i, file)
+		loopstart := time.Now()
+		CURRENT_FILENAME = file
+		serv.PersistenceWithUnixDate(start.Unix())
+		serv.Log(start.Unix())
+		log.LOGS.Alert("Time costs : %v", time.Now().Sub(loopstart))
+		time.Sleep(1)
+	}
+
 	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
 	time.Sleep(time.Second)
 }
