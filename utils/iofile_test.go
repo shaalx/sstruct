@@ -10,8 +10,11 @@ import (
 // }
 
 func TestReadDir(t *testing.T) {
-	files := ReadDir(".")
+	dir := "."
+	files := ReadDir(dir)
 	for i, it := range files {
 		fmt.Printf("%d:\t %s\n", i, it)
+		str, _ := ReadKey(dir + "/" + it)
+		fmt.Println(str)
 	}
 }
