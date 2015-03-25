@@ -23,6 +23,10 @@ func init() {
 
 	logMapping[1426948532] = "file2.txt"
 	logMapping[1427031288] = "C34-Economy0002.txt"
+	logMapping[1427296101] = "file.txt"
+	logMapping[1427031288] = "file1.txt"
+	logMapping[1426946958] = "file2.txt"
+
 	DATE = 1427031288
 	CURRENT_FILENAME = logMapping[DATE]
 }
@@ -31,8 +35,8 @@ func TopicAction() {
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
-	// AutoAnalyse()
-	AutoPersistence()
+	AutoAnalyse()
+	// AutoPersistence()
 }
 
 func AutoAnalyse() {
@@ -67,7 +71,7 @@ func AutoPersistence() {
 		log.LOGS.Alert("%d:\t %s\n", i, file)
 		loopstart := time.Now()
 		CURRENT_FILENAME = file
-		serv.PersistenceWithUnixDate(start.Unix())
+		serv.PersistenceWithUnixDate(loopstart.Unix())
 		serv.Log(start.Unix())
 		log.LOGS.Alert("Time costs : %v", time.Now().Sub(loopstart))
 		time.Sleep(1)
