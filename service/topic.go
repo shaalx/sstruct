@@ -35,7 +35,7 @@ func (self *TopicAction) Init() {
 }
 
 func (self *TopicAction) Log(date int64) {
-	utils.AppendFile(LOG_FILE, CURRENT_FILENAME+"\t"+utils.UnixDateString(date))
+	utils.AppendFile(LOG_FILE, utils.UnixDateString(date)+"\t"+CURRENT_FILENAME)
 }
 
 func (self *TopicAction) Persistence() {
