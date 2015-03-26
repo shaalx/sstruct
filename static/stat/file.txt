@@ -5,3 +5,36 @@ Key words:	[中国大脑 政协会议 人工智能]
 精确率：	0.3333
 召回率：	0.3333
 F-measure：	0.3333
+.3333
+
+ Co-word Chi 
+Top key words:	[项目 大脑项目 中国大脑]
+Key words:	[中国大脑 政协会议 人工智能]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333
+
+ Co-word Chi 
+Top key words:	[项目 大脑项目 中国大脑]
+Key words:	[中国大脑 政协会议 人工智能]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[项目 大脑项目 中国大脑]
+Key words:	[中国大脑 政协会议 人工智能]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[项目 大脑项目 中国大脑]
+Key words:	[中国大脑 政协会议 人工智能]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333

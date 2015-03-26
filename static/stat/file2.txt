@@ -5,3 +5,36 @@ Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
 精确率：	0.2500
 召回率：	0.2500
 F-measure：	0.2500
+.2500
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[支付 技术 扫脸 蚂蚁金服]
+Key words:	[扫脸支付 刷脸 支付技术 蚂蚁金服]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500

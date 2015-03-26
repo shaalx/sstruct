@@ -102,6 +102,7 @@ func (t *TopicMatix) Statistics() {
 	topFormatString, topNSlice := sentences.Top(topN)
 	fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
+	statResultString = "\n\n候选关键字Fi" + statResultString
 	SaveResult(statResultString)
 }
 
@@ -183,6 +184,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	topFormatString, topNSlice := sentences.Top(topN)
 	fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
+	statResultString = "\n\n一元词Fi'" + statResultString
 	SaveResult(statResultString)
 }
 
@@ -226,7 +228,7 @@ func PreciseAndRecall(tops []string) string {
 func SaveResult(content string) {
 	// 保存结果
 	stringSaveChan := make(chan string, 5)
-	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
+	go utils.SaveStringAppend(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
 	// fmt.Printf("\n%s\t %s\t %s\t %s\n", "index", "avg", "key-word", "freq")
 	stringSaveChan <- content
 	fmt.Println(content)

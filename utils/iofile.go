@@ -89,6 +89,19 @@ func SaveString(stringChan chan string, filename string) {
 	defer file.Close()
 }
 
+// 保存处理结果，结果从chan中读取
+func SaveStringAppend(stringChan chan string, filename string) {
+	file, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, os.ModeDevice)
+	if nil != err {
+		return
+	}
+	for {
+		str := <-stringChan
+		file.WriteString(str)
+	}
+	defer file.Close()
+}
+
 // 追加
 func AppendFile(filename string, content string) {
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_APPEND, os.ModeDevice)
