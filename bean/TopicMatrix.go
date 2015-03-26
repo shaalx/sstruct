@@ -101,6 +101,10 @@ func (t *TopicMatix) Statistics() {
 	}
 	// 排除重复
 	sentences = *sentences.EjRepeat()
+	// improve
+	for _, sentence := range sentences {
+		sentence.Sum = math.Log2(float64(sentence.Fre)) * sentence.Avg // 短文较差，长文还可以
+	}
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
@@ -189,6 +193,10 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	}
 	// 排除重复
 	sentences = *sentences.EjRepeat()
+	// improve
+	for _, sentence := range sentences {
+		sentence.Sum = math.Log2(float64(sentence.Fre)) * sentence.Avg // 短文较差，长文还可以
+	}
 	// 按照卡方值排序
 	sort.Sort(sentences)
 
@@ -266,7 +274,8 @@ func (c Sens) Len() int {
 
 func (c Sens) Less(i, j int) bool {
 	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg // 比较合理
-	return c[i].Avg > c[j].Avg // 长文不可靠，短文还可以
+	return c[i].Sum > c[j].Sum // 长文不可靠，短文还可以
+	// return c[i].Avg > c[j].Avg // 长文不可靠，短文还可以
 	// return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg // 短文较差，长文还可以
 }
 
