@@ -42,7 +42,7 @@ func (self *TopicAction) Persistence() {
 	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "几个模块。"
+		sentence := "这个。"
 		// sentence := <-stringChan
 		if sentence == "end" {
 			break
@@ -50,6 +50,7 @@ func (self *TopicAction) Persistence() {
 		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
 		ipaddr := "202.120.87.152"
 		bs := fetch.Do1(url, ipaddr)
+		fmt.Println(string(bs))
 		self.persis.Do(bs, sentence)
 		fmt.Println(i)
 		i++

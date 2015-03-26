@@ -12,13 +12,13 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "中", "他", "时", "", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "中", "他", "时", "这个", "", "", "", "", "", "",
 }
 
 var posStop string
 
 func init() {
-	posStop = "|o|p|u|e|c|wp|nh|"
+	posStop = "|o|p|u|e|c|wp|nh|r|q|m|"
 }
 
 func IsFilterContains(str string) bool {
@@ -85,7 +85,8 @@ func (t *TopicMatix) Statistics() {
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
-				score *= 0.2
+				score *= 0.0
+				break
 			}
 		}
 		if minFreq < 2 {
@@ -177,7 +178,8 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
-				score *= 0.2
+				score *= 0.0
+				break
 			}
 		}
 		if minFreq < 2 {
@@ -263,7 +265,7 @@ type Sen struct {
 
 func (s *Sen) String() string {
 	// return fmt.Sprintf("%.3f\t %.3f\t %s\t", s.Avg, s.Sum, s.Str)
-	return fmt.Sprintf("%.2f\t %s\t %d", s.Avg, s.Str, s.Fre)
+	return fmt.Sprintf("%.2f\t %.2f\t %s\t %d", s.Avg, s.Sum, s.Str, s.Fre)
 }
 
 type Sens []*Sen
