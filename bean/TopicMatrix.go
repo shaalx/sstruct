@@ -81,8 +81,6 @@ func (t *TopicMatix) Statistics() {
 			}
 			if ok {
 				score += math.Pow(float64(fr)-nq, 2.0) / nq
-				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
-				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
 				score *= 0.0

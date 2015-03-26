@@ -164,3 +164,75 @@ Key words:	[流通 经济学 流通理论 流通经济学]
 精确率：	0.7500
 召回率：	0.7500
 F-measure：	0.7500
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[流通经济学 经济学 流通理论 主流经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.7500
+召回率：	0.7500
+F-measure：	0.7500
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[流通经济学 经济学 流通理论 主流经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.7500
+召回率：	0.7500
+F-measure：	0.7500
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[流通经济学 主流经济学 古典经济学 新经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[流通经济学 主流经济学 古典经济学 新经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.2500
+召回率：	0.2500
+F-measure：	0.2500
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[理论经济学性质 流通经济学体系 经济学研究路径 理论经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[理论经济学性质 流通经济学体系 经济学研究路径 理论经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[流通经济学 经济学 流通理论 主流经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.7500
+召回率：	0.7500
+F-measure：	0.7500
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[流通经济学 经济学 流通理论 主流经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.7500
+召回率：	0.7500
+F-measure：	0.7500

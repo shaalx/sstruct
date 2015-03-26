@@ -42,7 +42,7 @@ func (self *TopicAction) Persistence() {
 	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "这个。"
+		sentence := "理论经济学。"
 		// sentence := <-stringChan
 		if sentence == "end" {
 			break
@@ -186,7 +186,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 	hedTopic.WeightUp(0.3)
 	// topics = append(topics, hedTopic)
 
-	inTopics := make(TopicSlice, 0)
+	// inTopics := make(TopicSlice, 0)
 	for _, v := range topicsOrigin {
 		// if v.IsPicked(id, []string{"SBV", "VOB"}...) {
 		// if v.IsPicked(-2, []string{"SBV", "VOB", "COO", "CMP"}...) {
@@ -194,7 +194,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 		// 		if att.IsPicked(-2, []string{"HED", "SBV", "ADV", "POB"}...) {
 		// TopicMatrix = append(TopicMatrix, topicsOrigin)
 		if v.IsPicked(-2, []string{"SBV", "ATT", "VOB", "HED", "POB", "ADV", "COO", "RAD", "LAD", "FOB"}...) {
-			inTopics = append(inTopics, v)
+			// inTopics = append(inTopics, v)
 			TopicMatrix = append(TopicMatrix, TopicSlice{v})
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "SBV"}...); ok {
