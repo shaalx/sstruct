@@ -91,6 +91,9 @@ func (t *TopicMatix) Statistics() {
 		if minFreq < 2 {
 			score *= 0.3
 		}
+		if len(key_slice) == 2 && key_slice[0].Const == key_slice[1].Const {
+			score *= 0.2
+		}
 		// 降低单个词的卡方值
 		score *= math.Log2(float64(len(key_slice) + 1))
 		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
@@ -175,6 +178,9 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		}
 		if minFreq < 2 {
 			score *= 0.3
+		}
+		if len(key_slice) == 2 && key_slice[0].Const == key_slice[1].Const {
+			score *= 0.2
 		}
 		// 降低单个词的卡方值
 		score *= math.Log2(float64(len(key_slice) + 1))
