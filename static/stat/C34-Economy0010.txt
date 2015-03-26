@@ -1,0 +1,36 @@
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[消费 消费结构 消费水平 消费支出 消费特征 消费方式 消费群体 消费倾向 居民消费]
+Key words:	[﻿1 2 3 4 5 6 7 8 9]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[消费 消费结构 消费水平 消费支出 消费特征 消费方式 消费群体 消费倾向 居民消费]
+Key words:	[﻿1 2 3 4 5 6 7 8 9]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[消费 消费结构 消费水平 消费支出 消费特征 消费方式 消费群体 消费倾向 居民消费]
+Key words:	[﻿1 2 3 4 5 6 7 8 9]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[消费 消费结构 消费水平 消费支出 消费特征 消费方式 消费群体 消费倾向 居民消费]
+Key words:	[﻿1 2 3 4 5 6 7 8 9]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN

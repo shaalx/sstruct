@@ -137,6 +137,9 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 	// fmt.Println(contentArrayOfFirstLayer)
 
 	// 第二层数组
+	if len(contentArrayOfFirstLayer) <= 0 {
+		return
+	}
 	bssecond := utils.I2Bytes(contentArrayOfFirstLayer[0])
 	contentArrayOfSecondLayer := search.SearchArrays(bssecond, []string{}...)
 	// fmt.Println(contentArrayOfSecondLayer)
