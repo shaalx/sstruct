@@ -84,6 +84,9 @@ func (t *TopicMatix) Statistics() {
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
+			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
+				score *= 0.2
+			}
 		}
 		if minFreq < 2 {
 			score *= 0.3
@@ -165,6 +168,9 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 				score += math.Pow(float64(fr)-nq, 2.0) / nq
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
 				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
+			}
+			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
+				score *= 0.2
 			}
 		}
 		if minFreq < 2 {
@@ -254,8 +260,8 @@ func (c Sens) Len() int {
 
 func (c Sens) Less(i, j int) bool {
 	// return float64(c[i].Fre)*c[i].Avg > float64(c[j].Fre)*c[j].Avg // 比较合理
-	// return c[i].Avg > c[j].Avg // 长文不可靠，短文还可以
-	return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg // 短文较差，长文还可以
+	return c[i].Avg > c[j].Avg // 长文不可靠，短文还可以
+	// return math.Log2(float64(c[i].Fre))*c[i].Avg > math.Log2(float64(c[j].Fre))*c[j].Avg // 短文较差，长文还可以
 }
 
 func (c Sens) Swap(i, j int) {

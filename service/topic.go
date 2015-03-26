@@ -39,11 +39,11 @@ func (self *TopicAction) Log(date int64) {
 }
 
 func (self *TopicAction) Persistence() {
-	stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
+	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		// sentence := "人工智能技术在最近几年突然一下开始有了实质性的应用。"
-		sentence := <-stringChan
+		sentence := "几个模块。"
+		// sentence := <-stringChan
 		if sentence == "end" {
 			break
 		}
@@ -53,8 +53,8 @@ func (self *TopicAction) Persistence() {
 		self.persis.Do(bs, sentence)
 		fmt.Println(i)
 		i++
+		<-make(chan bool, 1)
 	}
-	<-make(chan bool, 1)
 }
 
 func (self *TopicAction) PersistenceWithUnixDate(date int64) {

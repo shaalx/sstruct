@@ -37,3 +37,21 @@ Key words:	[﻿华录 发展 自力更生 录像机]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[乡间屋子阁楼 居住屋子阁楼 乡间阁楼 屋子阁楼]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[乡间屋子阁楼 居住屋子阁楼 乡间阁楼 屋子阁楼]
+Key words:	[﻿华录 发展 自力更生 录像机]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN

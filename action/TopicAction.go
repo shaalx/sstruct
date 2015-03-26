@@ -27,16 +27,17 @@ func init() {
 	// logMapping[1427297135] = "file1.txt"
 	// logMapping[1427297138] = "file2.txt"
 
-	DATE = 1427031288
+	DATE = 1426989715
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
 func TopicAction() {
+	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	AutoAnalyse()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {
@@ -115,6 +116,20 @@ func TopicActionAnalyseN() {
 	serv.Init()
 	// serv.Search()
 	serv.Analyse(33)
+	defer serv.Close()
+
+	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
+	time.Sleep(time.Second)
+}
+
+func TopicActionPersistence() {
+	start := time.Now()
+
+	var serv service.Service
+	serv = &service.TopicAction{}
+	serv.Init()
+
+	serv.Persistence()
 	defer serv.Close()
 
 	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
