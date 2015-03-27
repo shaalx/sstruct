@@ -587,3 +587,21 @@ Key words:	[流通 经济学 流通理论 流通经济学]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[中国大脑 是 在 全国政协]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[流通经济学 流通理论 经济学 主流经济学]
+Key words:	[流通 经济学 流通理论 流通经济学]
+精确率：	0.7500
+召回率：	0.7500
+F-measure：	0.7500

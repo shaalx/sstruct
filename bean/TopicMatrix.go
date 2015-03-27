@@ -239,7 +239,7 @@ func realteSet(m TopicMatix) {
 		relate = ""
 		if 1 == len(topic_slice) {
 			sigal_length += len(topic_slice)
-			ori_relateMap[topic_slice[0].Relate]++
+			ori_relateMap[topic_slice[0].Pos]++
 			continue
 		}
 		for _, t := range topic_slice {

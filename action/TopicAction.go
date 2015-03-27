@@ -47,9 +47,9 @@ func init() {
 
 func TopicAction() {
 	// TopicActionPersistence()
-	TopicActionAnalyseN()
+	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
 	// AutoAnalyse()
 }
