@@ -42,7 +42,7 @@ func (self *TopicAction) Persistence() {
 	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "中国大脑项目是李彦宏在全国政协会议上提的一个议案。"
+		sentence := "政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？政府储蓄。"
 		// sentence := <-stringChan
 		if sentence == "end" {
 			break
@@ -54,7 +54,7 @@ func (self *TopicAction) Persistence() {
 		self.persis.Do(bs, sentence)
 		fmt.Println(i)
 		i++
-		<-make(chan bool, 1)
+		break
 	}
 }
 
@@ -173,7 +173,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 // 处理句子成分
 func processSentence(topicsOrigin TopicSlice) string {
 	topicsStrOrigin := ""
-	// fmt.Println(topicsOrigin.String())
+	fmt.Println(topicsOrigin.String())
 	// sort.Sort(topicsOrigin)
 	var hedTopic *Topic
 	for _, it := range topicsOrigin {
