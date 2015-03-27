@@ -42,7 +42,7 @@ func (self *TopicAction) Persistence() {
 	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "理论经济学。"
+		sentence := "中国大脑项目是李彦宏在全国政协会议上提的一个议案。"
 		// sentence := <-stringChan
 		if sentence == "end" {
 			break
@@ -173,7 +173,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 // 处理句子成分
 func processSentence(topicsOrigin TopicSlice) string {
 	topicsStrOrigin := ""
-	// fmt.Println(topicsOrigin.String())
+	fmt.Println(topicsOrigin.String())
 	// sort.Sort(topicsOrigin)
 	var hedTopic *Topic
 	for _, it := range topicsOrigin {
@@ -211,6 +211,16 @@ func processSentence(topicsOrigin TopicSlice) string {
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.2)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ADV", "ATT"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
 				it.WeightUp(0.2)

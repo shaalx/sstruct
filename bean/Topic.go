@@ -55,7 +55,7 @@ func (t *Topic) WeightUp(w float32) {
 }
 
 func (t Topic) String() string {
-	return fmt.Sprintf("%d\t %s\t %d\t %s\t%.3f\n", t.Id, t.Relate, t.Parent, t.Const, t.Weight)
+	return fmt.Sprintf("%d\t %s\t %d\t %s\t %s\t%.3f\n", t.Id, t.Relate, t.Parent, t.Const, t.Pos, t.Weight)
 }
 
 func (t *Topic) CutWords() string {

@@ -117,6 +117,7 @@ func (t *TopicMatix) Statistics() {
 
 // 统计结果
 func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
+	realteSet(*t)
 	// 统计词频，映射到map
 	key_freq := make(map[string]int32, 1)
 	for _, key_slice := range *t {
@@ -162,9 +163,11 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	sentences := make(Sens, len(*t))
 	// 后续处理
 	var minFreq int32
+	relate := ""
 	for i, key_slice := range *t {
 		score = 0.0
 		minFreq = 1000
+		relate = ""
 		for _, key_word := range key_slice {
 			fr, ok := key_freq[key_word.Const]
 			if minFreq > fr {
@@ -179,6 +182,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 				score *= 0.0
 				break
 			}
+			relate += key_word.Relate + "-"
 		}
 		if minFreq < 2 {
 			score *= 0.1
@@ -188,7 +192,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		}
 		// 降低单个词的卡方值
 		score *= math.Log2(float64(len(key_slice) + 1))
-		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score}
+		sen := Sen{Str: key_slice.WordStrings(), Sum: score, Avg: score, Rel: relate}
 		sentences[i] = &sen
 	}
 	// 排除重复
@@ -210,10 +214,48 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 }
 
 func saveCoWords(s Sens) {
-	for i, sen := range s {
-		if len(sen.Str) > 6 && 0.0 < sen.Sum {
-			fmt.Print(i, "\t", sen.Str, "--", sen.Sum, "\n")
+	relateMap := make(map[string]int, 1)
+	for _, sen := range s {
+		// if len(sen.Rel) > 6 && 0.0 < sen.Sum {
+		// 	fmt.Printf("%d %s %s %.3f\n", i, sen.Str, sen.Rel, sen.Sum)
+		// }
+		relateMap[sen.Rel]++
+	}
+	fmt.Println()
+	length := len(s)
+	for k, v := range relateMap {
+		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(length))
+		// fmt.Printf("%s\t %d\n", k, v)
+	}
+}
+
+func realteSet(m TopicMatix) {
+	relateMap := make(map[string]int, 1)
+	ori_relateMap := make(map[string]int, 1)
+	relate := ""
+	sigal_length := 0
+	double_length := 0
+	for _, topic_slice := range m {
+		relate = ""
+		if 1 == len(topic_slice) {
+			sigal_length += len(topic_slice)
+			ori_relateMap[topic_slice[0].Relate]++
+			continue
 		}
+		for _, t := range topic_slice {
+			// fmt.Printf("%s-", t.Relate)
+			relate += t.Relate + "-"
+		}
+		double_length += 1
+		relateMap[relate]++
+	}
+
+	for k, v := range relateMap {
+		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(double_length))
+	}
+	fmt.Println()
+	for k, v := range ori_relateMap {
+		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(sigal_length))
 	}
 }
 
@@ -268,6 +310,7 @@ type Sen struct {
 	Sum float64
 	Avg float64
 	Fre int
+	Rel string
 }
 
 func (s *Sen) String() string {
