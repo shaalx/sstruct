@@ -39,22 +39,22 @@ func (self *TopicAction) Log(date int64) {
 }
 
 func (self *TopicAction) Persistence() {
-	// stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
+	stringChan := utils.ReadAll(ORIGIN_DIR + CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？政府储蓄。"
-		// sentence := <-stringChan
+		// sentence := "政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？政府储蓄。"
+		sentence := <-stringChan
 		if sentence == "end" {
 			break
 		}
 		url := `http://ltpapi.voicecloud.cn/analysis/?api_key=YourApiKey&text=` + sentence + `&format=json`
 		ipaddr := "202.120.87.152"
 		bs := fetch.Do1(url, ipaddr)
-		fmt.Println(string(bs))
+		// fmt.Println(string(bs))
 		self.persis.Do(bs, sentence)
 		fmt.Println(i)
 		i++
-		break
+		// break
 	}
 }
 
