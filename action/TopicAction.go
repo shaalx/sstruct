@@ -41,14 +41,14 @@ func init() {
 	logMapping[1427297135] = "file1.txt"
 	logMapping[1427297138] = "file2.txt"
 
-	logMapping[1427297000] = "economy.txt"
-	DATE = 1427297000
+	logMapping[1427468271] = "economy.txt"
+	DATE = 1427468271
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
 func TopicAction() {
 	// TopicActionPersistence()
-	// TopicActionAnalyseN()
+	TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
