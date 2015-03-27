@@ -22,26 +22,26 @@ func init() {
 	// logMapping[1427166719] = "file.txt"
 	// logMapping[1427101485] = "C32-Agriculture0002.txt"
 
-	logMapping[1427352668] = "C34-Economy0003.txt"
-	logMapping[1427352751] = "C34-Economy0004.txt"
-	logMapping[1427352869] = "C34-Economy0006.txt"
-	logMapping[1427353080] = "C34-Economy0008.txt"
-	logMapping[1427353205] = "C34-Economy0010.txt"
-	logMapping[1427353406] = "C34-Economy0012.txt"
-	logMapping[1427353588] = "C34-Economy0014.txt"
-	logMapping[1427353698] = "C34-Economy0016.txt"
-	logMapping[1427353813] = "C34-Economy0018.txt"
-	logMapping[1427354017] = "C34-Economy0020.txt"
-	logMapping[1427354170] = "C34-Economy0022.txt"
-	logMapping[1427354505] = "C34-Economy0024.txt"
-	logMapping[1427354710] = "C34-Economy0026.txt"
+	// logMapping[1427352668] = "C34-Economy0003.txt"
+	// logMapping[1427352751] = "C34-Economy0004.txt"
+	// logMapping[1427352869] = "C34-Economy0006.txt"
+	// logMapping[1427353080] = "C34-Economy0008.txt"
+	// logMapping[1427353205] = "C34-Economy0010.txt"
+	// logMapping[1427353406] = "C34-Economy0012.txt"
+	// logMapping[1427353588] = "C34-Economy0014.txt"
+	// logMapping[1427353698] = "C34-Economy0016.txt"
+	// logMapping[1427353813] = "C34-Economy0018.txt"
+	// logMapping[1427354017] = "C34-Economy0020.txt"
+	// logMapping[1427354170] = "C34-Economy0022.txt"
+	// logMapping[1427354505] = "C34-Economy0024.txt"
+	// logMapping[1427354710] = "C34-Economy0026.txt"
 
-	// logMapping[1427031288] = "C34-Economy0002.txt"
-	// logMapping[1427297132] = "file.txt"
-	// logMapping[1427297135] = "file1.txt"
-	// logMapping[1427297138] = "file2.txt"
+	logMapping[1427031288] = "C34-Economy0002.txt"
+	logMapping[1427297132] = "file.txt"
+	logMapping[1427297135] = "file1.txt"
+	logMapping[1427297138] = "file2.txt"
 
-	DATE = 1426986912
+	DATE = 1427031288
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -49,9 +49,9 @@ func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	AutoAnalyse()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {

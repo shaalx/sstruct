@@ -12,7 +12,7 @@ import (
 type TopicMatix []TopicSlice
 
 var filter []string = []string{
-	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "中", "他", "时", "这个", "", "", "", "", "", "",
+	",", "的", "在", "和", "了", "也", "上", "还", "是", "年", "有", "都", "而", "我", "这个", "这么", "将", "一个", "家", "最", "从", "能", "就", "不", "而是", "就是", "该", "中", "他", "时", "这个", "【", "】", "使", "只", "不", "不能", "没有", ",",
 }
 
 var posStop string
@@ -181,10 +181,10 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 			}
 		}
 		if minFreq < 2 {
-			score *= 0.3
+			score *= 0.1
 		}
 		if len(key_slice) == 2 && key_slice[0].Const == key_slice[1].Const {
-			score *= 0.2
+			score *= 0.0
 		}
 		// 降低单个词的卡方值
 		score *= math.Log2(float64(len(key_slice) + 1))
@@ -199,6 +199,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	}
 	// 按照卡方值排序
 	sort.Sort(sentences)
+	saveCoWords(sentences)
 
 	topN := 20 /*len(key_freq)/500 + */
 	topFormatString, topNSlice := sentences.Top(topN)
@@ -206,6 +207,14 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	statResultString := PreciseAndRecall(topNSlice)
 	statResultString = "\n\n一元词Fi'" + statResultString
 	SaveResult(statResultString)
+}
+
+func saveCoWords(s Sens) {
+	for i, sen := range s {
+		if len(sen.Str) > 6 && 0.0 < sen.Sum {
+			fmt.Print(i, "\t", sen.Str, "--", sen.Sum, "\n")
+		}
+	}
 }
 
 // 计算实验结果数据
