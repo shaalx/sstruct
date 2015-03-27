@@ -48,8 +48,8 @@ func init() {
 
 func TopicAction() {
 	// TopicActionPersistence()
-	// TopicActionAnalyseN()
-	TopicAction_PersistenceWithUnixDate() // 获得分词
+	TopicActionAnalyseN()
+	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
 	// AutoAnalyse()
@@ -132,7 +132,7 @@ func TopicActionAnalyseN() {
 	serv = &service.TopicAction{}
 	serv.Init()
 	// serv.Search()
-	serv.Analyse(1)
+	serv.Analyse(10)
 	defer serv.Close()
 
 	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))
