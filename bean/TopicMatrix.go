@@ -205,7 +205,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	sort.Sort(sentences)
 	saveCoWords(sentences)
 
-	topN := 20 /*len(key_freq)/500 + */
+	topN := 50 /*len(key_freq)/500 + */
 	topFormatString, topNSlice := sentences.Top(topN)
 	fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)

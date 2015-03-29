@@ -35,24 +35,28 @@ func init() {
 	// logMapping[1427354170] = "C34-Economy0022.txt"
 	// logMapping[1427354505] = "C34-Economy0024.txt"
 	// logMapping[1427354710] = "C34-Economy0026.txt"
+	// logMapping[1427468271] = "economy.txt"
 
-	logMapping[1427031288] = "C34-Economy0002.txt"
-	logMapping[1427297132] = "file.txt"
-	logMapping[1427297135] = "file1.txt"
-	logMapping[1427297138] = "file2.txt"
+	// tap
+	// logMapping[1427031288] = "C34-Economy0002.txt"
+	// logMapping[1427297132] = "file.txt"
+	// logMapping[1427297135] = "file1.txt"
+	// logMapping[1427297138] = "file2.txt"
 
-	logMapping[1427468271] = "economy.txt"
-	DATE = 1427468271
+	logMapping[1427597761] = "internet01.txt"
+	logMapping[1427620334] = "flight.txt"
+
+	DATE = 1427597761
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
 func TopicAction() {
 	// TopicActionPersistence()
-	TopicActionAnalyseN()
+	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	// AutoAnalyse()
+	AutoAnalyse()
 }
 
 func AutoAnalyse() {
@@ -83,7 +87,7 @@ func AutoPersistence() {
 	defer serv.Close()
 
 	// ORIGIN_DIR
-	ORIGIN_DIR = ORIGIN_DIR + "economy/"
+	// ORIGIN_DIR = ORIGIN_DIR + "economy/"
 	files := utils.ReadDir(ORIGIN_DIR)
 	for i, file := range files {
 		log.LOGS.Alert("%d:\t %s\n", i, file)
