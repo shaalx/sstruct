@@ -18,7 +18,7 @@ var filter []string = []string{
 var posStop string
 
 func init() {
-	posStop = "|o|p|u|e|c|wp|nh|r|q|m|"
+	posStop = "|o|p|u|e|c|nh|r|q|m|"
 }
 
 func IsFilterContains(str string) bool {
