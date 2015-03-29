@@ -38,7 +38,7 @@ func init() {
 	// logMapping[1427468271] = "economy.txt"
 
 	// tap
-	// logMapping[1427031288] = "C34-Economy0002.txt"
+	logMapping[1427031288] = "C34-Economy0002.txt"
 	// logMapping[1427297132] = "file.txt"
 	// logMapping[1427297135] = "file1.txt"
 	// logMapping[1427297138] = "file2.txt"
@@ -46,8 +46,8 @@ func init() {
 	// logMapping[1427597761] = "internet01.txt"
 	// logMapping[1427620334] = "flight.txt"
 	// logMapping[1427623186] = "internet02.txt"
-	logMapping[1427628521] = "internet03.txt"
-	DATE = 1427597761
+	// logMapping[1427628521] = "internet03.txt"
+	DATE = 1427031288
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
