@@ -1,8 +1,8 @@
 
 
-候选关键字Fi
+一元词Fi'
  Co-word Chi 
-Top key words:	[消费 储蓄存款 消费需求 储蓄 居民储蓄 经济增长 居民 人们消费 消费市场]
+Top key words:	[消费 消费需求 储蓄存款 储蓄 居民储蓄 经济增长 人们消费 消费市场 消费倾向]
 Key words:	[﻿1 2 3 4 5 6 7 8 9]
 精确率：	0.0000
 召回率：	0.0000
@@ -11,8 +11,296 @@ F-measure：	NaN
 
 一元词Fi'
  Co-word Chi 
-Top key words:	[消费 储蓄存款 消费需求 储蓄 居民储蓄 经济增长 人们消费 消费市场 居民]
+Top key words:	[消费 消费需求 储蓄存款 储蓄 居民储蓄 人们消费 经济增长 消费市场 消费倾向]
 Key words:	[﻿1 2 3 4 5 6 7 8 9]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[消费 消费需求 储蓄存款 储蓄 居民储蓄 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费需求 居民储蓄 经济发展 消费]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[居民储蓄 储蓄存款 经济增长 消费 储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 居民储蓄 消费 储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[社会消费品速度 储蓄存款 经济增长 增长速度 消费需求 居民储蓄]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 增长速度 消费需求 居民收入 居民储蓄]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.3333
+召回率：	0.3333
+F-measure：	0.3333
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 居民储蓄 消费 储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[居民储蓄 储蓄存款 经济增长 消费 储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 居民储蓄 经济增长 消费 储蓄 消费需求]
+Key words:	[﻿消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费需求 居民储蓄 经济发展 消费]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5000
+召回率：	0.5000
+F-measure：	0.5000
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 居民储蓄 经济增长 消费 储蓄 消费需求]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.6667
+召回率：	0.6667
+F-measure：	0.6667
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长 消费需求]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济]
+精确率：	0.5714
+召回率：	0.6667
+F-measure：	0.6154
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长 人们消费]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济 ]
+精确率：	0.5000
+召回率：	0.6667
+F-measure：	0.5714
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 经济增长 消费 储蓄 居民储蓄 增长 消费需求]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济 ]
+精确率：	0.5000
+召回率：	0.6667
+F-measure：	0.5714
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[储蓄存款 消费 储蓄 居民储蓄 消费需求 经济增长 人们消费]
+Key words:	[消费经济 储蓄 消费 消费需求 经济增长 经济 ]
+精确率：	0.5000
+召回率：	0.6667
+F-measure：	0.5714

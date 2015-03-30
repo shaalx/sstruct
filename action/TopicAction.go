@@ -23,11 +23,11 @@ func init() {
 	// logMapping[1427101485] = "C32-Agriculture0002.txt"
 
 	// logMapping[1427352668] = "C34-Economy0003.txt"
+	// logMapping[1427353080] = "C34-Economy0008.txt"
+	logMapping[1427353406] = "C34-Economy0012.txt"
+	// logMapping[1427353205] = "C34-Economy0010.txt"
 	// logMapping[1427352751] = "C34-Economy0004.txt"
 	// logMapping[1427352869] = "C34-Economy0006.txt"
-	// logMapping[1427353080] = "C34-Economy0008.txt"
-	// logMapping[1427353205] = "C34-Economy0010.txt"
-	// logMapping[1427353406] = "C34-Economy0012.txt"
 	// logMapping[1427353588] = "C34-Economy0014.txt"
 	// logMapping[1427353698] = "C34-Economy0016.txt"
 	// logMapping[1427353813] = "C34-Economy0018.txt"
@@ -38,7 +38,7 @@ func init() {
 	// logMapping[1427468271] = "economy.txt"
 
 	// tap
-	logMapping[1427031288] = "C34-Economy0002.txt"
+	// logMapping[1427031288] = "C34-Economy0002.txt"
 	// logMapping[1427297132] = "file.txt"
 	// logMapping[1427297135] = "file1.txt"
 	// logMapping[1427297138] = "file2.txt"

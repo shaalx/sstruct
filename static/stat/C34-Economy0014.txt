@@ -1,8 +1,8 @@
 
 
-候选关键字Fi
+一元词Fi'
  Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
+Top key words:	[假日经济 假日市场 假日 假日市场产业链 市场 经济 市场产业链 消费市场 假日消费]
 Key words:	[﻿1 2 3 4 5 6 7 8 9]
 精确率：	0.0000
 召回率：	0.0000
@@ -11,16 +11,7 @@ F-measure：	NaN
 
 一元词Fi'
  Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
-Key words:	[﻿1 2 3 4 5 6 7 8 9]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
+Top key words:	[假日经济 假日市场 假日 假日市场产业链 市场 经济 市场产业链 消费市场 假日消费]
 Key words:	[﻿1 2 3 4 5 6 7 8 9]
 精确率：	0.0000
 召回率：	0.0000
@@ -29,26 +20,8 @@ F-measure：	NaN
 
 一元词Fi'
  Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
-Key words:	[﻿1 2 3 4 5 6 7 8 9]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
-Key words:	[﻿1 2 3 4 5 6 7 8 9]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[假日经济 假日市场 假日 市场 经济 市场产业链 消费 市场繁荣 消费市场]
-Key words:	[﻿1 2 3 4 5 6 7 8 9]
+Top key words:	[假日经济 假日市场 假日 消费市场 消费 经济 市场 市场产业链 假日市场产业链 市场繁荣]
+Key words:	[1 2 3 4 5 6 7 8 9 ]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN

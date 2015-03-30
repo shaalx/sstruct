@@ -37,7 +37,7 @@ func (t *TopicMatix) Statistics() {
 				// fmt.Println(key.Pos, key.Const)
 				continue
 			}
-			key_freq[key.Const]++
+			key_freq[strings.TrimSpace(key.Const)]++
 		}
 		/*// 一元词
 		if 1 == len(key_slice) {
@@ -126,9 +126,25 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 				// fmt.Println(key.Pos, key.Const)
 				continue
 			}
-			key_freq[key.Const]++
+			key_freq[key.Const]++ //strings.Trim(, " ")
 		}
 		// fmt.Println(key_slice)
+	}
+	maxFreq := int32(0)
+	sec_maxFreq := int32(0)
+	// 最大词频
+	for _, v := range key_freq {
+		if maxFreq < v {
+			sec_maxFreq = maxFreq
+			maxFreq = v
+		}
+	}
+	// 缩小最大词频群
+	for k, v := range key_freq {
+		if maxFreq-1 < v || sec_maxFreq-1 < v {
+			key_freq[k] = (sec_maxFreq + maxFreq) / 2
+			fmt.Print(k, "\t")
+		}
 	}
 	key_freq_o := make(map[string]int32, 1)
 	for _, key_slice := range *o {
@@ -137,7 +153,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 				// fmt.Println(key.Pos, key.Const)
 				continue
 			}
-			key_freq_o[key.Const]++
+			key_freq_o[key.Const]++ //strings.Trim(, " ")
 		}
 		// fmt.Println(key_slice)
 	}
@@ -169,14 +185,12 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		minFreq = 1000
 		relate = ""
 		for _, key_word := range key_slice {
-			fr, ok := key_freq[key_word.Const]
+			fr, ok := key_freq[key_word.Const] //strings.Trim(, " ")
 			if minFreq > fr {
 				minFreq = fr
 			}
 			if ok {
 				score += math.Pow(float64(fr)-nq, 2.0) / nq
-				// score += float32(float64(math.Pow(float64(fr-int32(len(it)*2)), 2.0)) / float64(len(it)*2))
-				// score += float32(float64(math.Pow(float64(fr-int32(len(it))), 2.0)) / float64(len(it)))
 			}
 			if strings.Contains(posStop, "|"+key_word.Pos+"|") || IsFilterContains(key_word.Const) {
 				score *= 0.0
@@ -185,7 +199,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 			relate += key_word.Relate + "-"
 		}
 		if minFreq < 2 {
-			score *= 0.1
+			score *= 0.7
 		}
 		if len(key_slice) == 2 && key_slice[0].Const == key_slice[1].Const {
 			score *= 0.0
@@ -199,7 +213,8 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	sentences = *sentences.EjRepeat()
 	// improve
 	for _, sentence := range sentences {
-		sentence.Sum = math.Log2(float64(sentence.Fre)) * sentence.Avg // 短文较差，长文还可以
+		sentence.Sum = math.Log2(float64(sentence.Fre+1)) * sentence.Avg // 短文较差，长文还可以
+		// sentence.Sum = float64(sentence.Fre) * sentence.Avg
 	}
 	// 按照卡方值排序
 	sort.Sort(sentences)
@@ -269,9 +284,12 @@ func PreciseAndRecall(tops []string) string {
 		fmt.Println(err)
 		return ""
 	}
-	key_words := strings.Split(key_word, "\t")
-	key_words_len := len(key_words)
-	tops = tops[:key_words_len] //+1
+	key_words := strings.Split(key_word, "||")
+	key_words_len := len(key_words) - 2
+	// 提取的关键字比给出的关键字多bias个
+	bias := 2
+	key_words = key_words[1 : key_words_len+1]
+	tops = tops[:key_words_len+bias] //
 	count := 0.0
 	containWords := strings.Join(key_words, "|")
 	containWords = "|" + containWords + "|"
@@ -281,7 +299,7 @@ func PreciseAndRecall(tops []string) string {
 			count += 1.0
 		}
 	}
-	pricise := count / float64(key_words_len) //+1
+	pricise := count / float64(key_words_len+bias) //
 	recall := count / float64(key_words_len)
 	b := 1.0
 	f_measrue := (b*b + 1) * pricise * recall / (b*b*pricise + recall)
