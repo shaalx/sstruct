@@ -14,40 +14,50 @@ var logMapping map[int64]string
 func init() {
 	logMapping = make(map[int64]string, 1)
 
-	// logMapping[1426986912] = "C19-Computer0006.txt"
+	// // logMapping[1426986912] = "C19-Computer0006.txt"
 	// logMapping[1426989715] = "C34-Economy0002.txt"
-	// logMapping[1426988787] = "C16-Electronics02.txt"
-	// logMapping[1426943207] = "file2.txt"
-	// logMapping[1426943167] = "file1.txt"
-	// logMapping[1427166719] = "file.txt"
-	// logMapping[1427101485] = "C32-Agriculture0002.txt"
-
-	// logMapping[1427352668] = "C34-Economy0003.txt"
+	// // logMapping[1426988787] = "C16-Electronics02.txt"
+	// // logMapping[1426943207] = "file2.txt"
+	// // logMapping[1426943167] = "file1.txt"
+	// // logMapping[1427166719] = "file.txt"
+	// // logMapping[1427101485] = "C32-Agriculture0002.txt"
+	// // logMapping[1427352668] = "C34-Economy0003.txt"
 	// logMapping[1427353080] = "C34-Economy0008.txt"
-	logMapping[1427353406] = "C34-Economy0012.txt"
-	// logMapping[1427353205] = "C34-Economy0010.txt"
-	// logMapping[1427352751] = "C34-Economy0004.txt"
-	// logMapping[1427352869] = "C34-Economy0006.txt"
-	// logMapping[1427353588] = "C34-Economy0014.txt"
-	// logMapping[1427353698] = "C34-Economy0016.txt"
-	// logMapping[1427353813] = "C34-Economy0018.txt"
-	// logMapping[1427354017] = "C34-Economy0020.txt"
-	// logMapping[1427354170] = "C34-Economy0022.txt"
-	// logMapping[1427354505] = "C34-Economy0024.txt"
-	// logMapping[1427354710] = "C34-Economy0026.txt"
-	// logMapping[1427468271] = "economy.txt"
+	// logMapping[1427353406] = "C34-Economy0012.txt"
+	// // logMapping[1427353205] = "C34-Economy0010.txt"
+	// // logMapping[1427352751] = "C34-Economy0004.txt"
+	// // logMapping[1427352869] = "C34-Economy0006.txt"
+	// // logMapping[1427353588] = "C34-Economy0014.txt"
+	// // logMapping[1427353698] = "C34-Economy0016.txt"
+	// // logMapping[1427353813] = "C34-Economy0018.txt"
+	// // logMapping[1427354017] = "C34-Economy0020.txt"
+	// // logMapping[1427354170] = "C34-Economy0022.txt"
+	// // logMapping[1427354505] = "C34-Economy0024.txt"
+	// // logMapping[1427354710] = "C34-Economy0026.txt"
+	// // logMapping[1427468271] = "economy.txt"
+
+	logMapping[1427770652] = "C11-Space0027.txt"
+	logMapping[1427770749] = "C19-Computer0010.txt"
+	logMapping[1427770830] = "C3-Art0015.txt"
+	logMapping[1427774288] = "C31-Enviornment0005.txt"
+	logMapping[1427771023] = "C32-Agriculture0013.txt"
+	logMapping[1427771122] = "C38-Politics0014.txt"
+	logMapping[1427771284] = "C39-Sports0017.txt"
+	logMapping[1427771438] = "C6-Philosophy04.txt"
+	logMapping[1427771457] = "C7-History002.txt"
 
 	// tap
 	// logMapping[1427031288] = "C34-Economy0002.txt"
 	// logMapping[1427297132] = "file.txt"
 	// logMapping[1427297135] = "file1.txt"
 	// logMapping[1427297138] = "file2.txt"
-
 	// logMapping[1427597761] = "internet01.txt"
 	// logMapping[1427620334] = "flight.txt"
 	// logMapping[1427623186] = "internet02.txt"
 	// logMapping[1427628521] = "internet03.txt"
-	DATE = 1427031288
+	// logMapping[1427765874] = "economy.txt"
+
+	DATE = 1427774288
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -137,7 +147,7 @@ func TopicActionAnalyseN() {
 	serv = &service.TopicAction{}
 	serv.Init()
 	// serv.Search()
-	serv.Analyse(10)
+	serv.Analyse(1)
 	defer serv.Close()
 
 	log.LOGS.Alert("Time costs : %v", time.Now().Sub(start))

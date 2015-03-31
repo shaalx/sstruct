@@ -137,5 +137,11 @@ func ReadDir(dir string) []string {
 // 读取key文件
 func ReadKey(filename string) (string, error) {
 	bs, err := ioutil.ReadFile(filename)
+	if err != nil {
+		file, _ := os.OpenFile(filename, os.O_CREATE, 0664)
+		defer file.Close()
+		bs = []byte("||1||2||3||4||5||6||7||8||9||10||11||12||")
+		err = nil
+	}
 	return string(bs), err
 }

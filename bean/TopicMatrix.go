@@ -130,22 +130,22 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		}
 		// fmt.Println(key_slice)
 	}
-	maxFreq := int32(0)
-	sec_maxFreq := int32(0)
-	// 最大词频
-	for _, v := range key_freq {
-		if maxFreq < v {
-			sec_maxFreq = maxFreq
-			maxFreq = v
-		}
-	}
-	// 缩小最大词频群
-	for k, v := range key_freq {
-		if maxFreq-1 < v || sec_maxFreq-1 < v {
-			key_freq[k] = (sec_maxFreq + maxFreq) / 2
-			fmt.Print(k, "\t")
-		}
-	}
+	// maxFreq := int32(0)
+	// sec_maxFreq := int32(0)
+	// // 最大词频
+	// for _, v := range key_freq {
+	// 	if maxFreq < v {
+	// 		sec_maxFreq = maxFreq
+	// 		maxFreq = v
+	// 	}
+	// }
+	// // 缩小最大词频群
+	// for k, v := range key_freq {
+	// 	if maxFreq-1 < v || sec_maxFreq-1 < v {
+	// 		key_freq[k] = (sec_maxFreq + maxFreq) / 2
+	// 		fmt.Print(k, "\t")
+	// 	}
+	// }
 	key_freq_o := make(map[string]int32, 1)
 	for _, key_slice := range *o {
 		for _, key := range key_slice {
@@ -169,6 +169,22 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 		sum_freq_o += freq
 	}
 	sort.Sort(cellSlice)
+	//
+	for i := 1; i < 4; i++ {
+		avg := int32(0)
+		for j := 0; j <= i; j++ {
+			avg += cellSlice[j].Freq
+		}
+		word := cellSlice[i].Word
+		avg /= int32(i + 1)
+		key_freq[word] = avg
+		key_freq_o[word] = avg
+	}
+	word_0 := cellSlice[0].Word
+	word_1 := cellSlice[1].Word
+	word_2 := cellSlice[2].Word
+	key_freq[word_0] = 2*key_freq[word_1] - key_freq[word_2]
+	key_freq_o[word_0] = 2*key_freq[word_1] - key_freq[word_2]
 	// cellSlice.String()
 
 	// 卡方检验
@@ -254,7 +270,7 @@ func realteSet(m TopicMatix) {
 		relate = ""
 		if 1 == len(topic_slice) {
 			sigal_length += len(topic_slice)
-			ori_relateMap[topic_slice[0].Pos]++
+			ori_relateMap[topic_slice[0].Relate]++
 			continue
 		}
 		for _, t := range topic_slice {

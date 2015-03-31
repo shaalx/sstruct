@@ -7,3 +7,21 @@ Key words:	[转基因 科学 伦理 传统产业 大数据 数据经济 政务�
 精确率：	0.2222
 召回率：	0.2222
 F-measure：	0.2222
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[          ]
+Key words:	[转基因 科学 伦理 传统产业 大数据 数据经济 政务服务 数据资产 转型升级]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[          ]
+Key words:	[转基因 科学 伦理 传统产业 大数据 数据经济 政务服务 数据资产 转型升级]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN

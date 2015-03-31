@@ -1,0 +1,11 @@
+
+
+一元词Fi'
+
+一元词Fi'
+ Co-word Chi 
+Top key words:	[API函数 函数 函数设置 函数原型 串行函数 工作方式 函数返回 使用函数 CreateFile函数 相同函数 函数手册 相关函数 专门函数 BuildCommDCB函数]
+Key words:	[1 2 3 4 5 6 7 8 9 10 11 12]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
