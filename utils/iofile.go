@@ -115,7 +115,7 @@ func AppendFile(filename string, content string) {
 // 追加
 func WriteFile(filename string, content string) {
 	file, err := os.OpenFile(filename, os.O_CREATE, os.ModeDevice)
-	if log.IsError("{append to file error}", err) {
+	if log.IsError("{Write to file error}", err) {
 		return
 	}
 	file.WriteString(content + "\n")
@@ -140,7 +140,8 @@ func ReadKey(filename string) (string, error) {
 	if err != nil {
 		file, _ := os.OpenFile(filename, os.O_CREATE, 0664)
 		defer file.Close()
-		bs = []byte("||1||2||3||4||5||6||7||8||9||10||11||12||")
+		bs = []byte("||1||2||3||4||5||6||7||8||9||10||")
+		WriteFile(filename, "||1||2||3||4||5||6||7||8||9||10||")
 		err = nil
 	}
 	return string(bs), err

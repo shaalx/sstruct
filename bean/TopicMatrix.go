@@ -111,13 +111,14 @@ func (t *TopicMatix) Statistics() {
 	topFormatString, topNSlice := sentences.Top(topN)
 	fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
-	statResultString = "\n\n候选关键字Fi" + statResultString
-	SaveResult(statResultString)
+	ResultString := "\n\n候选关键字Fi" + statResultString
+
+	ResultString += "\n" + Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
+	SaveResult(ResultString)
 }
 
 // 统计结果
 func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
-	realteSet(*t)
 	// 统计词频，映射到map
 	key_freq := make(map[string]int32, 1)
 	for _, key_slice := range *t {
@@ -234,43 +235,58 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	}
 	// 按照卡方值排序
 	sort.Sort(sentences)
-	saveCoWords(sentences)
+	// saveCoWords(sentences)
 
-	topN := 50 /*len(key_freq)/500 + */
-	topFormatString, topNSlice := sentences.Top(topN)
-	fmt.Print(topFormatString)
+	topN := 30 /*len(key_freq)/500 + */
+	_, topNSlice := sentences.Top(topN)
+	// fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
-	statResultString = "\n\n一元词Fi'" + statResultString
-	SaveResult(statResultString)
+	ResultString := "\n\n候选关键字Fi" + statResultString
+	ResultString += fmt.Sprintf("总共分词词数%d\n", o.AllLength())
+	ResultString += "\n" + Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
+	SaveResult(ResultString)
+	fmt.Println(statResultString)
 }
 
-func saveCoWords(s Sens) {
-	relateMap := make(map[string]int, 1)
-	for _, sen := range s {
-		// if len(sen.Rel) > 6 && 0.0 < sen.Sum {
-		// 	fmt.Printf("%d %s %s %.3f\n", i, sen.Str, sen.Rel, sen.Sum)
-		// }
-		relateMap[sen.Rel]++
+func (self *TopicMatix) AllLength() int32 {
+	alllength := int32(0)
+	for _, topic_slice := range *self {
+		alllength += int32(len(topic_slice))
 	}
-	fmt.Println()
-	length := len(s)
-	for k, v := range relateMap {
-		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(length))
-		// fmt.Printf("%s\t %d\n", k, v)
-	}
+	return alllength
 }
 
-func realteSet(m TopicMatix) {
+// top n co-words
+func (self Sens) Co_word_top_n(n int) string {
+	k := 1
+	format_str := ""
+	for _, it := range self {
+		if k > n {
+			break
+		}
+		if it.Sum <= 0.0 {
+			break
+		}
+		if 5 < len(it.Rel) {
+			format_str += it.Str + "\n"
+		}
+		k++
+	}
+	return format_str
+}
+
+// 统计 共现词关系 比例
+func Co_word_realte(m TopicMatix) string {
 	relateMap := make(map[string]int, 1)
-	ori_relateMap := make(map[string]int, 1)
+	// ori_relateMap := make(map[string]int, 1)
 	relate := ""
-	sigal_length := 0
+	// sigal_length := 0
 	double_length := 0
 	for _, topic_slice := range m {
 		relate = ""
 		if 1 == len(topic_slice) {
-			sigal_length += len(topic_slice)
-			ori_relateMap[topic_slice[0].Relate]++
+			// sigal_length += len(topic_slice)
+			// ori_relateMap[topic_slice[0].Relate]++
 			continue
 		}
 		for _, t := range topic_slice {
@@ -280,14 +296,18 @@ func realteSet(m TopicMatix) {
 		double_length += 1
 		relateMap[relate]++
 	}
+	format_str := ""
 
-	for k, v := range relateMap {
-		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(double_length))
+	relates := []string{"ATT-ATT-ATT-", "ATT-ATT-SBV-", "ATT-SBV-", "ATT-VOB-", "ATT-HED-", "ATT-POB-", "ADV-ATT-", "FOB-VOB-", "SBV-SBV-", "SBV-ATT-", "SBV-VOB-", "SBV-COO-", "SBV-HED-"}
+	for _, it := range relates {
+		v := relateMap[it]
+		format_str += fmt.Sprintf("%s\t %.5f\n", it, float32(v)/float32(double_length))
 	}
-	fmt.Println()
-	for k, v := range ori_relateMap {
-		fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(sigal_length))
-	}
+	return format_str
+	// fmt.Println()
+	// // for k, v := range ori_relateMap {
+	// 	// fmt.Printf("%s\t %d\t %.5f\n", k, v, float32(v)/float32(sigal_length))
+	// }
 }
 
 // 计算实验结果数据
@@ -333,10 +353,11 @@ func PreciseAndRecall(tops []string) string {
 func SaveResult(content string) {
 	// 保存结果
 	stringSaveChan := make(chan string, 5)
-	go utils.SaveStringAppend(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
+	go utils.SaveString(stringSaveChan, STAT_DIR+CURRENT_FILENAME)
 	// fmt.Printf("\n%s\t %s\t %s\t %s\n", "index", "avg", "key-word", "freq")
 	stringSaveChan <- content
-	fmt.Println(content)
+	// fmt.Println(content)
+	fmt.Println("Statistics of\t", CURRENT_FILENAME)
 }
 
 type Sen struct {

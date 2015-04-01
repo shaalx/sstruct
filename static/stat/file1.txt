@@ -1,141 +1,48 @@
 
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-.4000
-000
-F-measure：	NaN
-
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
+Top key words:	[数据经济 经济 互联网经济 数字经济 经济结合 数据 未来世界]
 Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
+精确率：	0.5714
+召回率：	0.8000
+F-measure：	0.6667
+总共分词词数451
+
+ATT-ATT-ATT-	 0.00000
+ATT-ATT-SBV-	 0.04000
+ATT-SBV-	 0.12000
+ATT-VOB-	 0.22000
+ATT-HED-	 0.12000
+ATT-POB-	 0.02000
+ADV-ATT-	 0.00000
+FOB-VOB-	 0.00000
+SBV-SBV-	 0.00000
+SBV-ATT-	 0.00000
+SBV-VOB-	 0.04000
+SBV-COO-	 0.02000
+SBV-HED-	 0.42000
 
 
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[数据经济 互联网经济 经济结合 数字经济 经济]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.6000
-召回率：	0.6000
-F-measure：	0.6000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[数据经济 互联网经济 数字经济 经济结合 经济]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.6000
-召回率：	0.6000
-F-measure：	0.6000
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[经济 数据经济 数据 未来世界 世界]
-Key words:	[数字经济 互联网经济 数据经济 数据 梦想]
-精确率：	0.4000
-召回率：	0.4000
-F-measure：	0.4000
+数据经济
+互联网经济
+数字经济
+经济结合
+未来世界
+互联网公司
+用户改变
+企业关注
+企业出售
+公司想
+强大梦想
+背后梦想
+今年展会主题
+展会主题
+个性化友好
+制造商个性化
+主题为
+科技专家
+人类社会
+巨大时代
+社会进入
+变革时代

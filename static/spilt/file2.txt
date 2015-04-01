@@ -1,1 +1,262 @@
-在	昨天	德国	汉诺威	通信	和	信息	技术	博览会	上	阿里巴巴	集团	董事局	主席	马云	展示	了	蚂蚁金服	的	最新	支付	技术	SmiletoPay	扫脸	支付	据	介绍	马云	用	手机	登录	淘宝	选择	商品	然后	进入	支付	系统	确认	支付	后	出现	扫脸	的	页面	然后	扫脸	后台	认证	接着	显示	支付	成功	据	了解	马云	展示	的	是	蚂蚁金服	的	最新	支付	技术	SmiletoPay	扫脸	技术	该	技术	是	由	蚂蚁	金服	与	face	合作	研发	在	购物	后	的	支付	认证	阶段	通过	扫脸	取代	传统	密码	能	达到	超过	99%	识别率	在	马云	刷	脸	时	后台	验证	需要	处理	大量	来自	面部	的	数据	信息	包括	结构	五官	以及	肌肉	等	方面	的	数据	分析	从而	来	比	对	识别	是	不	是	马云	蚂蚁	金服	方面	表示	目前	该	刷脸	支付	技术	虽然	还	没有	正式	投入	商用	但是	未来	将	被	应用	于	阿里巴巴	在	全球	的	支付	开户	认证	等	业务	领域	昨天	在	秀	了	刷脸	支付	之后	马云	还	特别	把	从	淘宝网	买	到	的	与	德国	总理	默克尔	出生	年月	相同	的	德国	日历	赠与	默克尔	
+据介绍。
+0	 HED	 -1	 据	 p
+1	 POB	 0	 介绍	 v
+2	 WP	 0	 。	 wp
+
+在昨天德国汉诺威通信和信息技术博览会上。
+0	 HED	 -1	 在	 p
+1	 ADV	 4	 昨天	 nt
+2	 ATT	 3	 德国	 ns
+3	 SBV	 4	 汉诺威	 ns
+4	 ATT	 9	 通信	 v
+5	 LAD	 8	 和	 c
+6	 ATT	 7	 信息	 n
+7	 ATT	 8	 技术	 n
+8	 COO	 4	 博览会	 n
+9	 POB	 0	 上	 nd
+10	 WP	 0	 。	 wp
+
+阿里巴巴集团董事局主席马云展示了蚂蚁金服的最新支付技术“SmiletoPay”扫脸支付。
+0	 ATT	 1	 阿里巴巴	 nz
+1	 ATT	 2	 集团	 n
+2	 ATT	 3	 董事局	 n
+3	 ATT	 4	 主席	 n
+4	 SBV	 5	 马云	 nh
+5	 HED	 -1	 展示	 v
+6	 RAD	 5	 了	 u
+7	 ATT	 11	 蚂蚁金服	 n
+8	 RAD	 7	 的	 u
+9	 ADV	 10	 最新	 a
+10	 ATT	 11	 支付	 v
+11	 VOB	 5	 技术	 n
+12	 WP	 13	 “	 wp
+13	 SBV	 15	 SmiletoPay	 ws
+14	 WP	 13	 ”	 wp
+15	 COO	 5	 扫脸	 v
+16	 VOB	 15	 支付	 v
+17	 WP	 5	 。	 wp
+
+马云用手机登录淘宝。
+0	 SBV	 3	 马云	 nh
+1	 ADV	 3	 用	 p
+2	 POB	 1	 手机	 n
+3	 HED	 -1	 登录	 v
+4	 VOB	 3	 淘宝	 n
+5	 WP	 3	 。	 wp
+
+选择商品。
+0	 HED	 -1	 选择	 v
+1	 VOB	 0	 商品	 n
+2	 WP	 0	 。	 wp
+
+然后进入支付系统。
+0	 ADV	 1	 然后	 c
+1	 HED	 -1	 进入	 v
+2	 ATT	 3	 支付	 v
+3	 VOB	 1	 系统	 n
+4	 WP	 1	 。	 wp
+
+确认支付后出现扫脸的页面,然后扫脸后台认证,接着显示支付成功。
+0	 ATT	 2	 确认	 v
+1	 VOB	 0	 支付	 v
+2	 ADV	 3	 后	 nd
+3	 HED	 -1	 出现	 v
+4	 ATT	 6	 扫脸	 v
+5	 RAD	 4	 的	 u
+6	 VOB	 3	 页面	 n
+7	 WP	 9	 ,	 wp
+8	 ADV	 9	 然后	 c
+9	 COO	 3	 扫脸	 v
+10	 SBV	 11	 后台	 n
+11	 VOB	 9	 认证	 v
+12	 WP	 9	 ,	 wp
+13	 ADV	 14	 接着	 c
+14	 COO	 9	 显示	 v
+15	 VOB	 14	 支付	 v
+16	 CMP	 15	 成功	 a
+17	 WP	 3	 。	 wp
+
+据了解。
+0	 HED	 -1	 据	 p
+1	 POB	 0	 了解	 v
+2	 WP	 0	 。	 wp
+
+马云展示的是蚂蚁金服的最新支付技术SmiletoPay扫脸技术。
+0	 SBV	 1	 马云	 nh
+1	 SBV	 3	 展示	 v
+2	 RAD	 1	 的	 u
+3	 HED	 -1	 是	 v
+4	 ATT	 6	 蚂蚁金服	 n
+5	 RAD	 4	 的	 u
+6	 ADV	 7	 最新	 a
+7	 VOB	 3	 支付	 v
+8	 VOB	 7	 技术	 n
+9	 SBV	 10	 SmiletoPay	 ws
+10	 COO	 7	 扫脸	 v
+11	 VOB	 10	 技术	 n
+12	 WP	 3	 。	 wp
+
+该技术是由蚂蚁金服与face++合作研发。
+0	 ATT	 1	 该	 r
+1	 SBV	 2	 技术	 n
+2	 HED	 -1	 是	 v
+3	 ADV	 8	 由	 p
+4	 ATT	 5	 蚂蚁	 n
+5	 POB	 3	 金服	 n
+6	 ADV	 8	 与	 p
+7	 POB	 6	 face	 nh
+8	 VOB	 2	 合作	 v
+9	 COO	 8	 研发	 v
+10	 WP	 2	 。	 wp
+
+在购物后的支付认证阶段通过扫脸取代传统密码。
+0	 ADV	 9	 在	 p
+1	 ATT	 2	 购物	 v
+2	 POB	 0	 后	 nd
+3	 RAD	 0	 的	 u
+4	 ATT	 6	 支付	 v
+5	 VOB	 4	 认证	 v
+6	 ADV	 9	 阶段	 n
+7	 ADV	 9	 通过	 p
+8	 POB	 7	 扫脸	 v
+9	 HED	 -1	 取代	 v
+10	 ATT	 11	 传统	 n
+11	 VOB	 9	 密码	 n
+12	 WP	 9	 。	 wp
+
+能达到超过99%识别率。
+0	 ADV	 1	 能	 v
+1	 HED	 -1	 达到	 v
+2	 VOB	 1	 超过	 v
+3	 ATT	 4	 99%	 m
+4	 VOB	 2	 识别率	 n
+5	 WP	 1	 。	 wp
+
+在马云刷脸时。
+0	 HED	 -1	 在	 p
+1	 SBV	 2	 马云	 nh
+2	 ATT	 4	 刷	 v
+3	 VOB	 2	 脸	 n
+4	 POB	 0	 时	 n
+5	 WP	 0	 。	 wp
+
+后台验证需要处理大量来自面部的数据信息。
+0	 SBV	 1	 后台	 n
+1	 ADV	 2	 验证	 v
+2	 HED	 -1	 需要	 v
+3	 VOB	 2	 处理	 v
+4	 ATT	 9	 大量	 m
+5	 ATT	 9	 来自	 v
+6	 VOB	 5	 面部	 n
+7	 RAD	 5	 的	 u
+8	 ATT	 9	 数据	 n
+9	 VOB	 3	 信息	 n
+10	 WP	 2	 。	 wp
+
+包括结构、五官以及肌肉等方面的数据分析。
+0	 HED	 -1	 包括	 v
+1	 ATT	 7	 结构	 n
+2	 WP	 3	 、	 wp
+3	 COO	 1	 五官	 n
+4	 LAD	 5	 以及	 c
+5	 COO	 1	 肌肉	 n
+6	 RAD	 1	 等	 u
+7	 ATT	 9	 方面	 n
+8	 RAD	 7	 的	 u
+9	 VOB	 0	 数据	 n
+10	 RAD	 0	 分析	 v
+11	 WP	 0	 。	 wp
+
+从而来比对识别“是不是马云”。
+0	 ADV	 1	 从而	 c
+1	 ADV	 2	 来	 v
+2	 SBV	 6	 比	 p
+3	 ADV	 6	 对	 p
+4	 POB	 3	 识别	 v
+5	 WP	 6	 “	 wp
+6	 HED	 -1	 是	 v
+7	 ADV	 8	 不	 d
+8	 VOB	 6	 是	 v
+9	 VOB	 8	 马云	 n
+10	 WP	 8	 ”	 wp
+11	 WP	 6	 。	 wp
+
+蚂蚁金服方面表示。
+0	 ATT	 1	 蚂蚁	 n
+1	 ATT	 2	 金服	 n
+2	 SBV	 3	 方面	 n
+3	 HED	 -1	 表示	 v
+4	 WP	 3	 。	 wp
+
+目前该刷脸支付技术虽然还没有正式投入商用。
+0	 ADV	 3	 目前	 nt
+1	 ATT	 2	 该	 r
+2	 SBV	 3	 刷脸	 n
+3	 HED	 -1	 支付	 v
+4	 VOB	 3	 技术	 n
+5	 ADV	 9	 虽然	 c
+6	 ADV	 7	 还	 d
+7	 ADV	 9	 没有	 d
+8	 ADV	 9	 正式	 a
+9	 COO	 3	 投入	 v
+10	 VOB	 9	 商用	 v
+11	 WP	 3	 。	 wp
+
+但是未来将被应用于阿里巴巴在全球的支付、开户认证等业务领域。
+0	 ADV	 4	 但是	 c
+1	 ADV	 4	 未来	 nt
+2	 ADV	 4	 将	 d
+3	 ADV	 4	 被	 p
+4	 HED	 -1	 应用	 v
+5	 CMP	 4	 于	 p
+6	 SBV	 10	 阿里巴巴	 nh
+7	 ADV	 10	 在	 p
+8	 POB	 7	 全球	 n
+9	 RAD	 7	 的	 u
+10	 ATT	 16	 支付	 v
+11	 WP	 12	 、	 wp
+12	 COO	 10	 开户	 v
+13	 VOB	 12	 认证	 v
+14	 RAD	 10	 等	 u
+15	 ATT	 16	 业务	 n
+16	 POB	 5	 领域	 n
+17	 WP	 4	 。	 wp
+
+昨天。
+0	 HED	 -1	 昨天	 nt
+1	 WP	 0	 。	 wp
+
+在秀了刷脸支付之后。
+0	 HED	 -1	 在	 p
+1	 ATT	 3	 秀	 a
+2	 RAD	 1	 了	 u
+3	 FOB	 4	 刷脸	 n
+4	 ATT	 5	 支付	 v
+5	 POB	 0	 之后	 nd
+6	 WP	 0	 。	 wp
+
+马云还特别把从淘宝网买到的、与德国总理默克尔出生年月相同的德国日历赠与默克尔。
+0	 SBV	 20	 马云	 nh
+1	 ADV	 20	 还	 d
+2	 ADV	 20	 特别	 d
+3	 ADV	 20	 把	 p
+4	 ADV	 6	 从	 p
+5	 POB	 4	 淘宝网	 n
+6	 SBV	 16	 买	 v
+7	 CMP	 6	 到	 v
+8	 RAD	 6	 的	 u
+9	 WP	 14	 、	 wp
+10	 ADV	 14	 与	 p
+11	 ATT	 12	 德国	 ns
+12	 ATT	 13	 总理	 n
+13	 POB	 10	 默克尔	 nh
+14	 ATT	 15	 出生	 v
+15	 SBV	 16	 年月	 n
+16	 ATT	 19	 相同	 a
+17	 RAD	 16	 的	 u
+18	 ATT	 19	 德国	 ns
+19	 POB	 3	 日历	 n
+20	 HED	 -1	 赠与	 v
+21	 VOB	 20	 默克尔	 nh
+22	 WP	 20	 。	 wp
+

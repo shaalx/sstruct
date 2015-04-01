@@ -1,211 +1,63 @@
 
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-.3333
-
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[中国大脑项目 大脑项目 做项目]
+Top key words:	[大脑项目 项目 中国大脑项目 做项目 大项目]
 Key words:	[中国大脑 政协会议 人工智能]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+总共分词词数711
+
+ATT-ATT-ATT-	 0.09195
+ATT-ATT-SBV-	 0.06897
+ATT-SBV-	 0.18391
+ATT-VOB-	 0.20690
+ATT-HED-	 0.01149
+ATT-POB-	 0.12644
+ADV-ATT-	 0.08046
+FOB-VOB-	 0.00000
+SBV-SBV-	 0.00000
+SBV-ATT-	 0.03448
+SBV-VOB-	 0.04598
+SBV-COO-	 0.01149
+SBV-HED-	 0.13793
 
 
-一元词Fi'
- Co-word Chi 
-Top key words:	[中国大脑项目 大脑项目 做项目]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[项目 大脑项目 中国大脑]
-Key words:	[中国大脑 政协会议 人工智能]
-精确率：	0.3333
-召回率：	0.3333
-F-measure：	0.3333
+大脑项目
+中国大脑项目
+做项目
+大项目
+美国项目
+项目造成
+政协会议中心
+中国大脑计划
+会议中心
+全国政协会议
+中心厅
+中心举行
+政协大会发言
+新闻中心
+功能模拟
+模拟功能
+军方做
+国家力
+中国国防
+计划建立
+创业者做
+国家安全
+功能厅
+提议案
+正式提
+计算机模拟
+人脑功能
+刺激诞生
+持续需求
+长期需求
+人工智能技术
+芯片价格
+价格下降
+相关创新
+直接刺激
+让企业
+英特尔公司

@@ -1,159 +1,81 @@
 
- Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
- Co-word Chi 
-F-measure：	NaN
-F-measure：	NaN
-
- 召回率：	0.0000
-F-measure：	NaN
-
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
+Top key words:	[无线电通讯 通讯 间通讯 相互通讯 通讯实现 实验 阁楼 进行 小阁楼 阁楼窗口 进行决心 屋子阁楼]
+Key words:	[1 2 3 4 5 6 7 8 9 10]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
+总共分词词数7709
+
+ATT-ATT-ATT-	 0.01418
+ATT-ATT-SBV-	 0.00000
+ATT-SBV-	 0.07092
+ATT-VOB-	 0.21277
+ATT-HED-	 0.09929
+ATT-POB-	 0.21277
+ADV-ATT-	 0.09220
+FOB-VOB-	 0.00709
+SBV-SBV-	 0.00000
+SBV-ATT-	 0.03546
+SBV-VOB-	 0.04255
+SBV-COO-	 0.00709
+SBV-HED-	 0.20567
 
 
-一元词Fi'
- Co-word Chi 
-
-
-
-F-measure：	NaN
-F-measure：	NaN
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[乡间屋子阁楼 居住屋子阁楼 乡间阁楼 屋子阁楼]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[乡间屋子阁楼 居住屋子阁楼 乡间阁楼 屋子阁楼]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 彼此通讯 间]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-候选关键字Fi
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 实验]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-
-
-一元词Fi'
- Co-word Chi 
-Top key words:	[阁楼 通讯 间 彼此通讯]
-Key words:	[﻿华录 发展 自力更生 录像机]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
+无线电通讯
+间通讯
+相互通讯
+通讯实现
+小阁楼
+阁楼窗口
+进行决心
+屋子阁楼
+做实验
+阁楼角落
+大西洋两岸间
+兄亚比索
+兄长亚比索
+山谷间
+间符号
+比索收到
+电波穿过
+发报机电波
+自然界电波
+改良成为
+腰挂
+枪声回荡
+无可救药顽童
+电磁检波器
+原始检波器
+电池之中
+锌分量
+亚携
+目视方法
+气愤之下
+突出成绩
+无穷的乐趣
+１８９５年９月
+﻿万水千山隔不断纪念
+爱尔兰乡村
+所有时间
+４月２５日
+庭院两端
+容器大小
+实验室里
+电气用具
+生长妇女
+手持
+长久以来
+有朝一日完成
+遥纽芬兰
+宝贵光阴
+父亲看作
+很大
+现代通信
+杰出科学家
+少年时候
+大兴趣
+蒲冬明朋友
+兄消失

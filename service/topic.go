@@ -14,7 +14,7 @@ import (
 	"github.com/shaalx/sstruct/utils"
 	"sort"
 	// "time"
-	// "strings"
+	"strings"
 )
 
 type TopicAction struct {
@@ -45,7 +45,7 @@ func (self *TopicAction) Persistence() {
 	go utils.SaveStringAppend(stringSaveChan, "./"+CURRENT_FILENAME)
 	i := 1
 	for {
-		sentence := "有助于增加税收。"
+		sentence := "模块扇入是什么。"
 		// sentence := <-stringChan
 		if sentence == "end" {
 			break
@@ -164,6 +164,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 			// if strings.Contains(posStop, "|"+pos+"|") {
 			// 	fmt.Println(pos, cont)
 			// }
+			cont = strings.TrimSpace(cont)
 			topic := Topic{id, cont, relate, parent, 0.0, 0, pos}
 			topics[i] = &topic
 		}
@@ -178,7 +179,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 // 处理句子成分
 func processSentence(topicsOrigin TopicSlice) string {
 	topicsStrOrigin := ""
-	// fmt.Println(topicsOrigin.String())
+	fmt.Println(topicsOrigin.String())
 	// sort.Sort(topicsOrigin)
 	var hedTopic *Topic
 	for _, it := range topicsOrigin {
@@ -335,97 +336,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}*/
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "SBV"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"FOB", "VOB"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "ATT"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "ATT"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "VOB"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "VOB"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "ATT", "ATT"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "COO"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
 				it.WeightUp(0.1)
@@ -445,6 +356,16 @@ func processSentence(topicsOrigin TopicSlice) string {
 			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "SBV"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "VOB"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -455,17 +376,6 @@ func processSentence(topicsOrigin TopicSlice) string {
 			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "HED"}...); ok {
-			topics = append(topics, resultTopics...)
-			for _, it := range topics {
-				it.WeightUp(0.1)
-			}
-			sort.Sort(topics)
-			TopicMatrix = append(TopicMatrix, topics)
-			// fmt.Println(topics.String())
-			topics = make(TopicSlice, 0)
-		}
-		// ATT-POB
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "HED"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
@@ -476,7 +386,7 @@ func processSentence(topicsOrigin TopicSlice) string {
 			// fmt.Println(topics.String())
 			topics = make(TopicSlice, 0)
 		}
-		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"VOB", "HED"}...); ok {
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ATT", "POB"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
 				it.WeightUp(0.1)
@@ -487,6 +397,67 @@ func processSentence(topicsOrigin TopicSlice) string {
 			topics = make(TopicSlice, 0)
 		}
 		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"ADV", "ATT"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"FOB", "VOB"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "SBV"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "ATT"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "VOB"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "COO"}...); ok {
+			topics = append(topics, resultTopics...)
+			for _, it := range topics {
+				it.WeightUp(0.1)
+			}
+			sort.Sort(topics)
+			TopicMatrix = append(TopicMatrix, topics)
+			// fmt.Println(topics.String())
+			topics = make(TopicSlice, 0)
+		}
+		// ATT-POB
+		if ok, resultTopics := v.IsCond(topicsOrigin, []string{"SBV", "HED"}...); ok {
 			topics = append(topics, resultTopics...)
 			for _, it := range topics {
 				it.WeightUp(0.1)
