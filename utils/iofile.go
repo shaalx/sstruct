@@ -57,7 +57,7 @@ func ReadAll(filename string) chan string {
 	filestrings := strings.Split(filestring, "。")
 	go func([]string) {
 		for _, substring := range filestrings {
-			substrings := strings.Split(substring, "。")
+			substrings := strings.Split(substring, "，")
 			for _, it := range substrings {
 				if 0 >= len(it) {
 					continue
@@ -140,8 +140,8 @@ func ReadKey(filename string) (string, error) {
 	if err != nil {
 		file, _ := os.OpenFile(filename, os.O_CREATE, 0664)
 		defer file.Close()
-		bs = []byte("||1||2||3||4||5||6||7||8||9||10||")
-		WriteFile(filename, "||1||2||3||4||5||6||7||8||9||10||")
+		bs = []byte(",1,2,3,4,5,6,7,8,9,10,")
+		WriteFile(filename, ",1,2,3,4,5,6,7,8,9,10,")
 		err = nil
 	}
 	return string(bs), err

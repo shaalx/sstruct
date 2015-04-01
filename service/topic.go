@@ -170,7 +170,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 		}
 		fmt.Print(".")
 		// fmt.Println(sentence)
-		stringSaveChan <- sentence + "\n"
+		// stringSaveChan <- sentence + "\n"
 		stringSaveChan <- processSentence(topics)
 		OriginTopicMatrix = append(OriginTopicMatrix, topics)
 	}
@@ -179,7 +179,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 // 处理句子成分
 func processSentence(topicsOrigin TopicSlice) string {
 	topicsStrOrigin := ""
-	fmt.Println(topicsOrigin.String())
+	// fmt.Println(topicsOrigin.String())
 	// sort.Sort(topicsOrigin)
 	var hedTopic *Topic
 	for _, it := range topicsOrigin {
@@ -480,8 +480,8 @@ func processSentence(topicsOrigin TopicSlice) string {
 	// 	topicsStr += it.String()
 	// }
 	// fmt.Printf("%s\n%s\n", topicsStrOrigin, topicsStr)
-	// return /*result + "\n" + */ topicsStrOrigin /*+ "\n" + topicsStr + "\n"*/
-	return topicsOrigin.String() + "\n"
+	return /*result + "\n" + */ topicsStrOrigin /*+ "\n" + topicsStr + "\n"*/
+	// return topicsOrigin.String() + "\n"
 }
 
 func (self *TopicAction) Close() {

@@ -320,7 +320,7 @@ func PreciseAndRecall(tops []string) string {
 		fmt.Println(err)
 		return ""
 	}
-	key_words := strings.Split(key_word, "||")
+	key_words := strings.Split(key_word, ",")
 	key_words_len := len(key_words) - 2
 	// 提取的关键字比给出的关键字多bias个
 	bias := 2
