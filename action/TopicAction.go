@@ -66,8 +66,8 @@ func TopicAction() {
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
-	// AutoPersistence()
-	AutoAnalyse()
+	AutoPersistence()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {
@@ -97,8 +97,8 @@ func AutoPersistence() {
 	serv.Init()
 	defer serv.Close()
 
-	// ORIGIN_DIR
-	// ORIGIN_DIR = ORIGIN_DIR + "economy/"
+	// ORIGIN_DIR/economy;computer/
+	ORIGIN_DIR = ORIGIN_DIR + "agriculture/"
 	files := utils.ReadDir(ORIGIN_DIR)
 	for i, file := range files {
 		log.LOGS.Alert("%d:\t %s\n", i, file)
