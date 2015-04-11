@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"fmt"
+	// "fmt"
 	"testing"
 )
 
@@ -9,12 +9,16 @@ import (
 // 	DeleteEnter("file.txt")
 // }
 
-func TestReadDir(t *testing.T) {
-	dir := "."
-	files := ReadDir(dir)
-	for i, it := range files {
-		fmt.Printf("%d:\t %s\n", i, it)
-		str, _ := ReadKey(dir + "/" + it)
-		fmt.Println(str)
-	}
+// func TestReadDir(t *testing.T) {
+// 	dir := "."
+// 	files := ReadDir(dir)
+// 	for i, it := range files {
+// 		fmt.Printf("%d:\t %s\n", i, it)
+// 		str, _ := ReadKey(dir + "/" + it)
+// 		fmt.Println(str)
+// 	}
+// }
+
+func TestDeleteEnter(t *testing.T) {
+	DeleteEnter("file.txt")
 }

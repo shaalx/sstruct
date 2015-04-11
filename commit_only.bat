@@ -1,7 +1,8 @@
 git add -A
 git status
 ::echo commit for change : 
-set /p commit_for_change=
+@echo commit:
+@set /p commit_for_change=
 git commit -m "%commit_for_change%"
 ::git push oschina master
 ::git push github master

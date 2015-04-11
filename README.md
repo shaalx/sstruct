@@ -12,7 +12,7 @@ git clone http://github.com/shaalx/sstruct.git
 
 ## Discription
 
-Open-source, fetch news from toutiao and zhihu app. Just for study and research.
+Open-source, fetch news from toutiao ,zhihu app or anything else. Just for study and research.
 
 [wisdomswing.gmail.com](wisdomswing.gmail.com)
 
