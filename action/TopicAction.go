@@ -97,8 +97,8 @@ func AutoPersistence() {
 	serv.Init()
 	defer serv.Close()
 
-	// ORIGIN_DIR/economy;computer/agriculture;art
-	ORIGIN_DIR = ORIGIN_DIR + "history/"
+	// ORIGIN_DIR/economy;computer/agriculture;art;history;environment;politics;space;sports;
+	ORIGIN_DIR = ORIGIN_DIR + "philosophy/"
 	files := utils.ReadDir(ORIGIN_DIR)
 	for i, file := range files {
 		log.LOGS.Alert("%d:\t %s\n", i, file)

@@ -2,7 +2,7 @@ package utils
 
 import (
 	"bufio"
-	// "fmt"
+	"fmt"
 	"github.com/shaalx/sstruct/service/log"
 	. "github.com/shaalx/sstruct/vars"
 	"io/ioutil"
@@ -36,7 +36,9 @@ func DeleteEnter(filename string) {
 			return
 		}
 		bs := []byte(str)
+		fmt.Println(bs)
 		bs = bs[:len(bs)-2]
+		fmt.Println(bs)
 		_, err = writer.WriteString(string(bs))
 		writer.Flush()
 		if log.IsError("{write to file error}", err) {
