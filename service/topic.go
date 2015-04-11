@@ -170,7 +170,7 @@ func (self *TopicAction) analyse(sentence string, data []byte) {
 		}
 		fmt.Print(".")
 		// fmt.Println(sentence)
-		stringSaveChan <- sentence + "\n"
+		// stringSaveChan <- sentence + "\n"
 		stringSaveChan <- processSentence(topics)
 		OriginTopicMatrix = append(OriginTopicMatrix, topics)
 	}
