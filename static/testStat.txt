@@ -1,0 +1,164 @@
+资本形成是一国经济发展，特别是发展中国家经济增长的最重要战略因素之一。
+0	 SBV	 1	 资本	 n
+1	 SBV	 2	 形成	 v
+2	 HED	 -1	 是	 v
+3	 ATT	 4	 一	 m
+4	 ATT	 5	 国	 n
+5	 FOB	 6	 经济	 n
+6	 VOB	 2	 发展	 v
+7	 WP	 2	 ，	 wp
+8	 ADV	 9	 特别	 d
+9	 COO	 2	 是	 v
+10	 ATT	 11	 发展中国家	 i
+11	 SBV	 12	 经济	 n
+12	 ATT	 17	 增长	 v
+13	 RAD	 12	 的	 u
+14	 ADV	 15	 最	 d
+15	 ATT	 17	 重要	 a
+16	 ATT	 17	 战略	 n
+17	 ATT	 18	 因素	 n
+18	 VOB	 9	 之一	 r
+19	 WP	 2	 。	 wp
+
+资本形成是一国经济发展，特别是发展中国家经济增长的最重要战略因素之一。
+0	 SBV	 1	 资本	 n
+1	 SBV	 2	 形成	 v
+2	 HED	 -1	 是	 v
+3	 ATT	 4	 一	 m
+4	 ATT	 5	 国	 n
+5	 FOB	 6	 经济	 n
+6	 VOB	 2	 发展	 v
+7	 WP	 2	 ，	 wp
+8	 ADV	 9	 特别	 d
+9	 COO	 2	 是	 v
+10	 ATT	 11	 发展中国家	 i
+11	 SBV	 12	 经济	 n
+12	 ATT	 17	 增长	 v
+13	 RAD	 12	 的	 u
+14	 ADV	 15	 最	 d
+15	 ATT	 17	 重要	 a
+16	 ATT	 17	 战略	 n
+17	 ATT	 18	 因素	 n
+18	 VOB	 9	 之一	 r
+19	 WP	 2	 。	 wp
+
+资本形成是一国经济发展，特别是发展中国家经济增长的最重要战略因素之一。
+0	 SBV	 1	 资本	 n
+1	 SBV	 2	 形成	 v
+2	 HED	 -1	 是	 v
+3	 ATT	 4	 一	 m
+4	 ATT	 5	 国	 n
+5	 FOB	 6	 经济	 n
+6	 VOB	 2	 发展	 v
+7	 WP	 2	 ，	 wp
+8	 ADV	 9	 特别	 d
+9	 COO	 2	 是	 v
+10	 ATT	 11	 发展中国家	 i
+11	 SBV	 12	 经济	 n
+12	 ATT	 17	 增长	 v
+13	 RAD	 12	 的	 u
+14	 ADV	 15	 最	 d
+15	 ATT	 17	 重要	 a
+16	 ATT	 17	 战略	 n
+17	 ATT	 18	 因素	 n
+18	 VOB	 9	 之一	 r
+19	 WP	 2	 。	 wp
+
+资本形成的前提是有投资活动，而投资活动的资金来源是储蓄。
+0	 SBV	 1	 资本	 n
+1	 ATT	 3	 形成	 v
+2	 RAD	 1	 的	 u
+3	 SBV	 4	 前提	 n
+4	 HED	 -1	 是	 v
+5	 VOB	 4	 有	 v
+6	 ATT	 7	 投资	 v
+7	 VOB	 5	 活动	 v
+8	 WP	 4	 ，	 wp
+9	 ADV	 15	 而	 c
+10	 ATT	 13	 投资	 v
+11	 COO	 10	 活动	 v
+12	 RAD	 10	 的	 u
+13	 ATT	 14	 资金	 n
+14	 SBV	 15	 来源	 n
+15	 COO	 4	 是	 v
+16	 VOB	 15	 储蓄	 n
+17	 WP	 4	 。	 wp
+
+资本形成是一国经济发展，特别是发展中国家经济增长的最重要战略因素之一。
+0	 SBV	 1	 资本	 n
+1	 SBV	 2	 形成	 v
+2	 HED	 -1	 是	 v
+3	 ATT	 4	 一	 m
+4	 ATT	 5	 国	 n
+5	 FOB	 6	 经济	 n
+6	 VOB	 2	 发展	 v
+7	 WP	 2	 ，	 wp
+8	 ADV	 9	 特别	 d
+9	 COO	 2	 是	 v
+10	 ATT	 11	 发展中国家	 i
+11	 SBV	 12	 经济	 n
+12	 ATT	 17	 增长	 v
+13	 RAD	 12	 的	 u
+14	 ADV	 15	 最	 d
+15	 ATT	 17	 重要	 a
+16	 ATT	 17	 战略	 n
+17	 ATT	 18	 因素	 n
+18	 VOB	 9	 之一	 r
+19	 WP	 2	 。	 wp
+
+私人储蓄。
+0	 ATT	 1	 私人	 n
+1	 HED	 -1	 储蓄	 n
+2	 WP	 1	 。	 wp
+
+贫困现象。
+0	 ATT	 1	 贫困	 a
+1	 HED	 -1	 现象	 n
+2	 WP	 1	 。	 wp
+
+这有贫困现象。
+0	 SBV	 1	 这	 r
+1	 HED	 -1	 有	 v
+2	 ATT	 3	 贫困	 a
+3	 VOB	 1	 现象	 n
+4	 WP	 1	 。	 wp
+
+这有流通问题。
+0	 SBV	 1	 这	 r
+1	 HED	 -1	 有	 v
+2	 ATT	 3	 流通	 v
+3	 VOB	 1	 问题	 n
+4	 WP	 1	 。	 wp
+
+经济增长缓慢。
+0	 SBV	 1	 经济	 n
+1	 HED	 -1	 增长	 v
+2	 CMP	 1	 缓慢	 a
+3	 WP	 1	 。	 wp
+
+增加税收。
+0	 HED	 -1	 增加	 v
+1	 VOB	 0	 税收	 n
+2	 WP	 0	 。	 wp
+
+增加税收。
+0	 HED	 -1	 增加	 v
+1	 VOB	 0	 税收	 n
+2	 WP	 0	 。	 wp
+
+有助于增加税收。
+0	 HED	 -1	 有助于	 v
+1	 VOB	 0	 增加	 v
+2	 VOB	 1	 税收	 n
+3	 WP	 0	 。	 wp
+
+模块扇入是什么。
+0	 SBV	 2	 模块	 n
+1	 SBV	 2	 扇入	 v
+2	 HED	 -1	 是	 v
+3	 VOB	 2	 什么	 r
+4	 WP	 2	 。	 wp
+
+模块扇入是什么。
+模块	扇入	是	什么	模块扇入是什么。
+模块	扇入	是	什么	
