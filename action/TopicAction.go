@@ -20,8 +20,8 @@ func init() {
 	// logMapping[1426943167] = "file1.txt"
 	// logMapping[1427166719] = "file.txt"
 	// logMapping[1427101485] = "C32-Agriculture0002.txt"
-	// logMapping[1427352668] = "C34-Economy0003.txt"
-	// logMapping[1427353080] = "C34-Economy0008.txt"
+	logMapping[1427352668] = "C34-Economy0003.txt"
+	logMapping[1427353080] = "C34-Economy0008.txt"
 	// logMapping[1427353406] = "C34-Economy0012.txt"
 	// // logMapping[1427353205] = "C34-Economy0010.txt"
 	// // logMapping[1427352751] = "C34-Economy0004.txt"
@@ -56,9 +56,9 @@ func init() {
 	// logMapping[1427623186] = "internet02.txt"
 	// logMapping[1427628521] = "internet03.txt"
 	// logMapping[1427765874] = "economy.txt"
-	logMapping[1427904066] = "C34-Economy0003.txt"
-	logMapping[1427904106] = "C34-Economy0008.txt"
-	logMapping[1427904133] = "C34-Economy0012.txt"
+	// logMapping[1427904066] = "C34-Economy0003.txt"
+	// logMapping[1427904106] = "C34-Economy0008.txt"
+	// logMapping[1427904133] = "C34-Economy0012.txt"
 	DATE = 1427771438
 	CURRENT_FILENAME = logMapping[DATE]
 }
@@ -99,8 +99,8 @@ func AutoPersistence() {
 	serv.Init()
 	defer serv.Close()
 
-	// ORIGIN_DIR
-	// ORIGIN_DIR = ORIGIN_DIR + "economy/"
+	// ORIGIN_DIR/economy;computer/agriculture;art;history;environment;politics;space;sports;
+	ORIGIN_DIR = ORIGIN_DIR + "philosophy/"
 	files := utils.ReadDir(ORIGIN_DIR)
 	for i, file := range files {
 		log.LOGS.Alert("%d:\t %s\n", i, file)
