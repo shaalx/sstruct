@@ -1,0 +1,297 @@
+﻿资本形成是一国经济发展，特别是发展中国家经济增长的最重要战略因素之一。
+0	 SBV	 3	 ﻿	 v
+1	 VOB	 0	 资本	 n
+2	 COO	 0	 形成	 v
+3	 HED	 -1	 是	 v
+4	 ATT	 5	 一	 m
+5	 ATT	 6	 国	 n
+6	 FOB	 7	 经济	 n
+7	 VOB	 3	 发展	 v
+8	 WP	 3	 ，	 wp
+9	 ADV	 10	 特别	 d
+10	 COO	 3	 是	 v
+11	 ATT	 12	 发展中国家	 i
+12	 SBV	 13	 经济	 n
+13	 ATT	 18	 增长	 v
+14	 RAD	 13	 的	 u
+15	 ADV	 16	 最	 d
+16	 ATT	 18	 重要	 a
+17	 ATT	 18	 战略	 n
+18	 ATT	 19	 因素	 n
+19	 VOB	 10	 之一	 r
+20	 WP	 3	 。	 wp
+
+资本形成的前提是有投资活动，而投资活动的资金来源是储蓄。
+0	 SBV	 1	 资本	 n
+1	 ATT	 3	 形成	 v
+2	 RAD	 1	 的	 u
+3	 SBV	 4	 前提	 n
+4	 HED	 -1	 是	 v
+5	 VOB	 4	 有	 v
+6	 ATT	 7	 投资	 v
+7	 VOB	 5	 活动	 v
+8	 WP	 4	 ，	 wp
+9	 ADV	 15	 而	 c
+10	 ATT	 13	 投资	 v
+11	 COO	 10	 活动	 v
+12	 RAD	 10	 的	 u
+13	 ATT	 14	 资金	 n
+14	 SBV	 15	 来源	 n
+15	 COO	 4	 是	 v
+16	 VOB	 15	 储蓄	 n
+17	 WP	 4	 。	 wp
+
+无论是从理论上还是从世界各国的经济发展过程来看，储蓄,资本,增长的关系已人所共知。
+0	 ADV	 4	 无论是	 c
+1	 ADV	 4	 从	 p
+2	 ATT	 3	 理论	 n
+3	 POB	 1	 上	 nd
+4	 HED	 -1	 还是	 c
+5	 ADV	 23	 从	 p
+6	 ATT	 7	 世界	 n
+7	 ATT	 9	 各国	 r
+8	 RAD	 7	 的	 u
+9	 SBV	 10	 经济	 n
+10	 ATT	 11	 发展	 v
+11	 POB	 5	 过程	 n
+12	 RAD	 5	 来	 v
+13	 RAD	 5	 看	 v
+14	 WP	 5	 ，	 wp
+15	 ATT	 21	 储蓄	 v
+16	 WP	 17	 ,	 wp
+17	 SBV	 19	 资本	 n
+18	 WP	 17	 ,	 wp
+19	 COO	 15	 增长	 v
+20	 RAD	 15	 的	 u
+21	 SBV	 23	 关系	 n
+22	 ADV	 23	 已	 d
+23	 VOB	 4	 人所共知	 i
+24	 WP	 4	 。	 wp
+
+因此，改善国民储蓄状况，提高国民储蓄率，是各国政府所追求的经济政策目标之一。
+0	 ADV	 11	 因此	 c
+1	 WP	 0	 ，	 wp
+2	 SBV	 11	 改善	 v
+3	 SBV	 4	 国民	 n
+4	 VOB	 2	 储蓄	 v
+5	 VOB	 4	 状况	 n
+6	 WP	 2	 ，	 wp
+7	 COO	 2	 提高	 v
+8	 ATT	 9	 国民	 n
+9	 VOB	 7	 储蓄率	 n
+10	 WP	 2	 ，	 wp
+11	 HED	 -1	 是	 v
+12	 ATT	 13	 各国	 r
+13	 SBV	 15	 政府	 n
+14	 LAD	 15	 所	 u
+15	 ATT	 19	 追求	 v
+16	 RAD	 15	 的	 u
+17	 ATT	 18	 经济	 n
+18	 ATT	 19	 政策	 n
+19	 ATT	 20	 目标	 n
+20	 VOB	 11	 之一	 r
+21	 WP	 11	 。	 wp
+
+在实现这一目标的过程中，政府储蓄率的高低起着重要作用。
+0	 ADV	 13	 在	 p
+1	 ATT	 6	 实现	 v
+2	 ATT	 3	 这	 r
+3	 ATT	 4	 一	 m
+4	 VOB	 1	 目标	 n
+5	 RAD	 1	 的	 u
+6	 ATT	 7	 过程	 n
+7	 POB	 0	 中	 nd
+8	 WP	 0	 ，	 wp
+9	 ATT	 10	 政府	 n
+10	 ATT	 12	 储蓄率	 n
+11	 RAD	 10	 的	 u
+12	 SBV	 13	 高低	 n
+13	 HED	 -1	 起	 v
+14	 RAD	 13	 着	 u
+15	 ATT	 16	 重要	 a
+16	 VOB	 13	 作用	 n
+17	 WP	 13	 。	 wp
+
+遗憾的是，尽管政府储蓄既是经济学中的一个重要的理论问题，也是现实经济中令人关注的问题，但我国学术界对此问题的研究寥寥无几。
+0	 SBV	 2	 遗憾	 a
+1	 RAD	 0	 的	 u
+2	 HED	 -1	 是	 v
+3	 WP	 2	 ，	 wp
+4	 ADV	 8	 尽管	 c
+5	 SBV	 6	 政府	 n
+6	 SBV	 8	 储蓄	 v
+7	 ADV	 8	 既	 c
+8	 COO	 2	 是	 v
+9	 ATT	 10	 经济学	 n
+10	 ATT	 16	 中	 nd
+11	 RAD	 10	 的	 u
+12	 ATT	 16	 一个	 m
+13	 ATT	 16	 重要	 a
+14	 RAD	 13	 的	 u
+15	 ATT	 16	 理论	 n
+16	 VOB	 8	 问题	 n
+17	 WP	 8	 ，	 wp
+18	 ADV	 19	 也	 d
+19	 COO	 8	 是	 v
+20	 ATT	 21	 现实	 a
+21	 ATT	 22	 经济	 n
+22	 ADV	 23	 中	 nd
+23	 ATT	 27	 令	 v
+24	 DBL	 23	 人	 n
+25	 VOB	 23	 关注	 v
+26	 RAD	 23	 的	 u
+27	 VOB	 19	 问题	 n
+28	 WP	 19	 ，	 wp
+29	 ADV	 36	 但	 c
+30	 ATT	 31	 我国	 n
+31	 SBV	 36	 学术界	 n
+32	 ADV	 36	 对	 p
+33	 ATT	 34	 此	 r
+34	 POB	 32	 问题	 n
+35	 RAD	 32	 的	 u
+36	 COO	 19	 研究	 v
+37	 VOB	 36	 寥寥无几	 i
+38	 WP	 2	 。	 wp
+
+因对政府储蓄的界定不一致，所得到的结论大相径庭。
+0	 ADV	 3	 因	 c
+1	 ADV	 3	 对	 p
+2	 POB	 1	 政府	 n
+3	 ATT	 7	 储蓄	 v
+4	 RAD	 3	 的	 u
+5	 SBV	 7	 界定	 v
+6	 ADV	 7	 不	 d
+7	 HED	 -1	 一致	 a
+8	 WP	 7	 ，	 wp
+9	 LAD	 10	 所	 u
+10	 ATT	 12	 得到	 v
+11	 RAD	 10	 的	 u
+12	 SBV	 13	 结论	 n
+13	 COO	 7	 大相径庭	 i
+14	 WP	 7	 。	 wp
+
+本文首先从政府储蓄的界定开始，讨论我国政府储蓄的变化态势。
+0	 SBV	 4	 本文	 r
+1	 ADV	 4	 首先	 d
+2	 ADV	 4	 从	 p
+3	 POB	 2	 政府	 n
+4	 ATT	 7	 储蓄	 v
+5	 RAD	 4	 的	 u
+6	 SBV	 7	 界定	 v
+7	 HED	 -1	 开始	 v
+8	 WP	 7	 ，	 wp
+9	 COO	 7	 讨论	 v
+10	 ATT	 11	 我国	 n
+11	 SBV	 12	 政府	 n
+12	 ATT	 15	 储蓄	 v
+13	 RAD	 12	 的	 u
+14	 ATT	 15	 变化	 v
+15	 VOB	 9	 态势	 n
+16	 WP	 7	 。	 wp
+
+由于提高政府储蓄率的前提条件是改善经常性收支总额之间的关系。
+0	 ADV	 7	 由于	 c
+1	 ATT	 5	 提高	 v
+2	 ATT	 3	 政府	 n
+3	 VOB	 1	 储蓄率	 n
+4	 RAD	 1	 的	 u
+5	 ATT	 6	 前提	 n
+6	 SBV	 7	 条件	 n
+7	 HED	 -1	 是	 v
+8	 ATT	 12	 改善	 v
+9	 ATT	 10	 经常性	 n
+10	 ATT	 11	 收支	 n
+11	 VOB	 8	 总额	 n
+12	 ATT	 14	 之间	 nd
+13	 RAD	 12	 的	 u
+14	 VOB	 7	 关系	 n
+15	 WP	 7	 。	 wp
+
+这种关系牵涉到一系列重要的政策问题：增加政府储蓄是应当增加税收还是削减支出？经济体系将对增加政府储蓄的财政政策作出怎样的反应？政策引致的政府储蓄增加（预算赤字减少）从长期意义上说会提高国民储蓄率吗？政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？。
+0	 ATT	 1	 这种	 r
+1	 SBV	 2	 关系	 n
+2	 HED	 -1	 牵涉	 v
+3	 CMP	 2	 到	 v
+4	 ATT	 5	 一	 m
+5	 ATT	 9	 系列	 q
+6	 ATT	 9	 重要	 a
+7	 RAD	 6	 的	 u
+8	 ATT	 9	 政策	 n
+9	 VOB	 2	 问题	 n
+10	 WP	 2	 ：	 wp
+11	 SBV	 16	 增加	 v
+12	 SBV	 13	 政府	 n
+13	 SBV	 14	 储蓄	 v
+14	 VOB	 11	 是	 v
+15	 ADV	 16	 应当	 v
+16	 SBV	 19	 增加	 v
+17	 VOB	 16	 税收	 n
+18	 ADV	 19	 还	 d
+19	 COO	 2	 是	 v
+20	 VOB	 19	 削减	 v
+21	 VOB	 20	 支出	 n
+22	 WP	 2	 ？	 wp
+
+这种关系牵涉到一系列重要的政策问题：增加政府储蓄是应当增加税收还是削减支出？经济体系将对增加政府储蓄的财政政策作出怎样的反应？政策引致的政府储蓄增加（预算赤字减少）从长期意义上说会提高国民储蓄率吗？政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？。
+0	 ATT	 1	 经济	 n
+1	 SBV	 10	 体系	 n
+2	 ADV	 10	 将	 d
+3	 ADV	 10	 对	 p
+4	 POB	 3	 增加	 v
+5	 SBV	 6	 政府	 n
+6	 ATT	 9	 储蓄	 v
+7	 RAD	 6	 的	 u
+8	 ATT	 9	 财政	 n
+9	 VOB	 4	 政策	 n
+10	 HED	 -1	 作出	 v
+11	 ATT	 13	 怎样	 r
+12	 RAD	 11	 的	 u
+13	 VOB	 10	 反应	 v
+14	 WP	 10	 ？	 wp
+
+这种关系牵涉到一系列重要的政策问题：增加政府储蓄是应当增加税收还是削减支出？经济体系将对增加政府储蓄的财政政策作出怎样的反应？政策引致的政府储蓄增加（预算赤字减少）从长期意义上说会提高国民储蓄率吗？政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？。
+0	 SBV	 1	 政策	 n
+1	 ATT	 3	 引致	 v
+2	 RAD	 1	 的	 u
+3	 SBV	 4	 政府	 n
+4	 ADV	 5	 储蓄	 v
+5	 HED	 -1	 增加	 v
+6	 WP	 9	 （	 wp
+7	 ATT	 8	 预算	 n
+8	 SBV	 9	 赤字	 n
+9	 COO	 5	 减少	 v
+10	 WP	 9	 ）	 wp
+11	 ADV	 17	 从	 p
+12	 ATT	 13	 长期	 b
+13	 ATT	 14	 意义	 n
+14	 POB	 11	 上	 nd
+15	 RAD	 11	 说	 v
+16	 ADV	 17	 会	 v
+17	 COO	 5	 提高	 v
+18	 ATT	 19	 国民	 n
+19	 VOB	 17	 储蓄率	 n
+20	 RAD	 17	 吗	 u
+21	 WP	 5	 ？	 wp
+
+这种关系牵涉到一系列重要的政策问题：增加政府储蓄是应当增加税收还是削减支出？经济体系将对增加政府储蓄的财政政策作出怎样的反应？政策引致的政府储蓄增加（预算赤字减少）从长期意义上说会提高国民储蓄率吗？政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？。
+0	 SBV	 1	 政府	 n
+1	 ATT	 4	 储蓄	 v
+2	 RAD	 1	 的	 u
+3	 ATT	 4	 增加	 v
+4	 ADV	 14	 会	 v
+5	 ADV	 14	 因	 p
+6	 SBV	 7	 私人	 n
+7	 ADV	 11	 储蓄	 v
+8	 RAD	 7	 的	 u
+9	 ADV	 11	 按	 p
+10	 POB	 9	 比例	 n
+11	 POB	 5	 降低	 v
+12	 ADV	 14	 而	 c
+13	 ADV	 14	 被	 p
+14	 HED	 -1	 抵消	 v
+15	 RAD	 14	 吗	 u
+16	 WP	 14	 ？	 wp
+
+这种关系牵涉到一系列重要的政策问题：增加政府储蓄是应当增加税收还是削减支出？经济体系将对增加政府储蓄的财政政策作出怎样的反应？政策引致的政府储蓄增加（预算赤字减少）从长期意义上说会提高国民储蓄率吗？政府储蓄的增加会因私人储蓄的按比例降低而被抵消吗？。
+0	 HED	 -1	 。	 wp
+
