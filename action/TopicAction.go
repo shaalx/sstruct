@@ -59,8 +59,8 @@ func init() {
 	// logMapping[1427904066] = "C34-Economy0003.txt"
 	// logMapping[1427904106] = "C34-Economy0008.txt"
 	// logMapping[1427904133] = "C34-Economy0012.txt"
-	DATE = 1427771438
-	CURRENT_FILENAME = logMapping[DATE]
+	// DATE = 1427771438
+	// CURRENT_FILENAME = logMapping[DATE]
 }
 
 func TopicAction() {
