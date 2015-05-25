@@ -3,5 +3,5 @@
 #static/log.txt
 //static/origin/*
 #static/spilt/*
-#static/corpus/*
+static/corpus/*
 /static/key/edu/*
