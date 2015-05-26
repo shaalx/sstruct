@@ -2,113 +2,116 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[Fortran语言 Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran标准 VCFortran Fortran增加 Fortran特点]
+Top key words:	[Fortran程序 Fortran语言 程序 Fortran Fortran语言优越性 编写程序 主程序 语言 程序主界面图2 Fortran相比 编程程序 混合程序]
 Key words:	[1 2 3 4 5 6 7 8 9 10]
 精确率：	0.0000
 召回率：	0.0000
 F-measure：	NaN
-总共分词词数19664
+总共分词词数22001
 
-ATT-ATT-ATT-	 0.06452
-ATT-ATT-SBV-	 0.04378
-ATT-SBV-	 0.16590
-ATT-VOB-	 0.28802
-ATT-HED-	 0.00922
-ATT-POB-	 0.11982
-ADV-ATT-	 0.06912
-FOB-VOB-	 0.00000
-SBV-SBV-	 0.00461
-SBV-ATT-	 0.04839
-SBV-VOB-	 0.02995
-SBV-COO-	 0.09217
-SBV-HED-	 0.06452
+ATT-ATT-ATT-	 0.10748
+ATT-ATT-SBV-	 0.06698
+ATT-SBV-	 0.19003
+ATT-VOB-	 0.19159
+ATT-HED-	 0.07944
+ATT-POB-	 0.11059
+ADV-ATT-	 0.04361
+FOB-VOB-	 0.00312
+SBV-SBV-	 0.00467
+SBV-ATT-	 0.01090
+SBV-VOB-	 0.02336
+SBV-COO-	 0.02960
+SBV-HED-	 0.13863
 
 
-Fortran语言
 Fortran程序
-Fortran程序封装性
-主程序
-传统程序封装性
-Fortran标准
-VCFortran
-Fortran增加
-Fortran特点
-语言功能
-程序开头
-原程序
-友好程序
-Windows程序
-传统程序
-程序面
+Fortran语言
+Fortran语言优越性
 编写程序
-程序封装性
+主程序
+程序主界面图2
+Fortran相比
+编程程序
+混合程序
+结果程序
+UpgradingtoFortran
+Fortranbeforeto
+减源程序
+裂纹程序
+精程序
+原程序
+程序开头
+源程序
+直观程序
+程序主界面
+程序检查
+传统程序
+调试程序
+Windows程序
+应力场程序
+程序差
+程序提供
 程序资源
+inFortranbefore
+compiledFortranbefore
+Fortran出版社
+Fortran进行
+混合编程
+语言功能
+语言之间沟通
 语言不足
-语言深入人心
+常用语言
+语言编程.
 语言普及
+Fortran90语言
+语言深入人心
 语言优点
+计算机语言
+新语言
 语言象
-语言编写
-通用方法
-数据传递
-同类功能
+语言优越性
+混合编程要求
+编程方法
+功能利用
+编程思路
+文档类
+Wokspace窗口工具
+Project窗口工具
+No.6编程
+编程时间
+编程要求
+编程概念
+编程实例
 功能重要
-功能弥补
 显而易见功能
-数据类型
+同类功能
+功能弥补
+文档类文件
 调试功能
 下功能
+关键功能
 功能强大
 强大功能
-计算结果
-类结果
-OpenGL混合
-数据文件
-方法发挥
-传递变量
-进行方法
-简便方法
-数据曲线
-主应力云图图
-成员变量
-改造方法
-小云图图
-最终结果
-结果正确
-结果形象
-显示结果
-settings命令
-Filesinto命令
-利用解决
-限度利用
-VC混合
-OpenGL优势
-OpenGL库函数
-变量值
-变量封装
-图形标准
-新标准技术
+Debug功能
 图示
-OpenGL调试
-文档类文件
-子模块变量
-OpenGL成为
-混合技术
-Von图
-OpenGL工作
-力云图
-混合实例
-混合思路
-混合概念
-into命令
-命令嵌
-通用标准
+通用方法
+数据传递
+派生类对象
+CobArray类对象
+窗口工具
+小主应力云图
+主应力云图图
+类进行
+通用方法提出
+类里
 类模版
-类接口
+类差
+类概念
 类对象
-开发标准
-Debug命令
-
-忘表明
+原始数据准备
+简便方法
+方法发挥
+��
+��表明
 Fulloptimization
 微分积分
