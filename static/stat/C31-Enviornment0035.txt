@@ -1,0 +1,120 @@
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[化学品制造商协会 CHEMTREC中心 CHEMTREC 制造商协会 CHEMTREC应急 化学品 CHEMTREC联系 CHEMTREC提供 中心 化学品中心 制造商协会会员 应急中心]
+Key words:	[1 2 3 4 5 6 7 8 9 10]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+总共分词词数16341
+
+ATT-ATT-ATT-	 0.05426
+ATT-ATT-SBV-	 0.06202
+ATT-SBV-	 0.18682
+ATT-VOB-	 0.27984
+ATT-HED-	 0.00465
+ATT-POB-	 0.08915
+ADV-ATT-	 0.06047
+FOB-VOB-	 0.00310
+SBV-SBV-	 0.01318
+SBV-ATT-	 0.03876
+SBV-VOB-	 0.03488
+SBV-COO-	 0.03101
+SBV-HED-	 0.14186
+
+
+化学品制造商协会
+CHEMTREC中心
+制造商协会
+CHEMTREC应急
+CHEMTREC联系
+CHEMTREC提供
+化学品中心
+制造商协会会员
+应急中心
+化学品协会
+化学品协会公司
+CHEMTREC通知
+CHEMTREC打电话
+协会会员
+协会公司
+运输中心
+应急中心总部
+CHEMTREC安排
+CHEMTREC记载
+协会化学品
+占化学品制造商
+制造商协会公司
+化学品生产商
+化学品应急
+制造商协会计划
+CHEMTREC委员会目的
+应急服务
+制造商协会根
+制造商协会CMA
+全国中心
+医疗中心
+中心护士
+美国中心公司
+美国基础化学品
+控制中心公司
+设中心公司
+非应急
+基本化学品生产商
+协会会员公司
+CHEMTREC网络
+CHEMTREC报告
+CHEMTREC人员
+美国中心总部
+CHEMTREC通讯
+化学品信息
+CHEMTREC委员会
+CHEMTREC承诺
+CHEMTREC激活
+CHEMTREC取得
+CHEMTREC接触
+CHEMTREC变成
+CHEMTREC派出
+CHEMTREC得知
+CHEMTREC发挥
+CHEMTREC联络
+CHEMTREC客户
+CHEMTREC以期
+CHEMTREC发
+CHEMTREC告知
+CHEMTREC需求
+CHEMTREC接到
+CHEMTREC协调
+公司化学品
+全国中心总部
+医疗中心护士
+衣阿华州伯林顿市中心
+化学品计划
+应急计划
+化学品安全
+服务中心
+类型化学品
+化学品危险
+科技期刊协会
+化学品团体
+供化学品
+化学品管理
+化学品暴露
+基本化学品
+化学品状况
+得克萨斯州化学品
+化学品还有
+游泳池化学品
+化学品生产能力
+成立化学品
+化学品装运
+化学品特有
+化学品贮存
+化学品卡
+化学品流通商
+电话中心
+中心计划
+应急人员
+协会服务
+中心网络

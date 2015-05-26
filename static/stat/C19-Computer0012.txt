@@ -1,0 +1,114 @@
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[Fortran语言 Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran标准 VCFortran Fortran增加 Fortran特点]
+Key words:	[1 2 3 4 5 6 7 8 9 10]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+总共分词词数19664
+
+ATT-ATT-ATT-	 0.06452
+ATT-ATT-SBV-	 0.04378
+ATT-SBV-	 0.16590
+ATT-VOB-	 0.28802
+ATT-HED-	 0.00922
+ATT-POB-	 0.11982
+ADV-ATT-	 0.06912
+FOB-VOB-	 0.00000
+SBV-SBV-	 0.00461
+SBV-ATT-	 0.04839
+SBV-VOB-	 0.02995
+SBV-COO-	 0.09217
+SBV-HED-	 0.06452
+
+
+Fortran语言
+Fortran程序
+Fortran程序封装性
+主程序
+传统程序封装性
+Fortran标准
+VCFortran
+Fortran增加
+Fortran特点
+语言功能
+程序开头
+原程序
+友好程序
+Windows程序
+传统程序
+程序面
+编写程序
+程序封装性
+程序资源
+语言不足
+语言深入人心
+语言普及
+语言优点
+语言象
+语言编写
+通用方法
+数据传递
+同类功能
+功能重要
+功能弥补
+显而易见功能
+数据类型
+调试功能
+下功能
+功能强大
+强大功能
+计算结果
+类结果
+OpenGL混合
+数据文件
+方法发挥
+传递变量
+进行方法
+简便方法
+数据曲线
+主应力云图图
+成员变量
+改造方法
+小云图图
+最终结果
+结果正确
+结果形象
+显示结果
+settings命令
+Filesinto命令
+利用解决
+限度利用
+VC混合
+OpenGL优势
+OpenGL库函数
+变量值
+变量封装
+图形标准
+新标准技术
+图示
+OpenGL调试
+文档类文件
+子模块变量
+OpenGL成为
+混合技术
+Von图
+OpenGL工作
+力云图
+混合实例
+混合思路
+混合概念
+into命令
+命令嵌
+通用标准
+类模版
+类接口
+类对象
+开发标准
+Debug命令
+
+忘表明
+Fulloptimization
+微分积分

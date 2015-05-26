@@ -1,0 +1,118 @@
+
+
+候选关键字Fi
+ Co-word Chi 
+Top key words:	[MIS应用 MIS功能 MIS 应用 应用单位 IntranetMIS 信息 MIS系统 MIS系统平台 传统MIS Intranet 应用单位内部]
+Key words:	[1 2 3 4 5 6 7 8 9 10]
+精确率：	0.0000
+召回率：	0.0000
+F-measure：	NaN
+总共分词词数68371
+
+ATT-ATT-ATT-	 0.03840
+ATT-ATT-SBV-	 0.03506
+ATT-SBV-	 0.16361
+ATT-VOB-	 0.26210
+ATT-HED-	 0.01503
+ATT-POB-	 0.12354
+ADV-ATT-	 0.06678
+FOB-VOB-	 0.00668
+SBV-SBV-	 0.01002
+SBV-ATT-	 0.05008
+SBV-VOB-	 0.03506
+SBV-COO-	 0.09850
+SBV-HED-	 0.09516
+
+
+MIS应用
+MIS功能
+应用单位
+IntranetMIS
+MIS系统
+MIS系统平台
+传统MIS
+应用单位内部
+应用单位LAN
+S应用
+应用技术
+企业内部信息
+信息资源
+Intranet功能
+MIS实施
+MIS进行
+MIS资源
+MIS方法
+MIS考虑
+MIS存在
+MIS水平
+信息系统
+象应用
+Intranet技术
+Developer应用
+应用情况
+工程应用
+可应用
+应用转换
+应用范围
+应用成熟
+办公功能
+业务功能
+Internet技术
+先进技术
+Intranet在于
+共享信息
+信息共享
+内部信息
+信息集成
+信息提供
+为信息
+信息设施
+伟大信息
+信息环境
+产生信息
+信息形式
+企业级信息
+信息组织
+多媒体信息
+信息交流
+信息收集
+信息程度
+功能规划
+管理功能
+处理功能
+功能办公
+具有功能
+Intranet规划
+非结构化功能
+整体功能
+上述功能
+对应功能
+功能考虑
+有限功能
+功能部分
+自动化功能
+用于功能
+基本功能
+原有功能
+功能外
+Intranet方法
+Intranet优点
+所谓Intranet
+Intranet邮件
+企业内单位
+Web技术
+单位进行
+技术提供
+技术为
+网络系统设施
+新技术
+技术ODBC
+页面技术
+聊天技术
+技术基础
+有效技术
+出现技术
+.Intranet技术
+技术水平
+系统共享
+
