@@ -245,7 +245,12 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	ResultString += fmt.Sprintf("总共分词词数%d\n", o.AllLength())
 	ResultString += "\n" + Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
 	SaveResult(ResultString)
+	// SaveKeywords(topNSlice[:10])
 	fmt.Println(statResultString)
+}
+
+func SaveKeywords(topNWords []string) {
+	utils.WriteKey(KEY_DIR+CURRENT_FILENAME, topNWords)
 }
 
 func (self *TopicMatix) AllLength() int32 {

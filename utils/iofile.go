@@ -148,3 +148,17 @@ func ReadKey(filename string) (string, error) {
 	}
 	return string(bs), err
 }
+
+// 追加
+func WriteKey(filename string, keys []string) {
+	file, err := os.OpenFile(filename, os.O_CREATE, os.ModeDevice)
+	if log.IsError("{Write to file error}", err) {
+		return
+	}
+	keyStr := strings.Join(keys, ",")
+	_, err = file.WriteString(keyStr)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+}

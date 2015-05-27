@@ -2,124 +2,120 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[MIS应用 IntranetMIS MIS 应用 MIS功能 传统MIS 应用单位 MIS系统 Intranet 信息 信息共享 MIS系统平台]
-Key words:	[1 2 3 4 5 6 7 8 9 10]
-精确率：	0.0000
-召回率：	0.0000
-F-measure：	NaN
-总共分词词数8358
+Top key words:	[MIS应用 MIS功能 MIS 应用 IntranetMIS 应用单位 信息 MIS系统 MIS系统平台 传统MIS Intranet 应用单位内部]
+Key words:	[IntranetMIS MIS 应用 MIS功能 传统MIS 应用单位 MIS系统 Intranet 信息 信息共享]
+精确率：	0.7500
+召回率：	0.9000
+F-measure：	0.8182
+总共分词词数103245
 
-ATT-ATT-ATT-	 0.04970
-ATT-ATT-SBV-	 0.04518
-ATT-SBV-	 0.18223
-ATT-VOB-	 0.24247
-ATT-HED-	 0.06024
-ATT-POB-	 0.11596
-ADV-ATT-	 0.03916
-FOB-VOB-	 0.00151
-SBV-SBV-	 0.00151
-SBV-ATT-	 0.02259
-SBV-VOB-	 0.03916
-SBV-COO-	 0.03765
-SBV-HED-	 0.16265
+ATT-ATT-ATT-	 0.03840
+ATT-ATT-SBV-	 0.03506
+ATT-SBV-	 0.16361
+ATT-VOB-	 0.26210
+ATT-HED-	 0.01503
+ATT-POB-	 0.12354
+ADV-ATT-	 0.06678
+FOB-VOB-	 0.00668
+SBV-SBV-	 0.01002
+SBV-ATT-	 0.05008
+SBV-VOB-	 0.03506
+SBV-COO-	 0.09850
+SBV-HED-	 0.09516
 
 
 MIS应用
-IntranetMIS
 MIS功能
-传统MIS
+IntranetMIS
 应用单位
 MIS系统
-信息共享
 MIS系统平台
-Intranet应用
-MIS水平
-Intranet功能业务
-应用技术
-原有应用
-S应用
-应用功能
+传统MIS
+应用单位内部
 应用单位LAN
-应用系统
-系统应用
-先进技术
-业务功能功能
-Internet技术
-Intranet技术
-信息功能
-MIS能力
-信息系统
-多媒体信息
-信息提供
-MIS情况
+S应用
+应用技术
+企业内部信息
+信息资源
+Intranet功能
 MIS进行
-信息交流
 MIS实施
-MIS考虑
-MIS合并
 MIS存在
-Web技术
+MIS资源
+MIS方法
+MIS水平
+MIS考虑
+象应用
+信息系统
+Developer应用
+工程应用
+应用转换
+应用范围
+应用成熟
 应用情况
 可应用
-应用水平
-应用转换
-应用成为
-应用成熟
-应用范围
-Developer应用
-应用接口
-应用运行
-B应用
-连接数据库技术
-开放式数据库技术
-超文本页面技术
-信息规划
-Intranet问题
-Intranet进行
-信息集成
-Intranet防火墙
-Intranet具
-所谓Intranet
-Intranet邮件
-Intranet事务
-Intranet合并
-完善Intranet
-Intranet称为
+Intranet技术
+办公功能
+业务功能
+先进技术
+Internet技术
 Intranet在于
-企业内部系统
-为信息
-传统系统平台
-信息设施
-强大事务功能
-双向信息
-之间信息
-企业级信息
-信息收集
-信息组织
-蕴藏信息
-产生信息
+共享信息
+信息共享
+内部信息
+信息集成
+伟大信息
 信息形式
-结构化信息
-巨大信息
-信息革命
-开发技术
-技术具有
+信息组织
+产生信息
+企业级信息
+信息提供
+信息收集
+信息交流
+为信息
+信息设施
+信息程度
+信息环境
+多媒体信息
 功能规划
-新技术
-技术为
-技术提供
-技术基础
-技术水平
-技术ODBC
-Chat技术
-相关技术
-技术HTML
+处理功能
+管理功能
+功能办公
+整体功能
+对应功能
+非结构化功能
+上述功能
+有限功能
+具有功能
+功能部分
+自动化功能
+基本功能
+用于功能
+功能外
+原有功能
+功能考虑
+Intranet规划
+所谓Intranet
+Intranet优点
+Intranet方法
+Intranet邮件
+企业内单位
+Web技术
 聊天技术
-技术概念
+页面技术
+技术ODBC
+技术提供
 出现技术
-��术
-现技术
+有效技术
+技术为
 .Intranet技术
+新技术
+技术水平
+技术基础
+单位进行
+网络系统设施
+系统共享
+tranet技术
 技术水平
 系统共享
 
