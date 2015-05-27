@@ -2,12 +2,12 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[MIS应用 MIS功能 MIS 应用 IntranetMIS 应用单位 信息 MIS系统 MIS系统平台 传统MIS Intranet 应用单位内部]
-Key words:	[IntranetMIS MIS 应用 MIS功能 传统MIS 应用单位 MIS系统 Intranet 信息 信息共享]
-精确率：	0.7500
-召回率：	0.9000
-F-measure：	0.8182
-总共分词词数103245
+Top key words:	[MIS应用 MIS功能 MIS 应用 IntranetMIS 应用单位 信息 MIS系统 MIS系统平台 传统MIS Intranet 应用单位内部 S应用 应用单位LAN 功能]
+Key words:	[IntranetMIS MIS 应用 MIS功能 传统MIS 应用单位 MIS系统 Intranet 信息 信息共享 MIS系统平台 技术 Intranet应用]
+精确率：	0.6667
+召回率：	0.7692
+F-measure：	0.7143
+总共分词词数302213
 
 ATT-ATT-ATT-	 0.03840
 ATT-ATT-SBV-	 0.03506
@@ -32,90 +32,86 @@ MIS系统
 MIS系统平台
 传统MIS
 应用单位内部
-应用单位LAN
 S应用
+应用单位LAN
 应用技术
-企业内部信息
-信息资源
-Intranet功能
-MIS进行
-MIS实施
 MIS存在
-MIS资源
-MIS方法
+信息资源
+MIS实施
+MIS进行
 MIS水平
+Intranet功能
+MIS资源
 MIS考虑
-象应用
-信息系统
+MIS方法
+企业内部信息
 Developer应用
 工程应用
+象应用
 应用转换
 应用范围
 应用成熟
-应用情况
 可应用
+应用情况
+信息系统
 Intranet技术
 办公功能
 业务功能
 先进技术
-Internet技术
 Intranet在于
+Internet技术
 共享信息
 信息共享
 内部信息
-信息集成
 伟大信息
 信息形式
-信息组织
-产生信息
 企业级信息
-信息提供
-信息收集
+产生信息
+信息组织
 信息交流
-为信息
-信息设施
+信息收集
+信息集成
 信息程度
-信息环境
+信息提供
 多媒体信息
+为信息
+信息环境
+信息设施
 功能规划
-处理功能
-管理功能
-功能办公
 整体功能
-对应功能
 非结构化功能
+对应功能
 上述功能
 有限功能
-具有功能
 功能部分
 自动化功能
+处理功能
+管理功能
 基本功能
 用于功能
 功能外
+功能办公
 原有功能
+具有功能
 功能考虑
 Intranet规划
 所谓Intranet
-Intranet优点
-Intranet方法
 Intranet邮件
-企业内单位
-Web技术
+Intranet方法
+Intranet优点
+技术ODBC
 聊天技术
 页面技术
-技术ODBC
-技术提供
-出现技术
 有效技术
-技术为
+出现技术
+Web技术
 .Intranet技术
-新技术
 技术水平
+技术提供
 技术基础
+技术为
+新技术
+企业内单位
 单位进行
 网络系统设施
 系统共享
-tranet技术
-技术水平
-系统共享
-

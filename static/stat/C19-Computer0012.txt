@@ -2,117 +2,116 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[Fortran语言 Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran增加 Fortran特点 Fortran标准 VCFortran 原程序 程序开头]
-Key words:	[Fortran程序 Fortran语言 程序 Fortran Fortran语言优越性 编写程序 主程序 语言 程序主界面图2 Fortran相比 编程程序 混合程序]
-精确率：	0.4286
-召回率：	0.5000
-F-measure：	0.4615
-总共分词词数199351
+Top key words:	[Fortran程序 Fortran语言 程序 Fortran 主程序 编写程序 Fortran语言优越性 程序主界面图2 Fortran相比 编程程序 语言 混合程序 精程序 减源程序 程序开头]
+Key words:	[Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran标准 Fortran增加 Fortran特点 VCFortran 程序开头 原程序]
+精确率：	0.4000
+召回率：	0.4615
+F-measure：	0.4286
+总共分词词数314343
 
-ATT-ATT-ATT-	 0.06452
-ATT-ATT-SBV-	 0.04378
-ATT-SBV-	 0.16590
-ATT-VOB-	 0.28802
-ATT-HED-	 0.00922
-ATT-POB-	 0.11982
-ADV-ATT-	 0.06912
-FOB-VOB-	 0.00000
-SBV-SBV-	 0.00461
-SBV-ATT-	 0.04839
-SBV-VOB-	 0.02995
-SBV-COO-	 0.09217
-SBV-HED-	 0.06452
+ATT-ATT-ATT-	 0.10748
+ATT-ATT-SBV-	 0.06698
+ATT-SBV-	 0.19003
+ATT-VOB-	 0.19159
+ATT-HED-	 0.07944
+ATT-POB-	 0.11059
+ADV-ATT-	 0.04361
+FOB-VOB-	 0.00312
+SBV-SBV-	 0.00467
+SBV-ATT-	 0.01090
+SBV-VOB-	 0.02336
+SBV-COO-	 0.02960
+SBV-HED-	 0.13863
 
 
-Fortran语言
 Fortran程序
-Fortran程序封装性
+Fortran语言
 主程序
-传统程序封装性
-Fortran增加
-Fortran特点
-Fortran标准
-VCFortran
-原程序
-程序开头
-友好程序
-Windows程序
-程序面
-传统程序
-程序资源
-程序封装性
 编写程序
+Fortran语言优越性
+程序主界面图2
+Fortran相比
+编程程序
+混合程序
+精程序
+减源程序
+程序开头
+源程序
+原程序
+裂纹程序
+结果程序
+直观程序
+程序检查
+传统程序
+程序主界面
+应力场程序
+Windows程序
+UpgradingtoFortran
+inFortranbefore
+程序资源
+程序提供
+程序差
+compiledFortranbefore
+调试程序
+Fortranbeforeto
+Fortran出版社
+Fortran进行
+语言之间沟通
 语言功能
-语言不足
+混合编程
 语言深入人心
+常用语言
+语言不足
 语言普及
+Fortran90语言
+语言编程.
 语言优点
+新语言
 语言象
-语言编写
-应力强度因子
+语言优越性
+计算机语言
+混合编程要求
+编程方法
+No.6编程
+编程时间
+显而易见功能
+功能重要
 同类功能
 功能弥补
-功能重要
-显而易见功能
-Filesinto命令
+编程要求
+编程概念
+编程实例
 下功能
-强大功能
+关键功能
+派生类对象
+CobArray类对象
+功能利用
+编程思路
+Debug功能
 功能强大
-方法发挥
-数据类型
-相对陈旧
-USEMSIMSL
-微软家族
-Fulloptimization
-实践证明
-原本复杂
-微分积分
-条理清晰
-磁盘操作
-Ada采用
-普遍意义
-子例程subroutine
-忘表明
-反映分布
-决定作用
+强大功能
 调试功能
-如下
-简便方法
-数据曲线
-最终结果
-数据传递
+文档类
+原始数据准备
+Wokspace窗口工具
+类里
+类模版
+文档类文件
+Project窗口工具
+one.Itisvaluable
+微分积分矩阵
+ONMECHANICSCALCULATIONWITH
+thispaperdwells
+小主应力云图
 通用方法
-较好
-特定场合
-形象直观
-板应力场
-副研究员
-画面丰富多彩
-纹理映射
-执行发生
-如下库
-成员变量
-利用解决
-结果形象
-结果正确
-新标准技术
-SubroutineFunction
-ANSI委员会
-多哑元
-数理统计库
-变化判断
-主界面
-同样多
-色彩变化
-stat统计库
-转换double
-大限度
-数学方面
-特殊函数库
-好效果
-改造方法
-settings命令
-OpenGL库函数
-OpenGL优势
-变量值
-变量封装
+通用方法提出
+简便方法
+方法发挥
+MECHANICSCALCULATIONWITHMIXED
+CALCULATIONWITHMIXEDLANGUAGESZhang
+类概念
+类对象
+主应力云图图
+类差
+todesigncolorful
+everyone.Itis
