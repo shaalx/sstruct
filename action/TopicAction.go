@@ -34,7 +34,7 @@ func init() {
 	// logMapping[1427770652] = "C11-Space0027.txt"
 	// logMapping[1427770830] = "C3-Art0015.txt"
 	// logMapping[1427774288] = "C31-Enviornment0005.txt"
-	// logMapping[1427771023] = "C32-Agriculture0013.txt"
+	logMapping[1427771023] = "C32-Agriculture0013.txt"
 	// logMapping[1427771122] = "C38-Politics0014.txt"
 	// logMapping[1427771284] = "C39-Sports0017.txt"
 	// logMapping[1427788767] = "C6-Philosophy20.txt"
@@ -160,7 +160,7 @@ func init() {
 	logMapping[1432642624] = "C19-Computer0058.txt"
 	logMapping[1432642668] = "C19-Computer0062.txt"
 
-	DATE = 1428751644
+	DATE = 1427771023
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -168,9 +168,9 @@ func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	AutoAnalyse()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {
