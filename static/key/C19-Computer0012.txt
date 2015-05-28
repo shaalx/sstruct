@@ -1,1 +1,1 @@
-﻿,Fortran,Fortran语言优越性,编程程序,混合程序,
+Fortran语言,Fortran程序,Fortran,Fortran程序封装性,程序,语言,主程序,传统程序封装性,Fortran增加,Fortran特点,Fortran标准,VCFortran,程序开头,原程序,友好程序

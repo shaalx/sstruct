@@ -113,7 +113,7 @@ func (t *TopicMatix) Statistics() {
 	statResultString := PreciseAndRecall(topNSlice)
 	ResultString := "\n\n候选关键字Fi" + statResultString
 
-	ResultString += "\n" + Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
+	ResultString += Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
 	SaveResult(ResultString)
 }
 
@@ -241,11 +241,13 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	_, topNSlice := sentences.Top(topN)
 	// fmt.Print(topFormatString)
 	statResultString := PreciseAndRecall(topNSlice)
-	ResultString := "\n\n候选关键字Fi" + statResultString
-	ResultString += fmt.Sprintf("总共分词词数%d\n", o.AllLength())
-	ResultString += "\n" + Co_word_realte(*t) + "\n\n" + sentences.Co_word_top_n(100)
+	ResultString := ""
+	ResultString += fmt.Sprintf("Total words length:%d\n", o.AllLength())
+	ResultString += statResultString
+	ResultString += Co_word_realte(*t) + "\n"
+	ResultString += "\n\n" + sentences.Co_word_top_n(100)
 	SaveResult(ResultString)
-	// SaveKeywords(topNSlice[:15])
+	SaveKeywords(topNSlice[:15])
 	fmt.Println(statResultString)
 }
 
@@ -306,7 +308,7 @@ func Co_word_realte(m TopicMatix) string {
 	relates := []string{"ATT-ATT-ATT-", "ATT-ATT-SBV-", "ATT-SBV-", "ATT-VOB-", "ATT-HED-", "ATT-POB-", "ADV-ATT-", "FOB-VOB-", "SBV-SBV-", "SBV-ATT-", "SBV-VOB-", "SBV-COO-", "SBV-HED-"}
 	for _, it := range relates {
 		v := relateMap[it]
-		format_str += fmt.Sprintf("%s\t %.5f\n", it, float32(v)/float32(double_length))
+		format_str += fmt.Sprintf("%s:%.5f\n", it, float32(v)/float32(double_length))
 	}
 	return format_str
 	// fmt.Println()
@@ -345,13 +347,12 @@ func PreciseAndRecall(tops []string) string {
 	b := 1.0
 	f_measrue := (b*b + 1) * pricise * recall / (b*b*pricise + recall)
 
-	priciseString := fmt.Sprintf("精确率：\t%.4f\n", pricise) // len(key_words)-2
-	recallString := fmt.Sprintf("召回率：\t%.4f\n", recall)   // len(tops)
-	f_measrueString := fmt.Sprintf("F-measure：\t%.4f\n", f_measrue)
-	resultStr += "\n Co-word Chi \n"
-	resultStr += fmt.Sprintf("Top key words:\t%v\n", tops)
-	resultStr += fmt.Sprintf("Key words:\t%v\n", key_words)
+	priciseString := fmt.Sprintf("精确率:%.4f\n", pricise) // len(key_words)-2
+	recallString := fmt.Sprintf("召回率:%.4f\n", recall)   // len(tops)
+	f_measrueString := fmt.Sprintf("F-measure:%.4f\n", f_measrue)
 	resultStr += priciseString + recallString + f_measrueString
+	resultStr += fmt.Sprintf("Top key words:%v\n", tops)
+	resultStr += fmt.Sprintf("Key words:%v\n", key_words)
 	return resultStr
 }
 

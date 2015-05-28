@@ -1,134 +1,114 @@
+Total words length:215197
+精确率:0.4000
+召回率:0.4615
+F-measure:0.4286
+Top key words:[Fortran语言 Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran增加 Fortran特点 Fortran标准 VCFortran 程序开头 原程序 友好程序]
+Key words:[Fortran语言 程序 Fortran 主程序 编写程序 Fortran语言优越性 程序主界面图2 Fortran相比 语言 编程程序 混合程序 结果程序 原程序]
+ATT-ATT-ATT-:0.06452
+ATT-ATT-SBV-:0.04378
+ATT-SBV-:0.16590
+ATT-VOB-:0.28802
+ATT-HED-:0.00922
+ATT-POB-:0.11982
+ADV-ATT-:0.06912
+FOB-VOB-:0.00000
+SBV-SBV-:0.00461
+SBV-ATT-:0.04839
+SBV-VOB-:0.02995
+SBV-COO-:0.09217
+SBV-HED-:0.06452
 
 
-候选关键字Fi
- Co-word Chi 
-Top key words:	[Fortran程序 Fortran语言 程序 Fortran 编写程序 Fortran语言优越性]
-Key words:	[Fortran Fortran语言优越性 编程程序 混合程序]
-精确率：	0.3333
-召回率：	0.5000
-F-measure：	0.4000
-总共分词词数104088
 
-ATT-ATT-ATT-	 0.10748
-ATT-ATT-SBV-	 0.06698
-ATT-SBV-	 0.19003
-ATT-VOB-	 0.19159
-ATT-HED-	 0.07944
-ATT-POB-	 0.11059
-ADV-ATT-	 0.04361
-FOB-VOB-	 0.00312
-SBV-SBV-	 0.00467
-SBV-ATT-	 0.01090
-SBV-VOB-	 0.02336
-SBV-COO-	 0.02960
-SBV-HED-	 0.13863
-
-
-Fortran程序
 Fortran语言
-编写程序
-Fortran语言优越性
+Fortran程序
+Fortran程序封装性
 主程序
-程序主界面图2
-Fortran相比
-编程程序
-混合程序
-结果程序
-UpgradingtoFortran
-精程序
-减源程序
+传统程序封装性
+Fortran增加
+Fortran特点
+Fortran标准
+VCFortran
 程序开头
-源程序
 原程序
-裂纹程序
-Fortranbeforeto
+友好程序
 传统程序
-程序主界面
-程序检查
-直观程序
-应力场程序
 Windows程序
+程序面
+程序封装性
 程序资源
-程序提供
-程序差
-调试程序
-inFortranbefore
-compiledFortranbefore
-Fortran出版社
-Fortran进行
-混合编程
+编写程序
 语言功能
-语言之间沟通
-语言编程.
-常用语言
-Fortran90语言
-语言不足
 语言深入人心
+语言不足
 语言普及
 语言优点
-新语言
 语言象
-语言优越性
-计算机语言
-混合编程要求
-编程方法
-功能利用
-编程时间
-No.6编程
-编程思路
-编程实例
-编程概念
-编程要求
-文档类
+语言编写
+应力强度因子
 功能弥补
+功能重要
 同类功能
 显而易见功能
-功能重要
+Filesinto命令
 下功能
-关键功能
-Wokspace窗口工具
-Debug功能
 强大功能
 功能强大
+方法发挥
+数据类型
 调试功能
-Project窗口工具
-文档类文件
-CobArray类对象
-派生类对象
-通用方法
+条理清晰
+Ada采用
+微分积分
+原本复杂
+反映分布
+微软家族
+Fulloptimization
+实践证明
+决定作用
+忘表明
+相对陈旧
+磁盘操作
+子例程subroutine
+USEMSIMSL
+普遍意义
+数据曲线
+简便方法
+最终结果
+如下
 数据传递
-图示
-窗口工具
-类里
-类模版
-小主应力云图
-类进行
-通用方法提出
-主应力云图图
-原始数据准备
-类概念
-类对象
-类差
-方法发挥
-简便方法
-改造方法
-模版
-文档类文件
-Project窗口工具
-one.Itisvaluable
-微分积分矩阵
-ONMECHANICSCALCULATIONWITH
-thispaperdwells
-小主应力云图
 通用方法
-通用方法提出
-简便方法
-方法发挥
-MECHANICSCALCULATIONWITHMIXED
-CALCULATIONWITHMIXEDLANGUAGESZhang
-类概念
-类对象
-主应力云图图
-类差
-todesigncolorful
-everyone.Itis
+如下库
+形象直观
+板应力场
+执行发生
+画面丰富多彩
+较好
+特定场合
+副研究员
+纹理映射
+成员变量
+利用解决
+结果形象
+结果正确
+新标准技术
+变化判断
+主界面
+stat统计库
+同样多
+色彩变化
+数理统计库
+多哑元
+转换double
+SubroutineFunction
+ANSI委员会
+改造方法
+数学方面
+好效果
+大限度
+特殊函数库
+settings命令
+OpenGL库函数
+变量封装
+变量值
+OpenGL优势

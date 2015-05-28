@@ -14,31 +14,30 @@ var logMapping map[int64]string
 func init() {
 	logMapping = make(map[int64]string, 1)
 
-	// logMapping[1427352668] = "C34-Economy0003.txt"
-	// logMapping[1427353080] = "C34-Economy0008.txt"
-	// logMapping[1427353406] = "C34-Economy0012.txt"
-	// logMapping[1427353205] = "C34-Economy0010.txt"
-	// logMapping[1427352751] = "C34-Economy0004.txt"
-	// logMapping[1427352869] = "C34-Economy0006.txt"
-	// logMapping[1427353588] = "C34-Economy0014.txt"
-	// logMapping[1427353698] = "C34-Economy0016.txt"
-	// logMapping[1427353813] = "C34-Economy0018.txt"
-	// logMapping[1427354017] = "C34-Economy0020.txt"
-	// logMapping[1427354170] = "C34-Economy0022.txt"
-	// logMapping[1427354505] = "C34-Economy0024.txt"
-	// logMapping[1427354710] = "C34-Economy0026.txt"
-	// logMapping[1427468271] = "economy.txt"
-
-	// logMapping[1426989715] = "C34-Economy0002.txt"
 	// logMapping[1427770749] = "C19-Computer0010.txt"
 	// logMapping[1427770652] = "C11-Space0027.txt"
 	// logMapping[1427770830] = "C3-Art0015.txt"
 	// logMapping[1427774288] = "C31-Enviornment0005.txt"
-	logMapping[1427771023] = "C32-Agriculture0013.txt"
+	// logMapping[1427771023] = "C32-Agriculture0013.txt"
 	// logMapping[1427771122] = "C38-Politics0014.txt"
 	// logMapping[1427771284] = "C39-Sports0017.txt"
 	// logMapping[1427788767] = "C6-Philosophy20.txt"
 	// logMapping[1427771457] = "C7-History002.txt"
+
+	logMapping[1427352668] = "C34-Economy0003.txt"
+	logMapping[1427353080] = "C34-Economy0008.txt"
+	logMapping[1427353406] = "C34-Economy0012.txt"
+	logMapping[1427353205] = "C34-Economy0010.txt"
+	logMapping[1427352751] = "C34-Economy0004.txt"
+	logMapping[1427352869] = "C34-Economy0006.txt"
+	logMapping[1427353588] = "C34-Economy0014.txt"
+	logMapping[1427353698] = "C34-Economy0016.txt"
+	logMapping[1427353813] = "C34-Economy0018.txt"
+	logMapping[1427354017] = "C34-Economy0020.txt"
+	logMapping[1427354170] = "C34-Economy0022.txt"
+	logMapping[1427354505] = "C34-Economy0024.txt"
+	logMapping[1427354710] = "C34-Economy0026.txt"
+	logMapping[1426989715] = "C34-Economy0002.txt"
 
 	logMapping[1428652919] = "C19-Computer0001.txt"
 	logMapping[1428652919] = "C19-Computer0004.txt"
@@ -132,7 +131,6 @@ func init() {
 	logMapping[1428739677] = "C39-Sports0027.txt"
 	logMapping[1428739947] = "C39-Sports0029.txt"
 	logMapping[1428740191] = "C39-Sports0041.txt"
-	logMapping[1428740349] = "C39-Sports0043.txt"
 	logMapping[1428740549] = "C39-Sports0047.txt"
 	logMapping[1428740701] = "C39-Sports0055.txt"
 
@@ -160,7 +158,7 @@ func init() {
 	logMapping[1432642624] = "C19-Computer0058.txt"
 	logMapping[1432642668] = "C19-Computer0062.txt"
 
-	DATE = 1427771023
+	DATE = 1432642668
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -168,9 +166,9 @@ func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	TopicAction_AnalyseWithUnixDate() // 分析结果
+	// TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	// AutoAnalyse()
+	AutoAnalyse()
 }
 
 func AutoAnalyse() {
