@@ -2,12 +2,12 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[Fortran程序 Fortran语言 程序 Fortran 主程序 编写程序 Fortran语言优越性 程序主界面图2 Fortran相比 编程程序 语言 混合程序 精程序 减源程序 程序开头]
-Key words:	[Fortran程序 Fortran Fortran程序封装性 程序 语言 主程序 传统程序封装性 Fortran标准 Fortran增加 Fortran特点 VCFortran 程序开头 原程序]
-精确率：	0.4000
-召回率：	0.4615
-F-measure：	0.4286
-总共分词词数314343
+Top key words:	[Fortran程序 Fortran语言 程序 Fortran 编写程序 Fortran语言优越性]
+Key words:	[Fortran Fortran语言优越性 编程程序 混合程序]
+精确率：	0.3333
+召回率：	0.5000
+F-measure：	0.4000
+总共分词词数104088
 
 ATT-ATT-ATT-	 0.10748
 ATT-ATT-SBV-	 0.06698
@@ -26,45 +26,45 @@ SBV-HED-	 0.13863
 
 Fortran程序
 Fortran语言
-主程序
 编写程序
 Fortran语言优越性
+主程序
 程序主界面图2
 Fortran相比
 编程程序
 混合程序
+结果程序
+UpgradingtoFortran
 精程序
 减源程序
 程序开头
 源程序
 原程序
 裂纹程序
-结果程序
-直观程序
-程序检查
+Fortranbeforeto
 传统程序
 程序主界面
+程序检查
+直观程序
 应力场程序
 Windows程序
-UpgradingtoFortran
-inFortranbefore
 程序资源
 程序提供
 程序差
-compiledFortranbefore
 调试程序
-Fortranbeforeto
+inFortranbefore
+compiledFortranbefore
 Fortran出版社
 Fortran进行
-语言之间沟通
-语言功能
 混合编程
-语言深入人心
-常用语言
-语言不足
-语言普及
-Fortran90语言
+语言功能
+语言之间沟通
 语言编程.
+常用语言
+Fortran90语言
+语言不足
+语言深入人心
+语言普及
 语言优点
 新语言
 语言象
@@ -72,30 +72,47 @@ Fortran90语言
 计算机语言
 混合编程要求
 编程方法
-No.6编程
+功能利用
 编程时间
+No.6编程
+编程思路
+编程实例
+编程概念
+编程要求
+文档类
+功能弥补
+同类功能
 显而易见功能
 功能重要
-同类功能
-功能弥补
-编程要求
-编程概念
-编程实例
 下功能
 关键功能
-派生类对象
-CobArray类对象
-功能利用
-编程思路
-Debug功能
-功能强大
-强大功能
-调试功能
-文档类
-原始数据准备
 Wokspace窗口工具
+Debug功能
+强大功能
+功能强大
+调试功能
+Project窗口工具
+文档类文件
+CobArray类对象
+派生类对象
+通用方法
+数据传递
+图示
+窗口工具
 类里
 类模版
+小主应力云图
+类进行
+通用方法提出
+主应力云图图
+原始数据准备
+类概念
+类对象
+类差
+方法发挥
+简便方法
+改造方法
+模版
 文档类文件
 Project窗口工具
 one.Itisvaluable

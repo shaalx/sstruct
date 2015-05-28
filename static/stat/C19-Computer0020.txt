@@ -2,108 +2,122 @@
 
 候选关键字Fi
  Co-word Chi 
-Top key words:	[MIS应用 MIS功能 MIS 应用 IntranetMIS 应用单位 信息 MIS系统 MIS系统平台 传统MIS Intranet 应用单位内部 S应用 应用单位LAN 功能]
-Key words:	[IntranetMIS MIS 应用 MIS功能 传统MIS 应用单位 MIS系统 Intranet 信息 信息共享 MIS系统平台 技术 Intranet应用]
-精确率：	0.6667
-召回率：	0.7692
-F-measure：	0.7143
-总共分词词数302213
+Top key words:	[MIS应用 IntranetMIS MIS 应用 MIS功能]
+Key words:	[MIS应用 MIS系统 Intranet]
+精确率：	0.2000
+召回率：	0.3333
+F-measure：	0.2500
+总共分词词数292854
 
-ATT-ATT-ATT-	 0.03840
-ATT-ATT-SBV-	 0.03506
-ATT-SBV-	 0.16361
-ATT-VOB-	 0.26210
-ATT-HED-	 0.01503
-ATT-POB-	 0.12354
-ADV-ATT-	 0.06678
-FOB-VOB-	 0.00668
-SBV-SBV-	 0.01002
-SBV-ATT-	 0.05008
-SBV-VOB-	 0.03506
-SBV-COO-	 0.09850
-SBV-HED-	 0.09516
+ATT-ATT-ATT-	 0.04970
+ATT-ATT-SBV-	 0.04518
+ATT-SBV-	 0.18223
+ATT-VOB-	 0.24247
+ATT-HED-	 0.06024
+ATT-POB-	 0.11596
+ADV-ATT-	 0.03916
+FOB-VOB-	 0.00151
+SBV-SBV-	 0.00151
+SBV-ATT-	 0.02259
+SBV-VOB-	 0.03916
+SBV-COO-	 0.03765
+SBV-HED-	 0.16265
 
 
 MIS应用
-MIS功能
 IntranetMIS
+MIS功能
+传统MIS
 应用单位
 MIS系统
-MIS系统平台
-传统MIS
-应用单位内部
-S应用
-应用单位LAN
-应用技术
-MIS存在
-信息资源
-MIS实施
-MIS进行
-MIS水平
-Intranet功能
-MIS资源
-MIS考虑
-MIS方法
-企业内部信息
-Developer应用
-工程应用
-象应用
-应用转换
-应用范围
-应用成熟
-可应用
-应用情况
-信息系统
-Intranet技术
-办公功能
-业务功能
-先进技术
-Intranet在于
-Internet技术
-共享信息
 信息共享
-内部信息
-伟大信息
-信息形式
-企业级信息
-产生信息
-信息组织
+MIS系统平台
+MIS水平
+Intranet应用
+S应用
+原有应用
+应用技术
+应用功能
+Intranet功能业务
+应用单位LAN
+系统应用
+应用系统
+先进技术
+业务功能功能
+Intranet技术
+Internet技术
+信息功能
+MIS能力
+MIS合并
+MIS存在
+MIS情况
+MIS进行
+MIS考虑
+MIS实施
 信息交流
-信息收集
-信息集成
-信息程度
+信息系统
 信息提供
 多媒体信息
-为信息
-信息环境
-信息设施
-功能规划
-整体功能
-非结构化功能
-对应功能
-上述功能
-有限功能
-功能部分
-自动化功能
-处理功能
-管理功能
-基本功能
-用于功能
-功能外
-功能办公
-原有功能
-具有功能
-功能考虑
-Intranet规划
+应用成为
+Developer应用
+B应用
+应用运行
+应用接口
+应用成熟
+应用范围
+应用情况
+应用转换
+应用水平
+可应用
+Web技术
+开放式数据库技术
+连接数据库技术
+超文本页面技术
 所谓Intranet
+Intranet具
+Intranet合并
+完善Intranet
+信息规划
+Intranet在于
+Intranet称为
+Intranet问题
 Intranet邮件
-Intranet方法
-Intranet优点
+Intranet事务
+Intranet进行
+Intranet防火墙
+双向信息
+蕴藏信息
+产生信息
+信息收集
+信息形式
+信息组织
+信息集成
+强大事务功能
+信息革命
+巨大信息
+结构化信息
+企业级信息
+之间信息
+为信息
+信息设施
 技术ODBC
+相关技术
+Chat技术
 聊天技术
-页面技术
+技术概念
 有效技术
 出现技术
+技术HTML
+开发技术
+技术水平
+技术基础
+技术具有
+技术为
+新技术
+技术提供
+企业内部系统
+传统系统平台
+�现技术
 Web技术
 .Intranet技术
 技术水平
