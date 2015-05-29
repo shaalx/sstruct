@@ -93,7 +93,7 @@ var (
 		{
 			"C11-Space0003.txt",
 			"C11-Space0007.txt",
-			"C11-Space0009.txt", //0
+			"C11-Space0009.txt",
 			"C11-Space0015.txt",
 			"C11-Space0017.txt",
 			"C11-Space0025.txt",
@@ -119,7 +119,7 @@ var (
 		{
 			"C6-Philosophy22.txt",
 			"C6-Philosophy32.txt",
-			"C6-Philosophy39.txt", //0
+			"C6-Philosophy39.txt",
 			"C6-Philosophy47.txt",
 			"C6-Philosophy08.txt",
 			"C6-Philosophy14.txt",

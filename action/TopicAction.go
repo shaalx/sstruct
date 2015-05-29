@@ -158,7 +158,7 @@ func init() {
 	logMapping[1432642624] = "C19-Computer0058.txt"
 	logMapping[1432642668] = "C19-Computer0062.txt"
 
-	DATE = 1432642668
+	DATE = 1428724422
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -166,9 +166,9 @@ func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	AutoAnalyse()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {

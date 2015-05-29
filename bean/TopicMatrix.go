@@ -247,7 +247,7 @@ func (t *TopicMatix) StatisticsWithOrigin(o *TopicMatix) {
 	ResultString += Co_word_realte(*t) + "\n"
 	ResultString += "\n\n" + sentences.Co_word_top_n(100)
 	SaveResult(ResultString)
-	SaveKeywords(topNSlice[:15])
+	// SaveKeywords(topNSlice[:15])
 	fmt.Println(statResultString)
 }
 
