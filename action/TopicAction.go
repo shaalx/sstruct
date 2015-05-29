@@ -104,26 +104,27 @@ func init() {
 	// logMapping[1428740549] = "C39-Sports0047.txt"
 	// // logMapping[1428740701] = "C39-Sports0055.txt"
 
-	// logMapping[1428741958] = "C6-Philosophy08.txt"
-	// logMapping[1428742199] = "C6-Philosophy14.txt"
-	// // logMapping[1428742389] = "C6-Philosophy22.txt"
-	// // logMapping[1428742512] = "C6-Philosophy32.txt"
-	// // logMapping[1428742806] = "C6-Philosophy39.txt"
-	// logMapping[1428743084] = "C6-Philosophy43.txt"
-	// // logMapping[1428744077] = "C6-Philosophy47.txt"
-	// logMapping[1428751313] = "C6-Philosophy71.txt"
-	// logMapping[1428751376] = "C6-Philosophy80.txt"
-	// logMapping[1428751644] = "C6-Philosophy86.txt"
-	// DATE = 1427771438
-	// CURRENT_FILENAME = logMapping[DATE]
+	logMapping[1428741958] = "C6-Philosophy08.txt"
+	logMapping[1428742199] = "C6-Philosophy14.txt"
+	// logMapping[1428742389] = "C6-Philosophy22.txt"
+	// logMapping[1428742512] = "C6-Philosophy32.txt"
+	// logMapping[1428742806] = "C6-Philosophy39.txt"
+	logMapping[1428743084] = "C6-Philosophy43.txt"
+	// logMapping[1428744077] = "C6-Philosophy47.txt"
+	logMapping[1428751313] = "C6-Philosophy71.txt"
+	logMapping[1428751376] = "C6-Philosophy80.txt"
+	logMapping[1428751644] = "C6-Philosophy86.txt"
+	DATE = 1428751644
+	ORIGIN_DIR = ORIGIN_DIR + "philosophy/"
+	CURRENT_FILENAME = logMapping[DATE]
 }
 
 func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
-	// TopicAction_PersistenceWithUnixDate() // 获得分词
+	TopicAction_PersistenceWithUnixDate() // 获得分词
 	// TopicAction_AnalyseWithUnixDate() // 分析结果
-	AutoPersistence()
+	// AutoPersistence()
 	// AutoAnalyse()
 }
 

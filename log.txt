@@ -34,3 +34,5 @@
 1432642481	C19-Computer0048.txt
 1432642624	C19-Computer0058.txt
 1432642668	C19-Computer0062.txt
+1432877422	C6-Philosophy86.txt
+1432877913	C6-Philosophy86.txt
