@@ -1,4 +1,4 @@
-Total words length:279457
+Total words length:76932
 精确率:0.0000
 召回率:0.0000
 F-measure:NaN
@@ -17,6 +17,7 @@ SBV-ATT-:NaN
 SBV-VOB-:NaN
 SBV-COO-:NaN
 SBV-HED-:NaN
+
 
 
 
