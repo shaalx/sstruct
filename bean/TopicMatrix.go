@@ -330,9 +330,9 @@ func PreciseAndRecall(tops []string) string {
 	key_words := strings.Split(key_word, ",")
 	key_words_len := len(key_words) - 2
 	// 提取的关键字比给出的关键字多bias个
-	bias := 2
+	// bias := 2
 	key_words = key_words[1 : key_words_len+1]
-	tops = tops[:key_words_len+bias] //
+	tops = tops[:5] //
 	count := 0.0
 	containWords := strings.Join(key_words, "|")
 	containWords = "|" + containWords + "|"
@@ -342,7 +342,7 @@ func PreciseAndRecall(tops []string) string {
 			count += 1.0
 		}
 	}
-	pricise := count / float64(key_words_len+bias) //
+	pricise := count / float64(5) //
 	recall := count / float64(key_words_len)
 	b := 1.0
 	f_measrue := (b*b + 1) * pricise * recall / (b*b*pricise + recall)

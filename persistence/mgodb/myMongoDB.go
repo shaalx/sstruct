@@ -34,7 +34,8 @@ func SetDB(str ...string) *DB {
 
 func SetLocalDB(str ...string) *DB {
 	db := new(DB)
-	session, err := mgo.Dial("127.0.0.1:27017")
+	session, err := mgo.Dial("202.120.87.192:27017")
+	// session, err := mgo.Dial("127.0.0.1:27017")
 	if log.IsError("{connect mongodb}", err) {
 		return nil
 	}
