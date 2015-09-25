@@ -1,15 +1,26 @@
-Total words length:151548
-精确率:0.2500
-召回率:0.3333
-F-measure:0.2857
-Top key words:[愿望 信念 信念达 定义愿望 型愿望 φ 信念约束 愿望达]
+Total words length:279457
+精确率:0.0000
+召回率:0.0000
+F-measure:NaN
+Top key words:[       ]
 Key words:[信念 信念约束 意图 愿望算子DES 愿望实现 通信协议]
-ATT-ATT-ATT-:0.11642
-ATT-ATT-SBV-:0.06005
-ATT-SBV-:0.17279
-ATT-VOB-:0.21201
-ATT-HED-:0.01838
-ATT-POB-:0.09314
+ATT-ATT-ATT-:NaN
+ATT-ATT-SBV-:NaN
+ATT-SBV-:NaN
+ATT-VOB-:NaN
+ATT-HED-:NaN
+ATT-POB-:NaN
+ADV-ATT-:NaN
+FOB-VOB-:NaN
+SBV-SBV-:NaN
+SBV-ATT-:NaN
+SBV-VOB-:NaN
+SBV-COO-:NaN
+SBV-HED-:NaN
+
+
+
+:0.09314
 ADV-ATT-:0.03922
 FOB-VOB-:0.00123
 SBV-SBV-:0.00245

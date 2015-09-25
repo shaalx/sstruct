@@ -1,15 +1,26 @@
-Total words length:153802
-精确率:0.2857
-召回率:0.4000
-F-measure:0.3333
-Top key words:[API函数 函数 通信函数 通信 方式事件方式 方式 工作方式]
+Total words length:279457
+精确率:0.0000
+召回率:0.0000
+F-measure:NaN
+Top key words:[      ]
 Key words:[API函数 通信函数 通信参数 通信技术 通信编程]
-ATT-ATT-ATT-:0.07955
-ATT-ATT-SBV-:0.05032
-ATT-SBV-:0.17857
-ATT-VOB-:0.28247
-ATT-HED-:0.03734
-ATT-POB-:0.10065
+ATT-ATT-ATT-:NaN
+ATT-ATT-SBV-:NaN
+ATT-SBV-:NaN
+ATT-VOB-:NaN
+ATT-HED-:NaN
+ATT-POB-:NaN
+ADV-ATT-:NaN
+FOB-VOB-:NaN
+SBV-SBV-:NaN
+SBV-ATT-:NaN
+SBV-VOB-:NaN
+SBV-COO-:NaN
+SBV-HED-:NaN
+
+
+
+POB-:0.10065
 ADV-ATT-:0.02922
 FOB-VOB-:0.00000
 SBV-SBV-:0.00325
