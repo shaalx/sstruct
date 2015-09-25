@@ -12,17 +12,16 @@ var DATE int64
 var logMapping map[int64]string
 
 func init() {
-	logMapping = make(map[int64]string, 1)
+	logMapping = make(map[int64]string)
 
-	// logMapping[1427770749] = "C19-Computer0010.txt"
-	// logMapping[1427770652] = "C11-Space0027.txt"
-	// logMapping[1427770830] = "C3-Art0015.txt"
-	// logMapping[1427774288] = "C31-Enviornment0005.txt"
-	// logMapping[1427771023] = "C32-Agriculture0013.txt"
-	// logMapping[1427771122] = "C38-Politics0014.txt"
-	// logMapping[1427771284] = "C39-Sports0017.txt"
-	// logMapping[1427788767] = "C6-Philosophy20.txt"
-	// logMapping[1427771457] = "C7-History002.txt"
+	logMapping[1427770749] = "C19-Computer0010.txt"
+	logMapping[1427770652] = "C11-Space0027.txt"
+	logMapping[1427770830] = "C3-Art0015.txt"
+	logMapping[1427774288] = "C31-Enviornment0005.txt"
+	logMapping[1427771023] = "C32-Agriculture0013.txt"
+	logMapping[1427771122] = "C38-Politics0014.txt"
+	logMapping[1427771284] = "C39-Sports0017.txt"
+	logMapping[1427771457] = "C7-History002.txt"
 
 	logMapping[1427352668] = "C34-Economy0003.txt"
 	logMapping[1427353080] = "C34-Economy0008.txt"
@@ -134,6 +133,7 @@ func init() {
 	logMapping[1428740549] = "C39-Sports0047.txt"
 	logMapping[1428740701] = "C39-Sports0055.txt"
 
+	logMapping[1427788767] = "C6-Philosophy20.txt"
 	logMapping[1428742389] = "C6-Philosophy22.txt"
 	logMapping[1428742512] = "C6-Philosophy32.txt"
 	logMapping[1428742806] = "C6-Philosophy39.txt"
@@ -143,22 +143,36 @@ func init() {
 	logMapping[1428743084] = "C6-Philosophy43.txt"
 	logMapping[1428751313] = "C6-Philosophy71.txt"
 	logMapping[1428751376] = "C6-Philosophy80.txt"
-	logMapping[1432877913] = "C6-Philosophy86.txt"
+	// logMapping[1432877913] = "C6-Philosophy86.txt"
 
-	logMapping[1432641887] = "C19-Computer0001.txt"
-	logMapping[1432641960] = "C19-Computer0004.txt"
-	logMapping[1432642047] = "C19-Computer0010.txt"
-	logMapping[1432642098] = "C19-Computer0012.txt"
-	logMapping[1432642141] = "C19-Computer0018.txt"
-	logMapping[1432642227] = "C19-Computer0020.txt"
-	logMapping[1432642289] = "C19-Computer0036.txt"
-	logMapping[1432642352] = "C19-Computer0038.txt"
-	logMapping[1432642423] = "C19-Computer0044.txt"
-	logMapping[1432642481] = "C19-Computer0048.txt"
-	logMapping[1432642624] = "C19-Computer0058.txt"
-	logMapping[1432642668] = "C19-Computer0062.txt"
+	// logMapping[1432641887] = "C19-Computer0001.txt"
+	// logMapping[1432641960] = "C19-Computer0004.txt"
+	// logMapping[1432642047] = "C19-Computer0010.txt"
+	// logMapping[1432642098] = "C19-Computer0012.txt"
+	// logMapping[1432642141] = "C19-Computer0018.txt"
+	// logMapping[1432642227] = "C19-Computer0020.txt"
+	// logMapping[1432642289] = "C19-Computer0036.txt"
+	// logMapping[1432642352] = "C19-Computer0038.txt"
+	// logMapping[1432642423] = "C19-Computer0044.txt"
+	// logMapping[1432642481] = "C19-Computer0048.txt"
+	// logMapping[1432642624] = "C19-Computer0058.txt"
+	// logMapping[1432642668] = "C19-Computer0062.txt"
 
-	DATE = 1432877913
+	// 2015-09-25
+	logMapping[1443167638] = "C19-Computer0001.txt"
+	logMapping[1443167659] = "C19-Computer0004.txt"
+	logMapping[1443167685] = "C19-Computer0010.txt"
+	logMapping[1443167705] = "C19-Computer0012.txt"
+	logMapping[1443167723] = "C19-Computer0018.txt"
+	logMapping[1443167749] = "C19-Computer0020.txt"
+	logMapping[1443167773] = "C19-Computer0036.txt"
+	logMapping[1443167800] = "C19-Computer0038.txt"
+	logMapping[1443167842] = "C19-Computer0044.txt"
+	logMapping[1443167862] = "C19-Computer0048.txt"
+	logMapping[1443167900] = "C19-Computer0058.txt"
+	logMapping[1443167914] = "C19-Computer0062.txt"
+
+	DATE = 1427788767
 	CURRENT_FILENAME = logMapping[DATE]
 }
 
@@ -166,9 +180,9 @@ func TopicAction() {
 	// TopicActionPersistence()
 	// TopicActionAnalyseN()
 	// TopicAction_PersistenceWithUnixDate() // 获得分词
-	// TopicAction_AnalyseWithUnixDate() // 分析结果
+	TopicAction_AnalyseWithUnixDate() // 分析结果
 	// AutoPersistence()
-	AutoAnalyse()
+	// AutoAnalyse()
 }
 
 func AutoAnalyse() {
@@ -199,7 +213,7 @@ func AutoPersistence() {
 	defer serv.Close()
 
 	// ORIGIN_DIR/economy;computer/agriculture;art;history;environment;politics;space;sports;
-	ORIGIN_DIR = ORIGIN_DIR + "philosophy/"
+	ORIGIN_DIR = ORIGIN_DIR + "computer/"
 	files := utils.ReadDir(ORIGIN_DIR)
 	for i, file := range files {
 		log.LOGS.Alert("%d:\t %s\n", i, file)
