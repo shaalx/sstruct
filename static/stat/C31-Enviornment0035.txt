@@ -1,8 +1,8 @@
-Total words length:341979
-精确率:0.2000
+Total words length:307770
+精确率:0.2500
 召回率:0.2500
-F-measure:0.2222
-Top key words:[化学品制造商协会 CHEMTREC中心 CHEMTREC 制造商协会 CHEMTREC应急]
+F-measure:0.2500
+Top key words:[化学品制造商协会 CHEMTREC中心 CHEMTREC 制造商协会]
 Key words:[制造商协会 化学品 应急中心 化学品协会]
 ATT-ATT-ATT-:0.05542
 ATT-ATT-SBV-:0.06334
@@ -47,8 +47,8 @@ CHEMTREC安排
 制造商协会计划
 CHEMTREC委员会目的
 中心护士
-医疗中心
 全国中心
+医疗中心
 制造商协会根
 制造商协会CMA
 应急服务
@@ -63,22 +63,22 @@ CHEMTREC报告
 协会会员公司
 CHEMTREC人员
 CHEMTREC通讯
-CHEMTREC派出
-CHEMTREC发挥
-CHEMTREC得知
 CHEMTREC接触
+CHEMTREC派出
+CHEMTREC得知
 CHEMTREC变成
-CHEMTREC以期
-CHEMTREC告知
+CHEMTREC发挥
 CHEMTREC发
 CHEMTREC需求
-CHEMTREC协调
+CHEMTREC告知
+CHEMTREC以期
 CHEMTREC接到
+CHEMTREC协调
 CHEMTREC客户
-CHEMTREC承诺
-CHEMTREC激活
-CHEMTREC委员会
 化学品信息
+CHEMTREC激活
+CHEMTREC承诺
+CHEMTREC委员会
 美国中心总部
 衣阿华州伯林顿市中心
 公司化学品
@@ -87,14 +87,14 @@ CHEMTREC委员会
 化学品计划
 化学品安全
 科技期刊协会
-化学品还有
-游泳池化学品
-化学品生产能力
-类型化学品
+服务中心
 化学品危险
+类型化学品
+游泳池化学品
+化学品还有
+化学品生产能力
 化学品贮存
 化学品装运
-服务中心
 化学品卡
 化学品流通商
 化学品特有
@@ -113,6 +113,8 @@ CHEMTREC委员会
 中心报告
 应急人员
 通讯中心
+Servics中心
+
 Boulevard中心
 急计划
 电话中心
